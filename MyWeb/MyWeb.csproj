@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{304ECE55-EA44-4E47-AD10-EB313DD9EC92}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyWeb</RootNamespace>
+    <AssemblyName>MyWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(TargetFrameworkVersion)' == 'v3.5' Or '$(TargetFrameworkVersion)' == 'v4.0' ">
+      <ItemGroup>
+        <Reference Include="AWSSDK.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.EC2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.EC2.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.S3, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.S3.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.SimpleDB, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net35\AWSSDK.SimpleDB.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="AWSSDK.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.EC2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.EC2.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.S3, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.S3.dll</HintPath>
+        </Reference>
+        <Reference Include="AWSSDK.SimpleDB, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <Private>True</Private>
+          <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.SimpleDB.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\blockcart.css" />
+    <Content Include="css\blockcategories.css" />
+    <Content Include="css\blockcontact.css" />
+    <Content Include="css\blockcurrencies.css" />
+    <Content Include="css\blocklanguages.css" />
+    <Content Include="css\blocklayered.css" />
+    <Content Include="css\blocknewsletter.css" />
+    <Content Include="css\blockpermanentlinks.css" />
+    <Content Include="css\blocktags.css" />
+    <Content Include="css\blockviewed.css" />
+    <Content Include="css\blockwishlist.css" />
+    <Content Include="css\category.css" />
+    <Content Include="css\front%281%29.css" />
+    <Content Include="css\front.css" />
+    <Content Include="css\global.css" />
+    <Content Include="css\highdpi.css" />
+    <Content Include="css\homeslider.css" />
+    <Content Include="css\hook.css" />
+    <Content Include="css\hooks%281%29.css" />
+    <Content Include="css\jquery.autocomplete.css" />
+    <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\jquery.ui.core.css" />
+    <Content Include="css\jquery.ui.slider.css" />
+    <Content Include="css\jquery.ui.theme.css" />
+    <Content Include="css\live_configurator.css" />
+    <Content Include="css\productcomments.css" />
+    <Content Include="css\product_list.css" />
+    <Content Include="css\rd-parallax.css" />
+    <Content Include="css\responsive-tables.css" />
+    <Content Include="css\scenes.css" />
+    <Content Include="css\smartbloglatestnews.css" />
+    <Content Include="css\smartblogstyle.css" />
+    <Content Include="css\smartblogtags.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="css\themeconfiglink.css" />
+    <Content Include="css\tmcategoryproducts.css" />
+    <Content Include="css\tmmediaparallax.css" />
+    <Content Include="css\tmmegalayout.css" />
+    <Content Include="css\tmmegamenu.css" />
+    <Content Include="css\tmnewsletter.css" />
+    <Content Include="css\tmproductsslider.css" />
+    <Content Include="css\tmproductvideos.css" />
+    <Content Include="css\tmrelatedproducts.css" />
+    <Content Include="css\tmsearch.css" />
+    <Content Include="css\uniform.default.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="img\03652e83eb142d7f4d68f7d9cb0b3041421c7fb9_banner-4.jpg" />
+    <Content Include="img\2-home-default.jpg" />
+    <Content Include="img\3-home-default.jpg" />
+    <Content Include="img\357a3d21d923f03154ab8a4a1e84e0288cf06b1a_banner-6.jpg" />
+    <Content Include="img\3dce095f1fade7efab120cb73f9e91ffcb4b2aed_banner-2.jpg" />
+    <Content Include="img\4-home-default.jpg" />
+    <Content Include="img\anh1.jpg" />
+    <Content Include="img\anhdemo.jpg" />
+    <Content Include="img\warning_bar_0000_us.jpg" />
+    <Content Include="Index.html" />
+    <Content Include="Product-list.html" />
+    <Content Include="scripts\blocklayered.js" />
+    <Content Include="scripts\category.js" />
+    <Content Include="scripts\jquery.ui.core.min.js" />
+    <Content Include="scripts\jquery.ui.mouse.min.js" />
+    <Content Include="scripts\jquery.ui.slider.min.js" />
+    <Content Include="scripts\jquery.ui.widget.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\css.css" />
+    <Content Include="css\css%281%29.css" />
+    <Content Include="fonts\fl-bigmug-line.woff" />
+    <Content Include="fonts\Thin-Regular.woff" />
+    <Content Include="fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="scripts\10-bootstrap.min.js" />
+    <Content Include="scripts\14-device.min.js" />
+    <Content Include="scripts\15-jquery.total-storage.min.js" />
+    <Content Include="scripts\15-jquery.uniform-modified.js" />
+    <Content Include="scripts\16-jquery.scrollmagic.min.js" />
+    <Content Include="scripts\17-jquery.scrollmagic.debug.js" />
+    <Content Include="scripts\18-TimelineMax.min.js" />
+    <Content Include="scripts\19-TweenMax.min.js" />
+    <Content Include="scripts\20-jquery.bxslider.js" />
+    <Content Include="scripts\20-modernizr_v2_7_2.min.js" />
+    <Content Include="scripts\ajax-cart.js" />
+    <Content Include="scripts\ajax-wishlist.js" />
+    <Content Include="scripts\analytics.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\application2.js" />
+    <Content Include="scripts\blocknewsletter.js" />
+    <Content Include="scripts\ec.js" />
+    <Content Include="scripts\facebook.js" />
+    <Content Include="scripts\front1.js" />
+    <Content Include="scripts\front.js" />
+    <Content Include="scripts\global.js" />
+    <Content Include="scripts\gtm.js" />
+    <Content Include="scripts\homeslider.js" />
+    <Content Include="scripts\hoverIntent.js" />
+    <Content Include="scripts\index.js" />
+    <Content Include="scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="scripts\jquery.autocomplete.js" />
+    <Content Include="scripts\jquery.bxslider.js" />
+    <Content Include="scripts\jquery.easing.js" />
+    <Content Include="scripts\jquery.fancybox.js" />
+    <Content Include="scripts\jquery.rd-parallax.min.js" />
+    <Content Include="scripts\jquery.scrollTo.js" />
+    <Content Include="scripts\jquery.serialScroll.js" />
+    <Content Include="scripts\jquery.vide.min.js" />
+    <Content Include="scripts\jquery.youtubebackground.js" />
+    <Content Include="scripts\loader0.js" />
+    <Content Include="scripts\products-comparison.js" />
+    <Content Include="scripts\sdk.js" />
+    <Content Include="scripts\storage.js" />
+    <Content Include="scripts\superfish.js" />
+    <Content Include="scripts\themeconfiglink.js" />
+    <Content Include="scripts\tmmediaparallax.js" />
+    <Content Include="scripts\tmmegalayout.js" />
+    <Content Include="scripts\tmmegamenu.js" />
+    <Content Include="scripts\tmnewsletter.js" />
+    <Content Include="scripts\tmproductsslider.js" />
+    <Content Include="scripts\tmrelatedproducts.js" />
+    <Content Include="scripts\tmsearch.js" />
+    <Content Include="scripts\tmsocialfeeds.js" />
+    <Content Include="scripts\tools.js" />
+    <Content Include="scripts\treeManagement.js" />
+    <Content Include="scripts\validate.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54368</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
