@@ -1,174 +1,118 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
-using System.Text;
-using System.IO;
-
-using Amazon;
-using Amazon.EC2;
-using Amazon.EC2.Model;
-using Amazon.SimpleDB;
-using Amazon.SimpleDB.Model;
-using Amazon.S3;
-using Amazon.S3.Model;
+using MyWeb.Data;
+using MyWeb.Business;
+using MyWeb.Common;
+using System.Data;
 
 namespace MyWeb
 {
-	public partial class _Default : System.Web.UI.Page
-	{
-		protected IAmazonEC2 ec2;
-		protected IAmazonS3 s3;
-		protected IAmazonSimpleDB sdb;
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			StringBuilder sb = new StringBuilder(1024);
-			using (StringWriter sr = new StringWriter(sb))
-			{
-				try
-				{
-					ec2 = new AmazonEC2Client();
-					this.WriteEC2Info();
-				}
-				catch (AmazonEC2Exception ex)
-				{
-					if (ex.ErrorCode != null && ex.ErrorCode.Equals("AuthFailure"))
-					{
-						sr.WriteLine("The account you are using is not signed up for Amazon EC2.");
-						sr.WriteLine("<br />");
-						sr.WriteLine("You can sign up for Amazon EC2 at http://aws.amazon.com/ec2");
-						sr.WriteLine("<br />");
-						sr.WriteLine("<br />");
-					}
-					else
-					{
-						sr.WriteLine("Caught Exception: " + ex.Message);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Response Status Code: " + ex.StatusCode);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Error Code: " + ex.ErrorCode);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Error Type: " + ex.ErrorType);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Request ID: " + ex.RequestId);
-						sr.WriteLine("<br />");
-						sr.WriteLine("<br />");
-					}
-					this.ec2Placeholder.Text = sr.ToString();
-				}
-			}
+    public partial class Default : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                DataTable dtConfig = ConfigService.Config_GetByTop("1", "", "");
+                if (dtConfig.Rows.Count>0)
+                {
+                    Page.Title = dtConfig.Rows[0]["Title"].ToString();
+                    Page.MetaDescription = dtConfig.Rows[0]["Description"].ToString();
+                    Page.MetaKeywords = dtConfig.Rows[0]["Keyword"].ToString();
+                }
+                List<Product> listProduct = new List<Product>();
+                //Get sản phẩm phổ biến
+                listProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsPopular] = 1", "Level,Ord");
+                if (listProduct.Count > 0)
+                {
+                    ltrProducts.Text = "<li class=\"ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line\">\n";
+                    ltrProducts.Text += "<div class=\"product-container\">\n";
+                    ltrProducts.Text += "<div class=\"left-block\">\n";
+                    ltrProducts.Text += "<div class=\"product-image-container\">\n";
+                    ltrProducts.Text += "<a class=\"product_img_link\" href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\" title='" + listProduct[0].Name + "' itemprop=\"url\">\n";
+                    ltrProducts.Text += "<img class=\"replace-2x img-responsive\" src='" + listProduct[0].Image1 + "' alt='" + listProduct[0].Name + "' title='" + listProduct[0].Name + "' itemprop=\"image\" /></a>\n";
+                    ltrProducts.Text += "<a class=\"new-box\" href='#'><span class=\"new-label\">New</span></a>\n";
+                    ltrProducts.Text += "</div><!--left-block-->\n</div><!--roduct-image-container-->\n";
+                    ltrProducts.Text += "<div class=\"right-block\">\n";
+                    ltrProducts.Text += "<h5 itemprop=\"name\">\n";
+                    ltrProducts.Text += "<a class=\"product-name\" href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\" title='" + listProduct[0].Name + "' itemprop=\"url\">\n";
+                    ltrProducts.Text += "<span class=\"list-name\">" + listProduct[0].Name + "</span>\n";
+                    ltrProducts.Text += "<span class=\"grid-name\">" + listProduct[0].Name + "</span>\n";
+                    ltrProducts.Text += "</a></h5>\n";
+                    ltrProducts.Text += "<p class=\"product-desc\" itemprop=\"description\">\n";
+                    ltrProducts.Text += "<span class=\"list-desc\">" + StringClass.FormatContentNews(listProduct[0].Content, 200) + "</span>\n";
+                    ltrProducts.Text += "<span class=\"grid-desc\">" + StringClass.FormatContentNews(listProduct[0].Content, 50) + "</span></p>\n";
+                    ltrProducts.Text += "<div class=\"buttons\">\n";
+                    ltrProducts.Text += "<a class=\"quick-view\" href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\" data-href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\">\n";
+                    ltrProducts.Text += "<span>Quick view</span></a>\n</div><!--buttons-->\n";
+                    ltrProducts.Text += "</div><!--right-block-->\n</div><!--product-container--></li>\n";
+                    for (int i = 0; i < listProduct.Count; i++)
+                    {
+                        GeneralProductHtml(i + 1, listProduct);
+                    }
+                }
+            }
+        }
 
-			sb = new StringBuilder(1024);
-			using (StringWriter sr = new StringWriter(sb))
-			{
-				try
-				{
-					s3 = new AmazonS3Client();
-					this.WriteS3Info();
-				}
-				catch (AmazonS3Exception ex)
-				{
-					if (ex.ErrorCode != null && (ex.ErrorCode.Equals("InvalidAccessKeyId") ||
-						ex.ErrorCode.Equals("InvalidSecurity")))
-					{
-						sr.WriteLine("The account you are using is not signed up for Amazon S3");
-						sr.WriteLine("<br />");
-						sr.WriteLine("You can sign up for Amazon S3 at http://aws.amazon.com/s3");
-						sr.WriteLine("<br />");
-						sr.WriteLine("<br />");
-					}
-					else
-					{
-						sr.WriteLine("Caught Exception: " + ex.Message);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Response Status Code: " + ex.StatusCode);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Error Code: " + ex.ErrorCode);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Request ID: " + ex.RequestId);
-						sr.WriteLine("<br />");
-						sr.WriteLine("<br />");
-					}
-					this.s3Placeholder.Text = sr.ToString();
-				}
-			}
-
-			sb = new StringBuilder(1024);
-			using (StringWriter sr = new StringWriter(sb))
-			{
-				try
-				{
-					sdb = new AmazonSimpleDBClient();
-					this.WriteSimpleDBInfo();
-				}
-				catch (AmazonSimpleDBException ex)
-				{
-					if (ex.ErrorCode != null && ex.ErrorCode.Equals("InvalidClientTokenId"))
-					{
-						sr.WriteLine("The account you are using is not signed up for Amazon SimpleDB.");
-						sr.WriteLine("<br />");
-						sr.WriteLine("You can sign up for Amazon SimpleDB at http://aws.amazon.com/simpledb");
-						sr.WriteLine("<br />");
-						sr.WriteLine("<br />");
-					}
-					else
-					{
-						sr.WriteLine("Exception Message: " + ex.Message);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Response Status Code: " + ex.StatusCode);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Error Code: " + ex.ErrorCode);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Error Type: " + ex.ErrorType);
-						sr.WriteLine("<br />");
-						sr.WriteLine("Request ID: " + ex.RequestId);
-						sr.WriteLine("<br />");
-						sr.WriteLine("<br />");
-					}
-					this.sdbPlaceholder.Text = sr.ToString();
-				}
-			}
-		}
-
-		private void WriteEC2Info()
-		{
-			StringBuilder output = new StringBuilder();
-			DescribeInstancesRequest ec2Request = new DescribeInstancesRequest();
-			DescribeInstancesResponse ec2Response = ec2.DescribeInstances(ec2Request);
-			foreach (Reservation reservation in ec2Response.Reservations)
-			{
-				foreach (Instance instance in reservation.Instances)
-				{
-					output.AppendFormat("<li>{0}</li>", instance.InstanceId);
-				}
-			}
-			this.ec2Placeholder.Text = output.ToString();
-		}
-
-		private void WriteS3Info()
-		{
-			StringBuilder output = new StringBuilder();
-			ListBucketsResponse response = s3.ListBuckets();
-			if (response.Buckets != null && response.Buckets.Count > 0)
-				foreach (S3Bucket theBucket in response.Buckets)
-				{
-					output.AppendFormat("<li>{0}</li>", theBucket.BucketName);
-				}
-			this.s3Placeholder.Text = output.ToString();
-		}
-
-		private void WriteSimpleDBInfo()
-		{
-			StringBuilder output = new StringBuilder();
-			ListDomainsRequest sdbRequest = new ListDomainsRequest();
-			ListDomainsResponse sdbResponse = sdb.ListDomains(sdbRequest);
-			foreach (string domain in sdbResponse.DomainNames)
-			{
-				output.AppendFormat("<li>{0}</li>", domain);
-			}
-			this.sdbPlaceholder.Text = output.ToString();
-		}
-	}
+        private string GeneralProductHtml(int i, List<Product> listProduct)
+        {
+            string strHtml = string.Empty;
+            strHtml = "<li class=\"ajax_block_product col-xs-12 col-sm-4 col-md-3 ";
+            if (i % 4 == 1)
+            {
+                strHtml += "first-in-line";
+            }
+            else if (i % 4 == 0)
+            {
+                strHtml += "last-in-line";
+            }
+            if (i > 4)
+            {
+                strHtml += "last-line";
+            }
+            if (i % 3 == 1)
+            {
+                strHtml += "first-item-of-tablet-line";
+            }
+            else if (i % 3 == 0)
+            {
+                strHtml += "last-item-of-tablet-line";
+            }
+            if (i % 2 == 1)
+            {
+                strHtml += "first-item-of-mobile-line";
+            }
+            else if (i % 2 == 0)
+            {
+                strHtml += "last-item-of-mobile-line";
+            }
+            i = i - 1;
+            strHtml += "\">\n";
+            strHtml += "<div class=\"product-container\">\n";
+            strHtml += "<div class=\"left-block\">\n";
+            strHtml += "<div class=\"product-image-container\">\n";
+            strHtml += "<a class=\"product_img_link\" href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\" title='" + listProduct[i].Name + "' itemprop=\"url\">\n";
+            strHtml += "<img class=\"replace-2x img-responsive\" src='" + listProduct[i].Image1 + "' alt='" + listProduct[i].Name + "' title='" + listProduct[i].Name + "' itemprop=\"image\" /></a>\n";
+            strHtml += "<a class=\"new-box\" href='#'><span class=\"new-label\">New</span></a>\n";
+            strHtml += "</div><!--left-block-->\n</div><!--roduct-image-container-->\n";
+            strHtml += "<div class=\"right-block\">\n";
+            strHtml += "<h5 itemprop=\"name\">\n";
+            strHtml += "<a class=\"product-name\" href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\" title='" + listProduct[i].Name + "' itemprop=\"url\">\n";
+            strHtml += "<span class=\"list-name\">" + listProduct[i].Name + "</span>\n";
+            strHtml += "<span class=\"grid-name\">" + listProduct[i].Name + "</span>\n";
+            strHtml += "</a></h5>\n";
+            strHtml += "<p class=\"product-desc\" itemprop=\"description\">\n";
+            strHtml += "<span class=\"list-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 200) + "</span>\n";
+            strHtml += "<span class=\"grid-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 50) + "</span></p>\n";
+            strHtml += "<div class=\"buttons\">\n";
+            strHtml += "<a class=\"quick-view\" href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\" data-href=\"https://ld-prestashop.template-help.com/prestashop_60012/index.php?id_product=27&amp;controller=product&amp;id_lang=1\">\n";
+            strHtml += "<span>Quick view</span></a>\n</div><!--buttons-->\n";
+            strHtml += "</div><!--right-block-->\n</div><!--product-container--></li>\n";
+            return strHtml;
+        }
+    }
 }

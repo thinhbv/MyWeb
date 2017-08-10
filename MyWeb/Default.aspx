@@ -1,36 +1,44 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="MyWeb._Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMaster.Master" AutoEventWireup="true"
+    CodeBehind="Default.aspx.cs" Inherits="MyWeb.Default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head id="Head1" runat="server">
-    <title>My AWS Enabled Application - MyWeb</title>
-    <link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" charset="utf-8"/>
-</head>
-<html>
-<body>
-<div id="content" class="container">
-    <div class="section grid grid5 s3">
-        <h2>Amazon S3 Buckets:</h2>
-        <ul>
-            <asp:Label ID="s3Placeholder" runat="server"></asp:Label>
-        </ul>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="columns" class="container">
+        <div class="row">
+            <div class="large-left col-sm-12">
+                <div class="row">
+                    <div id="center_column" class="center_column col-xs-12 col-sm-12">
+                        <ul id="home-page-tabs" class="nav nav-tabs clearfix">
+                            <li class="homefeatured">
+                                <a data-toggle="tab" href="#homefeatured" class="homefeatured">Sản phẩm phổ biến</a>
+                            </li>
+                            <li class="blocknewproducts">
+                                <a data-toggle="tab" href="#blocknewproducts" class="blocknewproducts">Sản phẩm mới</a>
+                            </li>
+                            <li class="blockbestsellers">
+                                <a data-toggle="tab" href="#blockbestsellers" class="blockbestsellers">Sản phẩm bán chạy
+                                </a>
+                            </li>
+                            <li class="blockspecials">
+                                <a data-toggle="tab" href="#blockspecials" class="blockspecials">Sản phẩm đặc biệt</a>
+                            </li>
+                        </ul>
+                        <!--home-page-tabs-->
+                        <div class="tab-content">
+                            <!-- Products list -->
+                            <ul id="homefeatured" class=" product_list grid row homefeatured tab-pane">
+                                <asp:Literal ID="ltrProducts" runat="server"></asp:Literal>
+                            </ul><!--homefeatured-->
+                        </div><!--tab-content-->
+                    </div>
+                    <!--center_column-->
+                </div>
+                <!--row-->
+            </div>
+            <!--large-left-->
+        </div>
+        <!--row-->
     </div>
-    <div class="section grid grid5 sdb">
-        <h2>Amazon SimpleDB Domains:</h2>
-        <ul>
-            <asp:Label ID="sdbPlaceholder" runat="server"></asp:Label>
-                
-        </ul>
-    </div>
-
-    <div class="section grid grid5 gridlast ec2">
-        <h2>Amazon EC2 Instances:</h2>
-        <ul>
-            <asp:Label ID="ec2Placeholder" runat="server"></asp:Label>
-
-        </ul>
-    </div>
-</div>
-</body>
-</html>
+    <!--columns-->
+</asp:Content>
