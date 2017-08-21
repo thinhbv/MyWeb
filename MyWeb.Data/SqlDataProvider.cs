@@ -57,7 +57,10 @@ namespace MyWeb.Data
             }
             finally
             {
-
+                if (cmd.Connection != null)
+                {
+                    cmd.Connection.Close();
+                }
             }
         }
 

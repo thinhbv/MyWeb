@@ -184,6 +184,13 @@ namespace MyWeb.Common
         {
             return Priority == "2" ? "Xuất hiện trang chủ" : "Bình thường";
         }
+
+        public static void LoadDropProPriority(DropDownList ddl)
+        {
+            string[] myArr = new string[] { "0, -- Tất cả -- ", "1,Bình thường", "2,Xuất hiện trang chủ" };
+            LoadDropDownList(ddl, myArr, true);
+        }
+
         public static void LoadDropDownListFilterActive(DropDownList ddl)
         {
             string[] myArr = new string[] { ", -- Tất cả -- ", "1,Hiển thị", "0,Ẩn" };
@@ -198,13 +205,13 @@ namespace MyWeb.Common
 
         public static void LoadDropDownListPagePosition(DropDownList ddl) 
         {
-            string[] myArr = new string[] { "2,Menu chính","1,Menu trên","3,Menu dưới" };
+            string[] myArr = new string[] { "2,Menu chính","1,Menu trái","3,Menu dưới" };
             LoadDropDownList(ddl, myArr, true);
         }
 
         public static string ShowPagePosition(string Position)
         {
-            return Position == "1" ? "Menu trên" : Position == "2" ? "Menu chính" : "Menu dưới";
+            return Position == "1" ? "Menu trái" : Position == "2" ? "Menu chính" : "Menu dưới";
         }
         public static void LoadDropDownListPageType(DropDownList ddl)
         {
@@ -271,6 +278,18 @@ namespace MyWeb.Common
         public static string StripATag(string text)
         {
             return Regex.Replace(text, @"<a[^>]*?href\s*=\s*[""']?([^'"" >]+?)[ '""]?/?>|<.a*?>", string.Empty);
+        }
+        public static string GeneralDetailUrl(string group_name, string id, string pro_name)
+        {
+            string strUrl = string.Empty;
+            strUrl = "/" + StringClass.NameToTag(group_name) + "/" + id + "/" + StringClass.NameToTag(pro_name);
+            return strUrl;
+        }
+        public static string GeneralGroupUrl(string id, string group_name)
+        {
+            string strUrl = string.Empty;
+            strUrl = "/" + id + "/" + StringClass.NameToTag(group_name);
+            return strUrl;
         }
     }
 }

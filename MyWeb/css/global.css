@@ -13088,18 +13088,9 @@ header .row #header_logo a {
 		display: none;
 	}
 
-/*
-* @section      Page Footer
-* @description  This section holds specific style redeclarations for some
-*               of common elements in page footer
-*/
 .footer-container {
 	background: #fff;
 }
-
-	.footer-container .socialfeedblock {
-		margin-top: 15px;
-	}
 
 @media (max-width: 767px) {
 	.footer-container .socialfeedblock .hook_footer {

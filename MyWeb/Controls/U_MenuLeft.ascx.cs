@@ -19,16 +19,32 @@ namespace MyWeb.Controls
             {
                 string groupId = string.Empty;
                 string level = string.Empty;
-                DataTable dtG = GroupNewsService.GroupNews_GetByTop("", "Active=1 and len(Level)=5", "Level, Ord");
-                if (dtG.Rows.Count>0)
+                List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("", "Active=1", "Level, Ord");
+                if (listG.Count>0)
                 {
-                    for (int i = 0; i < dtG.Rows.Count; i++)
+                    for (int i = 0; i < listG.Count; i++)
                     {
-                        if (dtG.Rows[i]["Name"].ToString().ToLower().Contains("dịch vụ"))
+                        if (listG[i].Level.Length == 5)
                         {
-                            groupId = dtG.Rows[i]["Id"].ToString();
-                            level=dtG.Rows[i]["Level"].ToString();
-                            break;
+                            List<GroupProduct> listSub = listG.Where(l => l.Level.Length == 10 && l.Level.PadLeft(5) == listG[i].Level).ToList();
+                            if (listSub.Count > 0)
+                            {
+                                ltrmenu.Text += "<div class='layered_filter'>\n";
+                                ltrmenu.Text += "<div class='layered_subtitle_heading'>\n";
+                                ltrmenu.Text += "<span class='layered_subtitle'>" + listG[i].Name + "</span></div>\n";
+                                ltrmenu.Text += "<ul id='ul_layered_id_attribute_group_" + (i + 1).ToString() + "' class='col-lg-12 layered_filter_ul'>\n";
+                                for (int j = 0; j < listSub.Count; j++)
+                                {
+                                    ltrmenu.Text += "<li class='nomargin hiddable col-lg-12'>\n";
+                                    ltrmenu.Text += "<input type='checkbox' class='checkbox' name='layered_id_attribute_group_" + (j + 1).ToString() + "' id='layered_id_attribute_group_" + (j + 1).ToString() + "' value='" + listSub[j].Id + "' />\n";
+                                    ltrmenu.Text += "<label for='layered_id_attribute_group_" + (j + 1).ToString() + "'>\n";
+                                    string strUrl = PageHelper.GeneralGroupUrl(listSub[j].Id, listSub[j].Name);
+                                    ltrmenu.Text += "<a href='" + strUrl + "'>";
+                                    ltrmenu.Text += "<strong>" + listSub[j].Name + "</strong>\n";
+                                    ltrmenu.Text += "<span>" + listSub.Count.ToString() + "</span></a>\n</label>\n</li>\n";
+                                }
+                                ltrmenu.Text += "</ul>\n</div>\n";
+                            }
                         }
                     }
                 }

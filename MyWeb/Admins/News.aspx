@@ -163,16 +163,6 @@
                             <asp:Image ID="imgImage" runat="server" ImageAlign="Middle" Width="100px" />
                         </td>
                     </tr>
-                    <%--<tr>
-                        <th>
-                            <asp:Label ID="lblFile" runat="server" Text="File đính kèm:"></asp:Label>
-                        </th>
-                        <td>
-                            <asp:TextBox ID="txtFile" runat="server" CssClass="text"></asp:TextBox>&nbsp;<input
-                                id="btnImgFiles" type="button" onclick="BrowseServer('<% =txtFile.ClientID %>','Files');"
-                                value="Browse Server" />
-                        </td>
-                    </tr>--%>
                     <tr>
                         <th>
                             <asp:Label ID="lblDate" runat="server" Text="Ngày đăng:"></asp:Label>

@@ -2,7 +2,6 @@
 
 <%@ Register Src="Controls/U_Top.ascx" TagName="U_Top" TagPrefix="uc1" %>
 <%@ Register Src="Controls/U_Menu.ascx" TagName="U_Menu" TagPrefix="uc2" %>
-<%@ Register Src="Controls/U_Banner.ascx" TagName="U_Banner" TagPrefix="uc3" %>
 <%@ Register Src="Controls/U_Slider.ascx" TagName="U_Slider" TagPrefix="uc4" %>
 <%@ Register Src="Controls/U_Contact.ascx" TagName="U_Contact" TagPrefix="uc5" %>
 <%@ Register Src="Controls/Footer.ascx" TagName="Footer" TagPrefix="uc6" %>
@@ -15,12 +14,10 @@
 	<meta name="robots" content="index,follow"/>
 	<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0"/>
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
-        <script type="text/javascript" async="" src="./scripts/ec.js"></script>
-    <script type="text/javascript" async="" src="./scripts/analytics.js"></script>
-    <script async="" src="./scripts/gtm.js"></script>
-    <script id="facebook-jssdk" src="./scripts/sdk.js"></script>
-    <script type="text/javascript" src="./scripts/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
-    <script type="text/javascript" src="./scripts/4o300efCt-CXoq1JEC-sVReFz48.js"></script>
+        <script type="text/javascript" async="" src="../scripts/ec.js"></script>
+    <script type="text/javascript" async="" src="../scripts/analytics.js"></script>
+    <script async="" src="../scripts/gtm.js"></script>
+    <script id="facebook-jssdk" src="../scripts/sdk.js"></script>
     <link rel="icon" type="image/vnd.microsoft.icon" href="https://ld-prestashop.template-help.com/prestashop_60012/img/favicon.ico?1468996685">
     <link rel="shortcut icon" type="image/x-icon" href="https://ld-prestashop.template-help.com/prestashop_60012/img/favicon.ico?1468996685">
     <link rel="stylesheet" href="./css/global.css" media="all">
@@ -69,8 +66,6 @@
         var added_to_wishlist = 'The product was successfully added to your wishlist.';
         var ajax_allowed = true;
         var ajaxsearch = true;
-        var baseDir = 'https://ld-prestashop.template-help.com/prestashop_60012/';
-        var baseUri = 'https://ld-prestashop.template-help.com/prestashop_60012/index.php';
         var blocking_popup = '1';
         var comparator_max_item = 2;
         var comparedProductsIds = [];
@@ -93,7 +88,6 @@
         var homeslider_speed = 500;
         var homeslider_width = 10000;
         var id_lang = 1;
-        var img_dir = 'https://ld-prestashop.template-help.com/prestashop_60012/themes/theme1364/img/';
         var instantsearch = true;
         var isGuest = 0;
         var isLogged = 0;
@@ -103,8 +97,6 @@
         var loggin_required = 'You must be logged in to manage your wishlist.';
         var max_item = 'You cannot add more than 2 product(s) to the product comparison';
         var min_item = 'Please select at least one product';
-        var module_url = 'https://ld-prestashop.template-help.com/prestashop_60012/index.php?fc=module&amp;module=tmnewsletter&amp;controller=default&amp;id_lang=1';
-        var mywishlist_url = 'https://ld-prestashop.template-help.com/prestashop_60012/index.php?fc=module&module=blockwishlist&controller=mywishlist&id_lang=1';
         var nbItemsPerLine = 4;
         var nbItemsPerLineMobile = 2;
         var nbItemsPerLineTablet = 3;
@@ -116,8 +108,6 @@
         var quickView = true;
         var removingLinkText = 'remove this product from my cart';
         var roundMode = 2;
-        var search_url = 'https://ld-prestashop.template-help.com/prestashop_60012/index.php?controller=search';
-        var search_url_local = 'https://ld-prestashop.template-help.com/prestashop_60012/index.php?fc=module&module=tmsearch&controller=search&id_lang=1';
         var static_token = '3ac4aad1510521a3b35341f846de883b';
         var tm_cps_carousel_auto = 0;
         var tm_cps_carousel_auto_control = 0;
@@ -150,53 +140,53 @@
         var usingSecureMode = true;
         var wishlistProductsIds = false;
 	</script>
-	<script type="text/javascript" src="./scripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
-    <script type="text/javascript" src="./scripts/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="./scripts/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.easing.js"></script>
-    <script type="text/javascript" src="./scripts/tools.js"></script>
-    <script type="text/javascript" src="./scripts/global.js"></script>
-    <script type="text/javascript" src="./scripts/10-bootstrap.min.js"></script>
-    <script type="text/javascript" src="./scripts/14-device.min.js"></script>
-    <script type="text/javascript" src="./scripts/15-jquery.total-storage.min.js"></script>
-    <script type="text/javascript" src="./scripts/15-jquery.uniform-modified.js"></script>
-    <script type="text/javascript" src="./scripts/16-jquery.scrollmagic.min.js"></script>
-    <script type="text/javascript" src="./scripts/17-jquery.scrollmagic.debug.js"></script>
-    <script type="text/javascript" src="./scripts/18-TimelineMax.min.js"></script>
-    <script type="text/javascript" src="./scripts/19-TweenMax.min.js"></script>
-    <script type="text/javascript" src="./scripts/20-jquery.bxslider.js"></script>
-    <script type="text/javascript" src="./scripts/20-modernizr_v2_7_2.min.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="./scripts/products-comparison.js"></script>
-    <script type="text/javascript" src="./scripts/treeManagement.js"></script>
-    <script type="text/javascript" src="./scripts/blocknewsletter.js"></script>
-    <script type="text/javascript" src="./scripts/homeslider.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.bxslider.js"></script>
-    <script type="text/javascript" src="./scripts/hoverIntent.js"></script>
-    <script type="text/javascript" src="./scripts/superfish.js"></script>
-    <script type="text/javascript" src="./scripts/tmmegamenu.js"></script>
-    <script type="text/javascript" src="./scripts/front.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="./scripts/tmsearch.js"></script>
-    <script type="text/javascript" src="./scripts/tmrelatedproducts.js"></script>
-    <script type="text/javascript" src="./scripts/ajax-cart.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.scrollTo.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.serialScroll.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.rd-parallax.min.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.youtubebackground.js"></script>
-    <script type="text/javascript" src="./scripts/jquery.vide.min.js"></script>
-    <script type="text/javascript" src="./scripts/tmmediaparallax.js"></script>
-    <script type="text/javascript" src="./scripts/tmproductsslider.js"></script>
-    <script type="text/javascript" src="./scripts/validate.js"></script>
-    <script type="text/javascript" src="./scripts/tmnewsletter.js"></script>
-    <script type="text/javascript" src="./scripts/ajax-wishlist.js"></script>
-    <script type="text/javascript" src="./scripts/front1.js"></script>
-    <script type="text/javascript" src="./scripts/tmsocialfeeds.js"></script>
-    <script type="text/javascript" src="./scripts/tmmegalayout.js"></script>
-    <script type="text/javascript" src="./scripts/themeconfiglink.js"></script>
-    <script type="text/javascript" src="./scripts/index.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.easing.js"></script>
+    <script type="text/javascript" src="../scripts/tools.js"></script>
+    <script type="text/javascript" src="../scripts/global.js"></script>
+    <script type="text/javascript" src="../scripts/10-bootstrap.min.js"></script>
+    <script type="text/javascript" src="../scripts/14-device.min.js"></script>
+    <script type="text/javascript" src="../scripts/15-jquery.total-storage.min.js"></script>
+    <script type="text/javascript" src="../scripts/15-jquery.uniform-modified.js"></script>
+    <script type="text/javascript" src="../scripts/16-jquery.scrollmagic.min.js"></script>
+    <script type="text/javascript" src="../scripts/17-jquery.scrollmagic.debug.js"></script>
+    <script type="text/javascript" src="../scripts/18-TimelineMax.min.js"></script>
+    <script type="text/javascript" src="../scripts/19-TweenMax.min.js"></script>
+    <script type="text/javascript" src="../scripts/20-jquery.bxslider.js"></script>
+    <script type="text/javascript" src="../scripts/20-modernizr_v2_7_2.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="../scripts/products-comparison.js"></script>
+    <script type="text/javascript" src="../scripts/treeManagement.js"></script>
+    <script type="text/javascript" src="../scripts/blocknewsletter.js"></script>
+    <script type="text/javascript" src="../scripts/homeslider.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="../scripts/hoverIntent.js"></script>
+    <script type="text/javascript" src="../scripts/superfish.js"></script>
+    <script type="text/javascript" src="../scripts/tmmegamenu.js"></script>
+    <script type="text/javascript" src="../scripts/front.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="../scripts/tmsearch.js"></script>
+    <script type="text/javascript" src="../scripts/tmrelatedproducts.js"></script>
+    <script type="text/javascript" src="../scripts/ajax-cart.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.serialScroll.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.rd-parallax.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.youtubebackground.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.vide.min.js"></script>
+    <script type="text/javascript" src="../scripts/tmmediaparallax.js"></script>
+    <script type="text/javascript" src="../scripts/tmproductsslider.js"></script>
+    <script type="text/javascript" src="../scripts/validate.js"></script>
+    <script type="text/javascript" src="../scripts/tmnewsletter.js"></script>
+    <script type="text/javascript" src="../scripts/ajax-wishlist.js"></script>
+    <script type="text/javascript" src="../scripts/front1.js"></script>
+    <script type="text/javascript" src="../scripts/tmsocialfeeds.js"></script>
+    <script type="text/javascript" src="../scripts/tmmegalayout.js"></script>
+    <script type="text/javascript" src="../scripts/themeconfiglink.js"></script>
+    <script type="text/javascript" src="../scripts/index.js"></script>
     <link data-olark="true" rel="stylesheet" href="./css/theme.css" type="text/css">
 </head>
     <script>
@@ -291,19 +281,13 @@
            </header><!--header-->
         </div><!--header-container-->
        <div class="columns-container">
-           <div class="wrapper it_WHFXKNZIJFPP top-2-wrap-1">
-                <div class="row it_CWSQNFBKEXKW top-2-wrap-2-row-1">
-                    <div class="it_MIEJULRDEGLU col-xs-12    top-2-wrap-2-row-1-div">
-                        <!-- Module HomeSlider -->
-                        <div id="homepage-slider">
-                            <uc3:U_Banner ID="U_Banner" runat="server" />
-                        </div>
-                        <!-- /Module HomeSlider -->
-                    </div>
-                </div>
-            </div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
        </div><!--columns-container-->
+       <div class="footer-container">
+           <div id="footer">
+               <uc6:Footer ID="U_Footer" runat="server" />
+           </div><!--footer-->
+       </div><!--footer-container-->
     </div><!-- #page -->
 </body>
 </html>

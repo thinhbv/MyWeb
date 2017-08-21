@@ -59,8 +59,6 @@ namespace MyWeb.Admins
                     ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listGProduct[i].Name, listGProduct[i].Level), "/san-pham/" + listGProduct[i].Id + "/" + StringClass.NameToTag(listGProduct[i].Name) + ".aspx"));
                 }
             }
-            ddlLink.Items.Add(new ListItem("Mua phiếu quà tặng", "/mua-phieu-qua-tang.aspx"));
-            ddlLink.Items.Add(new ListItem("Đặt hẹn", "/dat-hen.aspx"));
             ddlLink.Items.Add(new ListItem("Liên hệ", "/Contact.aspx"));
             ddlLink.DataBind();
         }
@@ -125,6 +123,8 @@ namespace MyWeb.Admins
                     dt = PageService.Page_GetById(strCA);
                     Level = dt.Rows[0]["Level"].ToString().Substring(0, dt.Rows[0]["Level"].ToString().Length - 5);
                     txtName.Text = dt.Rows[0]["Name"].ToString();
+                    txtImage.Text = dt.Rows[0]["Image"].ToString();
+                    imgImage.ImageUrl = dt.Rows[0]["Image"].ToString().Length > 0 ? dt.Rows[0]["Image"].ToString() : "";
                     fckDetail.Value = dt.Rows[0]["Detail"].ToString();
                     //txtDescription.Text = dt.Rows[0]["Description"].ToString();
                     //txtKeyword.Text = dt.Rows[0]["Keyword"].ToString();
@@ -211,6 +211,7 @@ namespace MyWeb.Admins
                 Data.Page obj = new Data.Page();
                 obj.Id = Id;
                 obj.Name = txtName.Text;
+                obj.Image = txtImage.Text;
                 obj.Detail = fckDetail.Value;
                 obj.Level = Level + "00000";
                 obj.Description = "";

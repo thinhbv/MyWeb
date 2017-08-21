@@ -1,36 +1,55 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Footer.ascx.cs" Inherits="MyWeb.Controls.Footer" %>
-<div class="foot">
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            jQuery('#<%= btnRegister.ClientID %>').click(function () {
-                if (jQuery('#<%= txtEmail.ClientID %>').val().trim() == "") {
-                    alert("Vui lòng nhập email của bạn!");
-                    jQuery('#<%= txtEmail.ClientID %>').focus();
-                    return false
-                }
-                return true;
-            });
-        });
-    </script>
-    <div style="position: absolute; top: 16px; left: 10px">
-        <strong>Đăng ký email để nhận bản tin khuyến mại</strong>&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="txtEmail" runat="server" Width="170px"></asp:TextBox>&nbsp;&nbsp;
-        <asp:Button ID="btnRegister" runat="server" Text="Đăng ký" CssClass="button small"
-            OnClick="btnRegister_Click" />
+<div class="wrapper it_MSLTXVCEPPCM footer-1-wrap-2">
+    <div class="row it_ICLKLZUCUGLY full-width">
+        <div class="it_YJCVXJEGJPCZ col-xs-12 container static">
+            <div class="row it_ELPXQYQKREKT ">
+                <div class="it_RCORVIPCZLIJ col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
+                    <div id="tmhtmlcontent_footer">
+                        <ul class="tmhtmlcontent-footer clearfix row">
+                            <li class="tmhtmlcontent-item-1 col-xs-4 ">
+                                <a href="index.php" class="item-link" title="">
+                                    <img src="./images/logo.jpg" class="item-img img-responsive" title="" alt="" width="294" height="41" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- MODULE Block contact infos -->
+                    <section id="block_contact_infos" class="footer-block">
+                        <div>
+                            <asp:Literal ID="ltrInfo" runat="server"></asp:Literal>
+                        </div>
+                    </section>
+                    <!-- /MODULE Block contact infos -->
+                </div><!--it_RCORVIPCZLIJ-->
+                <div class="it_QEBRZGYQYBGZ col-xs-12 col-sm-3 col-md-3  ">
+                    <!-- Block myaccount module -->
+                    <section class="footer-block">
+                        <div class="block_content toggle-footer">
+                            <asp:Literal ID="ltrMenu" runat="server"></asp:Literal>
+                        </div>
+                    </section>
+                    <!-- /Block myaccount module -->
+                </div><!--it_QEBRZGYQYBGZ-->
+                <div class="it_YKWBSPXBZYRR col-xs-12 col-sm-5   ">
+                    <div class="socialfeedblock block footer">
+                        <div class="row hook_footer">
+                            <div class="item_1 col-xs-12">
+                                <div class="instagram-widget">
+                                    <div id="instafeed_footer" class="data">
+                                        <div class="instagram_items ">
+                                            <asp:Literal ID="ltrImages" runat="server"></asp:Literal>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--it_ELPXQYQKREKT-->
+        </div>
+        <!--it_YJCVXJEGJPCZ-->
     </div>
-    <div class="nsb_container" align="center">
-        <a id="l1" target="_blank" rel="nofollow" href="http://www.facebook.com/sharer.php?u=http://familyspa.vn/&title=">
-            <img title="Facebook" border="0" src="/Images/facebook_aqu_24.png" alt="Facebook" /></a>&nbsp;
-        <a id="l2" target="_blank" rel="nofollow" href="http://www.myspace.com/Modules/PostTo/Pages/?l=3&amp;u=http://familyspa.vn/&amp;title=">
-            <img title="MySpace" border="0" src="/Images/myspace_aqu_24.png" alt="MySpace" /></a>&nbsp;
-        <a id="l3" target="_blank" rel="nofollow" href="http://twitter.com/home?status=http://familyspa.vn/&amp;title=">
-            <img title="Twitter" border="0" src="/Images/twitter_aqu_24.png" alt="Twitter" /></a>&nbsp;
-        <a id="l5" target="_blank" rel="nofollow" href="http://del.icio.us/post?url=http://familyspa.vn/&amp;title=">
-            <img title="Delicious" border="0" src="/Images/delicious_aqu_24.png" alt="Delicious" /></a>&nbsp;</div>
-    <div style="clear: both;">
-    </div>
-    <div class="copy">
-        <asp:Literal ID="ltrCopyright" runat="server"></asp:Literal>
-        <%--<span>Family Spa </span>&copy; 2014 | <a href="#">Privacy policy</a>--%>
-    </div>
+    <!--it_ICLKLZUCUGLY-->
 </div>
+<!--it_MSLTXVCEPPCM-->

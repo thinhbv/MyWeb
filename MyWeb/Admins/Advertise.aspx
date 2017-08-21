@@ -46,7 +46,7 @@
                     <HeaderTemplate>
                         Hình ảnh</HeaderTemplate>
                     <ItemTemplate>
-                        <script type="text/javascript">                            playfile('<%#DataBinder.Eval(Container.DataItem, "Image").ToString() %>', "95", "80", "false", "", "", "")</script>
+                        <script type="text/javascript"> playfile('<%#DataBinder.Eval(Container.DataItem, "Image").ToString() %>', "95", "80", "false", "", "", "")</script>
                     </ItemTemplate>
                 </asp:TemplateColumn>
                 <asp:BoundColumn DataField="Width" HeaderText="Độ rộng" ItemStyle-CssClass="Center"
@@ -117,17 +117,6 @@
                     </ul>
                 </td>
             </tr>
-            <%--<tr>
-                        <th>
-                            <asp:Label ID="lblPage" runat="server" Text="Trang quảng cáo:"></asp:Label>
-                        </th>
-                        <td>
-                            <asp:DropDownList ID="ddlPageId" runat="server">
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="rfvPageId" runat="server" ControlToValidate="ddlPageId"
-                                Display="Dynamic" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>--%>
             <tr>
                 <th>
                     <asp:Label ID="lblName" runat="server" Text="Tên quảng cáo:"></asp:Label>

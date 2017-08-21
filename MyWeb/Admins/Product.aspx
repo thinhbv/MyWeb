@@ -167,8 +167,8 @@
 				</th>
 				<td>
 					<asp:TextBox ID="txtImage1" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-						id="btnImgImage1" type="button" onclick="BrowseServer('<% =txtImage1.ClientID %>	','Images');"
-						value="Browse Server" />&nbsp;
+                        id="btnImgImage1" type="button" onclick="BrowseServer('<% =txtImage1.ClientID %>','Images');"
+                        value="Browse Server" />&nbsp;
                     <asp:Image ID="imgImage1" runat="server" ImageAlign="Middle" Width="100px" />
 				</td>
 			</tr>
@@ -178,7 +178,7 @@
 				</th>
 				<td>
 					<asp:TextBox ID="txtImage2" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-						id="btnImgImage2" type="button" onclick="BrowseServer('<% =txtImage2.ClientID %>	','Images');"
+						id="btnImgImage2" type="button" onclick="BrowseServer('<% =txtImage2.ClientID %>','Images');"
 						value="Browse Server" />&nbsp;
                     <asp:Image ID="imgImage2" runat="server" ImageAlign="Middle" Width="100px" />
 				</td>
@@ -189,7 +189,7 @@
 				</th>
 				<td>
 					<asp:TextBox ID="txtImage3" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-						id="btnImgImage3" type="button" onclick="BrowseServer('<% =txtImage3.ClientID %>	','Images');"
+						id="btnImgImage3" type="button" onclick="BrowseServer('<% =txtImage3.ClientID %>','Images');"
 						value="Browse Server" />&nbsp;
                     <asp:Image ID="imgImage3" runat="server" ImageAlign="Middle" Width="100px" />
 				</td>
@@ -200,7 +200,7 @@
 				</th>
 				<td>
 					<asp:TextBox ID="txtImage4" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-						id="btnImgImage4" type="button" onclick="BrowseServer('<% =txtImage4.ClientID %>	','Images');"
+						id="btnImgImage4" type="button" onclick="BrowseServer('<% =txtImage4.ClientID %>','Images');"
 						value="Browse Server" />&nbsp;
                     <asp:Image ID="imgImage4" runat="server" ImageAlign="Middle" Width="100px" />
 				</td>
@@ -211,7 +211,7 @@
 				</th>
 				<td>
 					<asp:TextBox ID="txtImage5" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-						id="btnImgImage5" type="button" onclick="BrowseServer('<% =txtImage5.ClientID %>	','Images');"
+						id="btnImgImage5" type="button" onclick="BrowseServer('<% =txtImage5.ClientID %>','Images');"
 						value="Browse Server" />&nbsp;
                     <asp:Image ID="imgImage5" runat="server" ImageAlign="Middle" Width="100px" />
 				</td>
@@ -221,7 +221,7 @@
 					<asp:Label ID="lblContent" runat="server" Text="Mô tả:"></asp:Label>
 				</th>
 				<td>
-					<FCKeditorV2:FCKeditor ID="fckContent" runat="server" />
+					<FCKeditorV2:FCKeditor ID="fckContent" runat="server" ToolbarSet="Basic" />
 				</td>
 			</tr>
 			<tr>

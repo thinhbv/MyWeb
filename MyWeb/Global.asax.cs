@@ -17,8 +17,8 @@ namespace MyWeb
         void RegisterRoutes()
         {
             //Product routes
-            RouteTable.Routes.MapPageRoute("GroupProduct", "san-pham/{GroupId}/{title}", "~/Modules/Product/ViewProduct.aspx");
-            RouteTable.Routes.MapPageRoute("ProductDetail", "san-pham/{groupId}/{groupName}/{Id}/{title}", "~/Modules/Product/DetailProduct.aspx");
+            RouteTable.Routes.MapPageRoute("GroupProduct", "{GroupId}/{title}/trang-{page}", "~/Modules/Product/ViewProduct.aspx");
+            RouteTable.Routes.MapPageRoute("ProductDetail", "{groupName}/{Id}/{title}", "~/Modules/Product/DetailProduct.aspx");
             //News routes
             RouteTable.Routes.MapPageRoute("News", "{GroupId}/{title}.aspx", "~/Modules/News/ViewGroupNews.aspx");
             RouteTable.Routes.MapPageRoute("NewsDetail", "{groupId}/{groupName}/{Id}/{title}", "~/Modules/News/NewsDetails.aspx");

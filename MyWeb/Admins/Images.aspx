@@ -49,6 +49,14 @@
                         <script type="text/javascript">                            playfile('<%#Eval("Image").ToString() %>', "95", "80", "false", "", "", "")</script>
                     </ItemTemplate>
                 </asp:TemplateColumn>
+                <asp:TemplateColumn HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="TextShort">
+                    <HeaderTemplate>
+                        Vị trí
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblPriority" runat="server" Text='<%# MyWeb.Common.PageHelper.ShowProPriority(DataBinder.Eval(Container.DataItem, "Priority").ToString()) %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateColumn>
                 <asp:BoundColumn DataField="Ord" HeaderText="Thứ tự" ItemStyle-CssClass="Number"
                     Visible="true" />
                 <asp:TemplateColumn ItemStyle-CssClass="Active">
@@ -119,9 +127,18 @@
                 </th>
                 <td>
                     <asp:TextBox ID="txtImage" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-                        id="btnImgImage" type="button" onclick="BrowseServer('<% =txtImage.ClientID %>','Images');"
+                        id="btnImgImage" type="button" onclick="BrowseServer('<% =txtImage.ClientID %>','images');"
                         value="Browse Server" />&nbsp;
                     <asp:Image ID="imgImage" runat="server" ImageAlign="Middle" Width="100px" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <asp:Label ID="lblPriority" runat="server" Text="Vị trí hiển thị:"></asp:Label>
+                </th>
+                <td>
+                    <asp:DropDownList ID="ddlPriority" runat="server">
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>

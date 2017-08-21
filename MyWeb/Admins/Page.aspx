@@ -5,7 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="PageName">
-        QUẢN LÝ DANH MỤC TRANG</div>
+        QUẢN LÝ DANH MỤC TRANG
+    </div>
     <asp:Label ID="lblThongbao" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="Arial"
         Font-Size="12px" ForeColor="Red"></asp:Label>
     <asp:Panel ID="pnView" runat="server">
@@ -41,14 +42,24 @@
                 <asp:BoundColumn DataField="Active" HeaderText="Active" Visible="False" />
                 <asp:TemplateColumn ItemStyle-CssClass="Text">
                     <HeaderTemplate>
-                        Tên trang</HeaderTemplate>
+                        Tên trang
+                    </HeaderTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# MyWeb.Common.StringClass.ShowNameLevel(DataBinder.Eval(Container.DataItem, "Name").ToString(), DataBinder.Eval(Container.DataItem, "Level").ToString()) %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateColumn>
+                <asp:TemplateColumn ItemStyle-CssClass="Image">
+                    <HeaderTemplate>
+                        Hình ảnh
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <image src='<%#Eval("Image") %>' width="70px" />
+                    </ItemTemplate>
+                </asp:TemplateColumn>
                 <asp:TemplateColumn HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="TextShort">
                     <HeaderTemplate>
-                        Kiểu trang</HeaderTemplate>
+                        Kiểu trang
+                    </HeaderTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# MyWeb.Common.PageHelper.ShowPageType(DataBinder.Eval(Container.DataItem, "Type").ToString()) %>'></asp:Label>
                     </ItemTemplate>
@@ -59,7 +70,8 @@
                     Visible="true" />
                 <asp:TemplateColumn HeaderStyle-HorizontalAlign="Center" ItemStyle-CssClass="TextShort">
                     <HeaderTemplate>
-                        Vị trí</HeaderTemplate>
+                        Vị trí
+                    </HeaderTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblPosition" runat="server" Text='<%# MyWeb.Common.PageHelper.ShowPagePosition(DataBinder.Eval(Container.DataItem, "Position").ToString()) %>'></asp:Label>
                     </ItemTemplate>
@@ -67,21 +79,25 @@
                 <asp:TemplateColumn ItemStyle-CssClass="Center">
                     <HeaderTemplate>
                         Thứ tự<asp:ImageButton ID="imgUpdateOrd" runat="server" ToolTip="Cập nhật thứ tự"
-                            ImageUrl="~/Images/Update.png" OnClick="imgUpdateOrd_Click" /></HeaderTemplate>
+                            ImageUrl="~/Images/Update.png" OnClick="imgUpdateOrd_Click" />
+                    </HeaderTemplate>
                     <ItemTemplate>
                         <asp:TextBox ID="txtOrd" runat="server" Text='<%#(Eval("Ord").ToString()) %>' Width="70px"
-                            Style="text-align: center" /></ItemTemplate>
+                            Style="text-align: center" />
+                    </ItemTemplate>
                 </asp:TemplateColumn>
                 <asp:TemplateColumn ItemStyle-CssClass="Active">
                     <HeaderTemplate>
-                        Kích hoạt</HeaderTemplate>
+                        Kích hoạt
+                    </HeaderTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblStatus" runat="server" Text='<%# MyWeb.Common.PageHelper.ShowActiveStatus(DataBinder.Eval(Container.DataItem, "Active").ToString()) %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateColumn>
                 <asp:TemplateColumn ItemStyle-CssClass="Function">
                     <HeaderTemplate>
-                        Chức năng</HeaderTemplate>
+                        Chức năng
+                    </HeaderTemplate>
                     <ItemTemplate>
                         <asp:ImageButton ID="cmdAddSub" runat="server" AlternateText="Thêm cấp con" CommandName="AddSub"
                             CssClass="Add" ToolTip="Thêm cấp con" ImageUrl="/App_Themes/Admin/images/add.png"
@@ -94,7 +110,8 @@
                                         ID="cmdActive" runat="server" AlternateText='<%#MyWeb.Common.PageHelper.ShowActiveToolTip(DataBinder.Eval(Container.DataItem, "Active").ToString())%>'
                                         CommandName="Active" CssClass="Active" ToolTip='<%# MyWeb.Common.PageHelper.ShowActiveToolTip(DataBinder.Eval(Container.DataItem, "Active").ToString())%>'
                                         ImageUrl='<%#MyWeb.Common.PageHelper.ShowActiveImage(DataBinder.Eval(Container.DataItem, "Active").ToString())%>'
-                                        CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id")%>' /></ItemTemplate>
+                                        CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id")%>' />
+                    </ItemTemplate>
                 </asp:TemplateColumn>
             </Columns>
             <PagerStyle HorizontalAlign="Center" CssClass="Paging" Position="Bottom" NextPageText="Previous"
@@ -137,6 +154,17 @@
                     <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName"
                         Display="Dynamic" ErrorMessage="*" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     <asp:HiddenField ID="txtId" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <asp:Label ID="lblImage" runat="server" Text="Hình ảnh:"></asp:Label><span style="color: Red; font-size: 11px;"> (153x102)</span>
+                </th>
+                <td>
+                    <asp:TextBox ID="txtImage" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
+                        id="btnImgImage" type="button" onclick="BrowseServer('<% =txtImage.ClientID %>','Images');"
+                        value="Browse Server" />&nbsp;
+                            <asp:Image ID="imgImage" runat="server" ImageAlign="Middle" Width="100px" />
                 </td>
             </tr>
             <tr>
