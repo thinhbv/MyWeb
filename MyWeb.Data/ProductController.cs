@@ -32,6 +32,7 @@ namespace MyWeb.Data
             }
             catch (Exception ex)
             {
+				throw ex;
             }
             finally
             {
@@ -45,7 +46,7 @@ namespace MyWeb.Data
         }
         #endregion
         #region[Product_GetCount]
-        public int Product_GetCount(string GroupId)
+        public int Product_GetCount(string level)
         {
             int total = 0;
             Data.Product obj = new Data.Product();
@@ -55,7 +56,7 @@ namespace MyWeb.Data
                 using (SqlCommand dbCmd = new SqlCommand("sp_Product_GetCount", GetConnection()))
                 {
                     dbCmd.CommandType = CommandType.StoredProcedure;
-                    dbCmd.Parameters.Add(new SqlParameter("@GroupId", GroupId));
+                    dbCmd.Parameters.Add(new SqlParameter("@Level", level));
                     dr = dbCmd.ExecuteReader();
                     if (dr.HasRows)
                     {
@@ -68,6 +69,7 @@ namespace MyWeb.Data
             }
             catch (Exception ex)
             {
+				throw ex;
             }
             finally
             {
@@ -81,14 +83,14 @@ namespace MyWeb.Data
         }
         #endregion
         #region[spProduct_PhanTrang]
-        public DataTable Product_Pagination(string currPage, string perpage, string GroupId)
+        public DataTable Product_Pagination(string currPage, string perpage, string level)
         {
             SqlCommand dbCmd;
             dbCmd = new SqlCommand("spProduct_PhanTrang");
             dbCmd.CommandType = CommandType.StoredProcedure;
             dbCmd.Parameters.Add(new SqlParameter("@currPage", currPage));
             dbCmd.Parameters.Add(new SqlParameter("@recodperpage", perpage));
-            dbCmd.Parameters.Add(new SqlParameter("@GroupId", GroupId));
+            dbCmd.Parameters.Add(new SqlParameter("@Level", level));
             return GetData(dbCmd);
         }
         #endregion
@@ -119,6 +121,7 @@ namespace MyWeb.Data
             }
             catch (Exception ex)
             {
+				throw ex;
             }
             finally
             {
@@ -155,6 +158,7 @@ namespace MyWeb.Data
             }
             catch (Exception ex)
             {
+				throw ex;
             }
             finally
             {

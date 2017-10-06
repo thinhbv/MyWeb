@@ -189,7 +189,7 @@
     <script type="text/javascript" src="../scripts/index.js"></script>
     <link data-olark="true" rel="stylesheet" href="./css/theme.css" type="text/css">
 </head>
-    <script>
+    <%--<script>
         function patch() {
 
             window._open = window.open;
@@ -251,7 +251,7 @@
                 blockWindow([url]);
             }
 
-        }; patch();</script>
+        }; patch();</script>--%>
 <body id="index" class="index hide-left-column hide-right-column lang_en  one-column">
    <div id="page">
        <div id="preloader">

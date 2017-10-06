@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MyWeb</RootNamespace>
     <AssemblyName>MyWeb</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
@@ -125,129 +125,6 @@
     <Content Include="Admins\Product.aspx" />
     <Content Include="Admins\Support.aspx" />
     <Content Include="Admins\User.aspx" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\101-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\109-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\115-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\121-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\12321318_10208412351857024_8649162444317155846_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\127-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\12998468_124450187955843_3296757398587776771_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\13245215_1931488203745127_4864725760049276740_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\13327565_10154124148304376_3167308529830392716_n.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\134-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\13516585_10207001002327419_2961682564888599287_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\142-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\148-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\150-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\156844_152159411618969_74419242_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\16806792_364143350651128_2292078649981644147_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\19275213_10203257537196697_464393774444062924_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\1f447.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\1f60f.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\1f61c.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\1f645_200d_2640.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20664594_10155561481854376_483494901713279338_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20728160_10155561501829376_9031694726360132125_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20768039_10155570264824376_488764920720696729_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20776024_10155558993134376_5437592131910762496_n.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20799832_10155564257889376_2246783699060200320_n.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\231b.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\24-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\24-medium_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\24-tm_cart_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\25-tm_cart_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\26-tm_cart_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\26-tm_large_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\26-tm_thickbox_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\261d.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\27-tm_cart_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\2728.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\2753.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\27a1.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\28-tm_cart_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\29-tm_cart_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\2935.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\36-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\42-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\42-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\49-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\49-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\59-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\59-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\68-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\68-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\71-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\71-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\71859009f59c40fbe725a42be49690a42df9ac23_image-1.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\77-home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\77-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\83-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\8b5d02d6e36425dcda573ce0022caf33e6b43eb3_footer-logo.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\8LjiuSpLZqQ.html" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\91-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\95-tm_home_default.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\advertisement.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockcart.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockcategories.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockcontact.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockcurrencies.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blocklanguages.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blocknewsletter.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockpermanentlinks.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blocktags.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockviewed.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blockwishlist.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\front%281%29.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\front.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\global.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\highdpi.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\hook.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\hooks%281%29.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\hooks.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.autocomplete.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.bxslider%281%29.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.bxslider.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.fancybox.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.jqzoom.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\live_configurator.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\loader.gif" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\mRdPvMHwxRU.png" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\nBUFrgnjf0W.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\NY6VWsj0pNH.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\page.html" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\print.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\product.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\productcomments.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\product_list.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\rd-parallax.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\responsive-tables.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\saved_resource%281%29.html" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\saved_resource.html" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\sendtoafriend.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\SHps053D9IL.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\smartbloglatestnews.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\smartblogstyle.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\smartblogtags.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\socialsharing.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\storage.html" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\store-logo-1468328254.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\T5sgO6OLkLN.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\theme.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\themeconfiglink.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmcategoryproducts.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmmediaparallax.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmmegalayout.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmmegamenu.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmnewsletter.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmproductvideos.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmrelatedproducts.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmsearch.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\uhqWgZuql2P.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\uniform.default.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\video-js.css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\warning_bar_0000_us.jpg" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\XBwzv5Yrm_1.html" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\xXeqK6-PtF-.css" />
     <Content Include="App_Themes\Admin\images\add.png" />
     <Content Include="App_Themes\Admin\images\asc.gif" />
     <Content Include="App_Themes\Admin\images\back.png" />
@@ -376,7 +253,6 @@
     <Content Include="css\video-js.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="images\logo.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\Update.png" />
@@ -389,12 +265,11 @@
     <Content Include="img\anh1.jpg" />
     <Content Include="img\anhdemo.jpg" />
     <Content Include="img\warning_bar_0000_us.jpg" />
-    <Content Include="Index.html" />
+    <Content Include="Modules\News\ViewNews.aspx" />
     <Content Include="Modules\Page\Contact.aspx" />
     <Content Include="Modules\Page\Logon.aspx" />
     <Content Include="Modules\Product\ProductDetail.aspx" />
     <Content Include="Modules\Product\ViewProduct.aspx" />
-    <Content Include="Product-list.html" />
     <Content Include="scripts\3ts2ksMwXvKRuG480KNifJ2_JNM.js" />
     <Content Include="scripts\4o300efCt-CXoq1JEC-sVReFz48.js" />
     <Content Include="scripts\7830-582-10-3714.js" />
@@ -828,7 +703,12 @@
     <Content Include="scripts\sendtoafriend.js" />
     <Content Include="scripts\socialsharing.js" />
     <Content Include="scripts\video.js" />
-    <Content Include="ViewDetail.html" />
+    <Content Include="uploads\advertise\anhdemo.jpg" />
+    <Content Include="uploads\images\about.jpg" />
+    <Content Include="uploads\images\anh1.jpg" />
+    <Content Include="uploads\_thumbs\Advertise\anhdemo.jpg" />
+    <Content Include="uploads\_thumbs\Images\about.jpg" />
+    <Content Include="uploads\_thumbs\Images\anh1.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1010,6 +890,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modules\News\GlobalClass.cs" />
+    <Compile Include="Modules\News\ViewNews.aspx.cs">
+      <DependentUpon>ViewNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\News\ViewNews.aspx.designer.cs">
+      <DependentUpon>ViewNews.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\PageMaster.Master.cs">
       <DependentUpon>PageMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1049,7 +937,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Modules\News\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\css.css" />
@@ -1130,103 +1017,11 @@
     <Content Include="scripts\editor\plugins\syntaxhighlight2\js\MERGE JAVASCRIPT.bat" />
     <Content Include="DefaultMaster.Master" />
     <Content Include="Modules\PageMaster.Master" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\10-bootstrap.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\14-device.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\15-jquery.total-storage.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\15-jquery.uniform-modified.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\16-jquery.scrollmagic.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\17-jquery.scrollmagic.debug.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\18-TimelineMax.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\19-TweenMax.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20-jquery.bxslider.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\20-modernizr_v2_7_2.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\3ts2ksMwXvKRuG480KNifJ2_JNM.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\4o300efCt-CXoq1JEC-sVReFz48.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\5xHVbQfADSI.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\7830-582-10-3714.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\869LwPNcOVc.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\9KVtHbGD1VF.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\aDcvT9FX0BJ.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\AeRfdTX3yOT.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\ajax-cart.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\ajax-wishlist.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\analytics.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\app.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\application2.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\baKVxnytZAE.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\BGFjiL5BWRa.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\blocknewsletter.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\crossselling.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\css" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\css%281%29" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\D_kQU7-aCL5.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\ec.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\EOVN2IhQ4Kr.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\facebook.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\front.js%281%29.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\front.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\G8UOL5Ku2fB.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\global.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\gtm.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\hoverIntent.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\HpsEbnzRy73.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\hS93Zk2aEqj.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery-1.11.0.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery-migrate-1.2.1.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.autocomplete.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.bxslider.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.easing.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.fancybox.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.idTabs.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.jqzoom.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.rating.pack.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.rd-parallax.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.scrollTo.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.serialScroll.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.textareaCounter.plugin.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.vide.min.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\jquery.youtubebackground.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\JrQJnSGtBLB.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\KzWp2sE7kmD.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\loader0.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\mmHmLwdktjl.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\MyDMGItKbGn.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\n044tYjDsf0.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\N4KSa2S3Wun.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\nOdNLbINEhZ.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\OFysc_Ow13I.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\oYiBDGltlHg.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\PEWiJBwCGvk.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\product.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\productcomments.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\products-comparison.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\productscategory.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\QRsGi3IvSlX.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\RzFBXS-itWy.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\RzzWrObpHQV.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\sdk.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\sendtoafriend.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\socialsharing.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\SpNhMC4sEzj.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\storage.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\superfish.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\t6RVUzVMaLa.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\themeconfiglink.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmmediaparallax.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmmegalayout.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmmegamenu.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmnewsletter.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmrelatedproducts.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmsearch.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tmsocialfeeds.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\tools.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\treeManagement.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\validate.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\video.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\visits" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\WSm0lkq_DcC.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\wxgJxxIza2w.js.download" />
-    <Content Include="Adobe Acrobat X Pro - Crazysoft_files\x5xrDhdc31a.js.download" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont-2.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Properties\PublishProfiles\DaMyNghe.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -46,15 +46,15 @@ namespace MyWeb.Business
         }
         #endregion
         #region[Product_GetCount]
-        public static int Product_GetCount(string GroupId)
+        public static int Product_GetCount(string level)
         {
-            return db.Product_GetCount(GroupId);
+            return db.Product_GetCount(level);
         }
         #endregion
         #region[spProduct_PhanTrang]
-        public static DataTable Product_Pagination(string currPage, string perpage, string GroupId)
+        public static DataTable Product_Pagination(string currPage, string perpage, string level)
         {
-            return db.Product_Pagination(currPage, perpage, GroupId);
+            return db.Product_Pagination(currPage, perpage, level);
         }
         #endregion
     }

@@ -70,4 +70,53 @@ using System;using System.Data;using System.Data.SqlClient;using System.Colle
             //Clear cache
             System.Web.HttpContext.Current.Cache.Remove("News");
             return true;
-        }		#endregion		}}
+        }		#endregion	
+		#region[News_GetCount]
+		public int News_GetCount(string level)
+		{
+			int total = 0;
+			Data.Product obj = new Data.Product();
+			SqlDataReader dr = null;
+			try
+			{
+				using (SqlCommand dbCmd = new SqlCommand("sp_News_GetCount", GetConnection()))
+				{
+					dbCmd.CommandType = CommandType.StoredProcedure;
+					dbCmd.Parameters.Add(new SqlParameter("@Level", level));
+					dr = dbCmd.ExecuteReader();
+					if (dr.HasRows)
+					{
+						while (dr.Read())
+						{
+							total = dr.GetInt32(0);
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				if (dr != null)
+				{
+					dr.Close();
+				}
+				obj = null;
+			}
+			return total;
+		}
+		#endregion
+		#region[spNews_PhanTrang]
+		public DataTable News_Pagination(string currPage, string perpage, string level)
+		{
+			SqlCommand dbCmd;
+			dbCmd = new SqlCommand("spNews_PhanTrang");
+			dbCmd.CommandType = CommandType.StoredProcedure;
+			dbCmd.Parameters.Add(new SqlParameter("@currPage", currPage));
+			dbCmd.Parameters.Add(new SqlParameter("@recodperpage", perpage));
+			dbCmd.Parameters.Add(new SqlParameter("@Level", level));
+			return GetData(dbCmd);
+		}
+		#endregion	}}

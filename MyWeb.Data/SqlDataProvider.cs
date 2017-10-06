@@ -12,10 +12,13 @@ namespace MyWeb.Data
     {
         /// <summary>
         /// SQL server connection string
-        /// </summary>
-        //static string strConStr = @"Data Source=THINHBV-PC;Initial Catalog=FamilySpa;User ID=sa;Password=Fsoft@12345;Pooling=true;Max Pool Size=256;Min Pool Size=16;";
+		/// </summary>
+#if DEBUG
 		static string strConStr = @"Data Source=.;Initial Catalog=DaMyNghe;User ID=sa;Password=Thinh!@#123;Pooling=true;Max Pool Size=256;Min Pool Size=16;";
-        /// <summary>
+#else
+		static string strConStr = @"Data Source=.;Initial Catalog=damyngh1_ht;User ID=damyngh1_ht;Password=oEir595~;Pooling=true;Max Pool Size=256;Min Pool Size=16;";
+#endif
+		/// <summary>
         /// Global SQL server connection
         /// </summary>
         public static SqlConnection connection;

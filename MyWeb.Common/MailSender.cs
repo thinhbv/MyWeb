@@ -50,7 +50,7 @@ namespace MyWeb.Common
             }
             catch (Exception ex)
             {
-                throw;
+				throw ex;
             }
         }
         #endregion

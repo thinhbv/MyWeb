@@ -45,5 +45,17 @@ namespace MyWeb.Business
 			return db.News_Delete(Id);
 		}
 		#endregion
+		#region[spNews_PhanTrang]
+		public static DataTable News_Pagination(string currPage, string perpage, string level)
+		{
+			return db.News_Pagination(currPage, perpage, level);
+		}
+		#endregion
+		#region[News_GetCount]
+		public static int News_GetCount(string level)
+		{
+			return db.News_GetCount(level);
+		}
+		#endregion
 	}
 }

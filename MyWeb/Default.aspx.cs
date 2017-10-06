@@ -125,7 +125,7 @@ namespace MyWeb
             strHtml += "<div class=\"left-block\">\n";
             strHtml += "<div class=\"product-image-container\">\n";
             List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("1", "Id=" + listProduct[i].GroupId, "");
-            string strURL = PageHelper.GeneralDetailUrl(listG[0].Name, listProduct[i].Id, listProduct[i].Name);
+			string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, listProduct[i].Id, listProduct[i].Name);
             strHtml += "<a class=\"product_img_link\" href=\"" + strURL + "\" title='" + listProduct[i].Name + "' itemprop=\"url\">\n";
             strHtml += "<img class=\"replace-2x img-responsive\" src='" + listProduct[i].Image1 + "' alt='" + listProduct[i].Name + "' title='" + listProduct[i].Name + "' itemprop=\"image\" /></a>\n";
             strHtml += "<a class=\"new-box\" href='#'><span class=\"new-label\">New</span></a>\n";
@@ -160,7 +160,7 @@ namespace MyWeb
             {
                 strHtml = "<li class=\"col-xs-12 col-sm-4 col-md-4 last-in-line last-line last-item-of-tablet-line first-item-of-mobile-line last-mobile-line\">\n";
             }
-            string strURL = PageHelper.GeneralGroupUrl(dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
+			string strURL = PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
             strHtml += "<div class='post-container'>\n";
             strHtml +="<div class='blog-image'>\n";
             strHtml += "<a href='" + strURL + "'>\n";

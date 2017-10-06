@@ -8,7 +8,7 @@
                         <ul class="tmhtmlcontent-footer clearfix row">
                             <li class="tmhtmlcontent-item-1 col-xs-4 ">
                                 <a href="index.php" class="item-link" title="">
-                                    <img src="./images/logo.jpg" class="item-img img-responsive" title="" alt="" width="294" height="41" />
+                                    <img src="../../../images/logo.jpg" class="item-img img-responsive" title="" alt="" width="294" height="41" />
                                 </a>
                             </li>
                         </ul>

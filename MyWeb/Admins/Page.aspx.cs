@@ -41,14 +41,14 @@ namespace MyWeb.Admins
             dt = GroupNewsService.GroupNews_GetByTop("","Active=1","Level, Ord");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(dt.Rows[i]["Name"].ToString(), dt.Rows[i]["Level"].ToString()), "/" + dt.Rows[i]["Id"].ToString() + "/" + StringClass.NameToTag(dt.Rows[i]["Name"].ToString()) + ".aspx"));
+                ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(dt.Rows[i]["Name"].ToString(), dt.Rows[i]["Level"].ToString()),PageHelper.GeneralGroupUrl(Consts.CON_TIN_TUC, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString())));
             }
             List<Data.GroupImages> listG = GroupImagesService.GroupImages_GetByTop("", "Active=1", "Level, Ord");
             if (listG.Count>0)
             {
                 for (int i = 0; i < listG.Count; i++)
                 {
-                    ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listG[i].Name, listG[i].Level), "/Thu-vien-anh/" + listG[i].Id + "/" + StringClass.NameToTag(listG[i].Name) + ".aspx"));
+                    ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listG[i].Name, listG[i].Level), "/Thu-vien-anh/" + listG[i].Id + "/" + StringClass.NameToTag(listG[i].Name)));
                 }
             }
             List<Data.GroupProduct> listGProduct = GroupProductService.GroupProduct_GetByTop("", "Active=1", "Level, Ord");
@@ -56,7 +56,7 @@ namespace MyWeb.Admins
             {
                 for (int i = 0; i < listGProduct.Count; i++)
                 {
-                    ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listGProduct[i].Name, listGProduct[i].Level), "/san-pham/" + listGProduct[i].Id + "/" + StringClass.NameToTag(listGProduct[i].Name) + ".aspx"));
+                    ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listGProduct[i].Name, listGProduct[i].Level), PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGProduct[i].Id, listGProduct[i].Name)));
                 }
             }
             ddlLink.Items.Add(new ListItem("Liên hệ", "/Contact.aspx"));
@@ -235,7 +235,7 @@ namespace MyWeb.Admins
                 {
                     DataTable dt = new DataTable();
                     dt = PageService.Page_GetById(Id);
-                    Link = "/Page/" + Id + "/" + StringClass.NameToTag(dt.Rows[0]["Name"].ToString()) + ".aspx";
+                    Link = "/Page/" + Id + "/" + StringClass.NameToTag(dt.Rows[0]["Name"].ToString());
                     sql.ExecuteNonQuery("Update Page set Link='" + Link + "'  Where Id='" + Id + "'");
                 }
                 BindGrid();

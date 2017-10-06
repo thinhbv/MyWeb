@@ -17,11 +17,13 @@ namespace MyWeb
         void RegisterRoutes()
         {
             //Product routes
-            RouteTable.Routes.MapPageRoute("GroupProduct", "{GroupId}/{title}/trang-{page}", "~/Modules/Product/ViewProduct.aspx");
-            RouteTable.Routes.MapPageRoute("ProductDetail", "{groupName}/{Id}/{title}", "~/Modules/Product/DetailProduct.aspx");
+            RouteTable.Routes.MapPageRoute("GroupProduct", "san-pham/{GroupId}/{title}", "~/Modules/Product/ViewProduct.aspx");
+			RouteTable.Routes.MapPageRoute("GroupProductPage", "san-pham/{GroupId}/{title}/trang-{page}", "~/Modules/Product/ViewProduct.aspx");
+			RouteTable.Routes.MapPageRoute("ProductDetail", "san-pham/{groupName}/{Id}/{title}", "~/Modules/Product/DetailProduct.aspx");
             //News routes
-            RouteTable.Routes.MapPageRoute("News", "{GroupId}/{title}.aspx", "~/Modules/News/ViewGroupNews.aspx");
-            RouteTable.Routes.MapPageRoute("NewsDetail", "{groupId}/{groupName}/{Id}/{title}", "~/Modules/News/NewsDetails.aspx");
+			RouteTable.Routes.MapPageRoute("News", "tin-tuc/{GroupId}/{title}.aspx", "~/Modules/News/ViewNews.aspx");
+			RouteTable.Routes.MapPageRoute("GroupNews", "tin-tuc/{GroupId}/{title}/trang-{page}", "~/Modules/News/ViewNews.aspx");
+			RouteTable.Routes.MapPageRoute("NewsDetail", "tin-tuc/{groupName}/{Id}/{title}", "~/Modules/News/NewsDetails.aspx");
             RouteTable.Routes.MapPageRoute("Images", "Thu-vien-anh/{GroupId}/{title}", "~/Modules/Page/ImagesView.aspx");
             //Page routes
             RouteTable.Routes.MapPageRoute("PageDetail", "Page/{pageId}/{title}", "~/Modules/Page/PageDetail.aspx");
