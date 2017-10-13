@@ -13784,12 +13784,12 @@ input[type=radio]:checked + label:after {
 input[type="checkbox"] + label,
 input[type="checkbox"] + .label label {
 	display: inline-block;
-	padding-left: 27px;
+	padding-left: 20px;
 	position: relative;
 	clear: both;
 	cursor: pointer;
 	text-transform: none;
-	padding-top: 2px;
+	padding-top: 0px;
 }
 
 	input[type="checkbox"] + label:before,

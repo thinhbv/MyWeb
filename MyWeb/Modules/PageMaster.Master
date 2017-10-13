@@ -1,0 +1,261 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMaster.Master.cs" Inherits="MyWeb.PageMaster" %>
+
+<%@ Register Src="/Controls/U_Menu.ascx" TagName="U_Menu" TagPrefix="uc2" %>
+<%@ Register Src="/Controls/Footer.ascx" TagName="Footer" TagPrefix="uc6" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>Đá Mỹ Nghệ HT</title>
+	<meta name="description" content="Looking for licensed software for your computer or network?" />
+	<meta name="generator" content="PrestaShop" />
+	<meta name="robots" content="index,follow" />
+	<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script type="text/javascript" src="../../../scripts/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="/prestashop_60012/img/favicon.ico?1468996685" />
+	<link rel="shortcut icon" type="image/x-icon" href="/prestashop_60012/img/favicon.ico?1468996685" />
+	<link rel="stylesheet" href="../css/global.css" media="all">
+	<link rel="stylesheet" href="../css/highdpi.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.bxslider.css" media="all">
+	<link rel="stylesheet" href="../css/responsive-tables.css" media="all">
+	<link rel="stylesheet" href="../css/uniform.default.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.fancybox.css" media="all">
+	<link rel="stylesheet" href="../css/product_list.css" media="all">
+	<link rel="stylesheet" href="../css/category.css" media="all">
+	<link rel="stylesheet" href="../css/scenes.css" media="all">
+	<link rel="stylesheet" href="../css/blockcategories.css" media="all">
+	<link rel="stylesheet" href="../css/blockcurrencies.css" media="all">
+	<link rel="stylesheet" href="../css/blocklanguages.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.ui.core.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.ui.slider.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.ui.theme.css" media="all">
+	<link rel="stylesheet" href="../css/blocklayered.css" media="all">
+	<link rel="stylesheet" href="../css/blockcontact.css" media="all">
+	<link rel="stylesheet" href="../css/blocknewsletter.css" media="all">
+	<link rel="stylesheet" href="../css/blocktags.css" media="all">
+	<link rel="stylesheet" href="../css/blockviewed.css" media="all">
+	<link rel="stylesheet" href="../css/hooks.css" media="all">
+	<link rel="stylesheet" href="../css/blockpermanentlinks.css" media="all">
+	<link rel="stylesheet" href="../css/smartblogstyle.css" media="all">
+	<link rel="stylesheet" href="../css/smartbloglatestnews.css" media="all">
+	<link rel="stylesheet" href="../css/smartblogtags.css" media="all">
+	<link rel="stylesheet" href="../css/tmmegamenu.css" media="all">
+	<link rel="stylesheet" href="../css/front.css" media="all">
+	<link rel="stylesheet" href="../css/tmsearch.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.autocomplete.css" media="all">
+	<link rel="stylesheet" href="../css/tmrelatedproducts.css" media="all">
+	<link rel="stylesheet" href="../css/blockcart.css" media="all">
+	<link rel="stylesheet" href="../css/jquery.bxslider(1).css" media="all">
+	<link rel="stylesheet" href="../css/hooks(1).css" media="all">
+	<link rel="stylesheet" href="../css/tmmediaparallax.css" media="all">
+	<link rel="stylesheet" href="../css/rd-parallax.css" media="all">
+	<link rel="stylesheet" href="../css/tmcategoryproducts.css" media="all">
+	<link rel="stylesheet" href="../css/tmnewsletter.css" media="all">
+	<link rel="stylesheet" href="../css/blockwishlist.css" media="all">
+	<link rel="stylesheet" href="../css/productcomments.css" media="all">
+	<link rel="stylesheet" href="../css/front(1).css" media="all">
+	<link rel="stylesheet" href="../css/video-js.css" media="all">
+	<link rel="stylesheet" href="../css/tmproductvideos.css" media="all">
+	<link rel="stylesheet" href="../css/hook.css" media="all">
+	<link rel="stylesheet" href="../css/tmmegalayout.css" media="all">
+	<link rel="stylesheet" href="../css/live_configurator.css" media="all">
+	<link rel="stylesheet" href="../css/themeconfiglink.css" media="all">
+	<script type="text/javascript">
+		var CUSTOMIZE_TEXTFIELD = 1;
+		var FancyboxI18nClose = 'Close';
+		var FancyboxI18nNext = 'Next';
+		var FancyboxI18nPrev = 'Previous';
+		var added_to_wishlist = 'The product was successfully added to your wishlist.';
+		var ajax_allowed = true;
+		var ajaxsearch = true;
+		var blocking_popup = '1';
+		var blocklayeredSliderName = { "price": "price", "weight": "weight" };
+		var comparator_max_item = 2;
+		var comparedProductsIds = [];
+		var contentOnly = false;
+		var currency = { "id": 1, "name": "Dollar", "iso_code": "USD", "iso_code_num": "840", "sign": "$", "blank": "0", "conversion_rate": "1.000000", "deleted": "0", "format": "1", "decimals": "1", "active": "1", "prefix": "$ ", "suffix": "", "id_shop_list": null, "force_id": false };
+		var currencyBlank = 0;
+		var currencyFormat = 1;
+		var currencyRate = 1;
+		var currencySign = '$';
+		var customizationIdMessage = 'Customization #';
+		var delete_txt = 'Delete';
+		var displayList = false;
+		var filters = [{ "type_lite": "id_attribute_group", "type": "id_attribute_group", "id_key": 3, "name": "Color", "is_color_group": true, "values": { "5": { "color": "#AAB2BD", "name": "Grey", "nbr": 3, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-grey", "rel": "" }, "8": { "color": "#ffffff", "name": "White", "nbr": 3, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-white", "rel": "" }, "10": { "color": "#E84C3D", "name": "Red", "nbr": 8, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-red", "rel": "" }, "11": { "color": "#434A54", "name": "Black", "nbr": 2, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-black", "rel": "" }, "13": { "color": "#F39C11", "name": "Orange", "nbr": 1, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-orange", "rel": "" }, "14": { "color": "#5D9CEC", "name": "Blue", "nbr": 5, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-blue", "rel": "" }, "15": { "color": "#A0D468", "name": "Green", "nbr": 3, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-green", "rel": "" }, "16": { "color": "#F1C40F", "name": "Yellow", "nbr": 3, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-yellow", "rel": "" }, "24": { "color": "#FCCACD", "name": "Pink", "nbr": 11, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#color-pink", "rel": "" } }, "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_attribute_group", "type": "id_attribute_group", "id_key": 5, "name": "Operating System", "is_color_group": false, "values": { "28": { "color": "", "name": "Linux", "nbr": 14, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#operating_system-linux", "rel": "" }, "29": { "color": "", "name": "Macintosh OS", "nbr": 17, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#operating_system-macintosh_os", "rel": "" }, "30": { "color": "", "name": "Microsoft Windows", "nbr": 19, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#operating_system-microsoft_windows", "rel": "" } }, "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_attribute_group", "type": "id_attribute_group", "id_key": 4, "name": "Format", "is_color_group": false, "values": { "25": { "color": "", "name": "CD\/DVD", "nbr": 18, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#format-cd_dvd", "rel": "nofollow" }, "26": { "color": "", "name": "Download", "nbr": 19, "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#format-download", "rel": "nofollow" } }, "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_feature", "type": "id_feature", "id_key": 8, "values": { "85": { "nbr": 20, "name": "Free Shipping", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#shipping-free_shipping", "rel": "nofollow" } }, "name": "Shipping \t", "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_feature", "type": "id_feature", "id_key": 9, "values": { "86": { "nbr": 20, "name": "30 days", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#return_policy-30_days", "rel": "" } }, "name": "Return Policy", "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_feature", "type": "id_feature", "id_key": 10, "values": { "89": { "nbr": 20, "name": "1 pound", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#weight-1_pound", "rel": "nofollow" } }, "name": "Weight", "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_feature", "type": "id_feature", "id_key": 12, "values": { "90": { "nbr": 16, "name": "Last 30 days", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#new_releases-last_30_days", "rel": "" }, "91": { "nbr": 4, "name": "Last 90 days", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#new_releases-last_90_days", "rel": "" } }, "name": "New Releases ", "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_feature", "type": "id_feature", "id_key": 13, "values": { "82": { "nbr": 13, "name": "PC games", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#game_types-pc_games", "rel": "" }, "83": { "nbr": 4, "name": "Windows games", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#game_types-windows_games", "rel": "" }, "84": { "nbr": 3, "name": "Xbox One games", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#game_types-xbox_one_games", "rel": "" } }, "name": "Game Types", "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "id_feature", "type": "id_feature", "id_key": 11, "values": { "87": { "nbr": 16, "name": "Home", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#office_type-home", "rel": "" }, "88": { "nbr": 4, "name": "Personal", "url_name": "", "meta_title": "", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#office_type-personal", "rel": "" } }, "name": "Office Type", "url_name": null, "meta_title": null, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "quantity", "type": "quantity", "id_key": 0, "name": "Availability", "values": [{ "name": "Not available", "nbr": 1, "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#availability-not_available", "rel": "nofollow" }, { "name": "In stock", "nbr": 19, "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#availability-in_stock", "rel": "nofollow" }], "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "manufacturer", "type": "manufacturer", "id_key": 0, "name": "Manufacturer", "values": { "4": { "name": "Adobe", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-adobe", "rel": "nofollow" }, "11": { "name": "Apple", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-apple", "rel": "nofollow" }, "2": { "name": "Blizzard Entertainment", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-blizzard_entertainment", "rel": "nofollow" }, "7": { "name": "Intel", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-intel", "rel": "nofollow" }, "3": { "name": "Intuit", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-intuit", "rel": "nofollow" }, "5": { "name": "McAfee", "nbr": "1", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-mcafee", "rel": "nofollow" }, "8": { "name": "Microsoft", "nbr": "3", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-microsoft", "rel": "nofollow" }, "6": { "name": "Symantec", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-symantec", "rel": "nofollow" }, "9": { "name": "Ubisoft", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-ubisoft", "rel": "nofollow" }, "10": { "name": "Windows", "nbr": "2", "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#manufacturer-windows", "rel": "nofollow" } }, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "condition", "type": "condition", "id_key": 0, "name": "Condition", "values": { "new": { "name": "New", "nbr": 20, "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#condition-new", "rel": "nofollow" }, "used": { "name": "Used", "nbr": 0, "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#condition-used", "rel": "nofollow" }, "refurbished": { "name": "Refurbished", "nbr": 0, "link": "http:\/\/ld-prestashop.template-help.com\/prestashop_60012\/index.php?id_category=52&controller=category&id_lang=1#condition-refurbished", "rel": "nofollow" } }, "filter_show_limit": "0", "filter_type": "0" }, { "type_lite": "price", "type": "price", "id_key": 0, "name": "Price", "slider": true, "max": "92", "min": "18", "values": { "1": "92", "0": "18" }, "unit": "$", "format": "1", "filter_show_limit": "0", "filter_type": "0" }];
+		var freeProductTranslation = 'Free!';
+		var freeShippingTranslation = 'Free shipping!';
+		var generated_date = 1500627027;
+		var hasDeliveryAddress = false;
+		var highDPI = false;
+		var id_lang = 1;
+		var instantsearch = true;
+		var isGuest = 0;
+		var isLogged = 0;
+		var isMobile = false;
+		var is_logged = false;
+		var l_code = 'en_US';
+		var loggin_required = 'You must be logged in to manage your wishlist.';
+		var max_item = 'You cannot add more than 2 product(s) to the product comparison';
+		var min_item = 'Please select at least one product';
+		var nbItemsPerLine = 3;
+		var nbItemsPerLineMobile = 2;
+		var nbItemsPerLineTablet = 2;
+		var page_name = 'category';
+		var param_product_url = '#';
+		var placeholder_blocknewsletter = 'Enter your e-mail';
+		var popup_status = true;
+		var priceDisplayMethod = 1;
+		var priceDisplayPrecision = 2;
+		var quickView = true;
+		var removingLinkText = 'remove this product from my cart';
+		var roundMode = 2;
+		var static_token = '3ac4aad1510521a3b35341f846de883b';
+		var tm_cps_carousel_auto = 0;
+		var tm_cps_carousel_auto_control = 0;
+		var tm_cps_carousel_auto_hover = 1;
+		var tm_cps_carousel_auto_pause = 3000;
+		var tm_cps_carousel_control = 0;
+		var tm_cps_carousel_hide_control = 1;
+		var tm_cps_carousel_item_scroll = 1;
+		var tm_cps_carousel_loop = 1;
+		var tm_cps_carousel_nb = 4;
+		var tm_cps_carousel_pager = 0;
+		var tm_cps_carousel_random = 0;
+		var tm_cps_carousel_slide_margin = 30;
+		var tm_cps_carousel_slide_width = 270;
+		var tm_cps_carousel_speed = 500;
+		var tmnewsletter_status = '2';
+		var tmolarkchat_status = '2';
+		var tmsearch_description = true;
+		var tmsearch_height = 180;
+		var tmsearch_image = true;
+		var tmsearch_limit = true;
+		var tmsearch_limit_num = 3;
+		var tmsearch_manufacturer = true;
+		var tmsearch_price = true;
+		var tmsearch_reference = true;
+		var tmsearch_scroll = false;
+		var toBeDetermined = 'To be determined';
+		var token = '360afb8bd1876d299e62a27e06084470';
+		var user_newsletter_status = 0;
+		var usingSecureMode = true;
+		var wishlistProductsIds = false;
+	</script>
+
+	<script type="text/javascript" src="../../../scripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.easing.js"></script>
+	<script type="text/javascript" src="../../../scripts/tools.js"></script>
+	<script type="text/javascript" src="../../../scripts/global.js"></script>
+	<script type="text/javascript" src="../../../scripts/10-bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/14-device.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/15-jquery.total-storage.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/15-jquery.uniform-modified.js"></script>
+	<script type="text/javascript" src="../../../scripts/16-jquery.scrollmagic.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/17-jquery.scrollmagic.debug.js"></script>
+	<script type="text/javascript" src="../../../scripts/18-TimelineMax.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/19-TweenMax.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/20-jquery.bxslider.js"></script>
+	<script type="text/javascript" src="../../../scripts/20-modernizr_v2_7_2.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="../../../scripts/products-comparison.js"></script>
+	<script type="text/javascript" src="../../../scripts/category.js"></script>
+	<script type="text/javascript" src="../../../scripts/treeManagement.js"></script>
+	<script type="text/javascript" src="../../../scripts/blocklayered.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.ui.core.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.ui.widget.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.ui.mouse.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.ui.slider.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="../../../scripts/blocknewsletter.js"></script>
+	<script type="text/javascript" src="../../../scripts/hoverIntent.js"></script>
+	<script type="text/javascript" src="../../../scripts/superfish.js"></script>
+	<script type="text/javascript" src="../../../scripts/tmmegamenu.js"></script>
+	<script type="text/javascript" src="../../../scripts/front.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.autocomplete.js"></script>
+	<%--<script type="text/javascript" src="../../../scripts/tmsearch.js"></script>--%>
+	<script type="text/javascript" src="../../../scripts/tmrelatedproducts.js"></script>
+	<script type="text/javascript" src="../../../scripts/ajax-cart.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.serialScroll.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.rd-parallax.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.youtubebackground.js"></script>
+	<script type="text/javascript" src="../../../scripts/jquery.vide.min.js"></script>
+	<script type="text/javascript" src="../../../scripts/tmmediaparallax.js"></script>
+	<script type="text/javascript" src="../../../scripts/validate.js"></script>
+	<script type="text/javascript" src="../../../scripts/tmnewsletter.js"></script>
+	<script type="text/javascript" src="../../../scripts/ajax-wishlist.js"></script>
+	<script type="text/javascript" src="../../../scripts/front1.js"></script>
+	<script type="text/javascript" src="../../../scripts/video.js"></script>
+	<script type="text/javascript" src="../../../scripts/tmsocialfeeds.js"></script>
+	<script type="text/javascript" src="../../../scripts/tmmegalayout.js"></script>
+	<%--<script type="text/javascript" src="../../../scripts/themeconfiglink.js"></script>--%>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+			var elem = $('.parallax-box-1');
+			if (elem.length) {
+				$('body').append('<div class=\"rd-parallax rd-parallax-1\">\r\n<div class=\"rd-parallax-layer\" data-offset=\"0\" data-speed=\"0.3\" data-type=\"media\" data-fade=\"false\" data-url=\"/prestashop_60012/img/cms/home-parallax.jpg\" data-direction=\"normal\"><\/div>\r\n<div class=\"rd-parallax-layer\" data-offset=\"0\" data-speed=\"0\" data-type=\"html\" data-fade=\"false\" data-direction=\"inverse\"><div class=\"parallax-main-layout\"><\/div><\/div>\r\n<\/div>\r\n');
+				var wrapper = $('.rd-parallax-1');
+				elem.before(wrapper);
+				$('.rd-parallax-1 .parallax-main-layout').replaceWith(elem);
+			}
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(window).on('load', function () {
+				$.RDParallax();
+				$('.rd-parallax-layer video').each(function () {
+					$(this)[0].play();
+				});
+			});
+		});
+	</script>
+	<asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body id="index" class="index hide-left-column hide-right-column lang_en  one-column">
+		<div id="page">
+			<div id="preloader">
+				<div class="cssload-dots"></div>
+			</div>
+			<!-- #preloader -->
+			<div class="header-container">
+				<header id="header">
+               <div class="nav">
+					<div class="container">
+						<div class="row">
+							<div id="header_logo">
+								<a href="https://ld-prestashop.template-help.com/prestashop_60012/" title="Crazysoft">
+									<img class="logo img-responsive" src="../../../images/logo.png" alt="Crazysoft" width="1170" height="250" />
+								</a>
+							</div><!--header_logo-->
+						</div><!--row-->
+					</div><!--container-->
+				</div><!--nav-->
+               <div class="top">
+                   <div class="container">
+                       <div class="row">
+                           <uc2:U_Menu ID="U_Menu" runat="server" />
+                       </div><!--row-->
+                   </div><!--container-->
+               </div><!--top-->
+           </header>
+				<!--header-->
+			</div>
+			<!--header-container-->
+			<div class="columns-container">
+				<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+			</div>
+			<!--columns-container-->
+			<div class="footer-container">
+				<div id="footer">
+					<uc6:Footer ID="U_Footer" runat="server" />
+				</div>
+				<!--footer-->
+			</div>
+			<!--footer-container-->
+		</div>
+		<!-- #page -->
+</body>
+</html>

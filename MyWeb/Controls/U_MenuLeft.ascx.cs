@@ -41,7 +41,7 @@ namespace MyWeb.Controls
 									string strUrl = PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listSub[j].Id, listSub[j].Name);
                                     ltrmenu.Text += "<a href='" + strUrl + "'>";
                                     ltrmenu.Text += "<strong>" + listSub[j].Name + "</strong>\n";
-                                    int count = ProductService.Product_GetCount(listSub[j].Id);
+                                    int count = ProductService.Product_GetCount(listSub[j].Level);
                                     ltrmenu.Text += "<span>(" + count.ToString() + ")</span></a>\n</label>\n</li>\n";
                                 }
                                 ltrmenu.Text += "</ul>\n</div>\n";
