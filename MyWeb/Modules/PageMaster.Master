@@ -12,8 +12,8 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<script type="text/javascript" src="../../../scripts/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
-	<link rel="icon" type="image/vnd.microsoft.icon" href="/prestashop_60012/img/favicon.ico?1468996685" />
-	<link rel="shortcut icon" type="image/x-icon" href="/prestashop_60012/img/favicon.ico?1468996685" />
+	<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico?1468996685" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1468996685" />
 	<link rel="stylesheet" href="../css/global.css" media="all">
 	<link rel="stylesheet" href="../css/highdpi.css" media="all">
 	<link rel="stylesheet" href="../css/jquery.bxslider.css" media="all">

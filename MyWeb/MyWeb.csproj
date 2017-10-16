@@ -253,6 +253,7 @@
     <Content Include="css\uniform.default.css" />
     <Content Include="css\video-js.css" />
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\logo.jpg" />
     <Content Include="images\logo.png" />

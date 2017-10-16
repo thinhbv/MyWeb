@@ -18,8 +18,8 @@
     <script type="text/javascript" async="" src="../scripts/analytics.js"></script>
     <script async="" src="../scripts/gtm.js"></script>
     <script id="facebook-jssdk" src="../scripts/sdk.js"></script>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="https://ld-prestashop.template-help.com/prestashop_60012/img/favicon.ico?1468996685">
-    <link rel="shortcut icon" type="image/x-icon" href="https://ld-prestashop.template-help.com/prestashop_60012/img/favicon.ico?1468996685">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico?1468996685">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1468996685">
     <link rel="stylesheet" href="./css/global.css" media="all">
     <link rel="stylesheet" href="./css/highdpi.css" media="all">
     <link rel="stylesheet" href="./css/responsive-tables.css" media="all">

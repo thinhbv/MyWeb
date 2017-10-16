@@ -133,11 +133,6 @@ Hiển thị
 <div class="content_sortPagiBar">
 <div class="bottom-pagination-content clearfix">
 <div id="pagination_bottom" class="pagination clearfix">
-<%--<div class="showall">
-                                        <button type="submit" class="btn btn-default">
-                                            <span>Hiển thị tất cả</span>
-                                        </button>
-                                    </div>--%>
 <ul class="pagination">
 <asp:Literal ID="ltrPaging" runat="server"></asp:Literal>
 </ul>

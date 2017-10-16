@@ -140,7 +140,7 @@ namespace MyWeb.Modules.Product
             strHtml += "<span class='list-desc'>" + StringClass.FormatContentNews(dt.Rows[i]["Content"].ToString(), 200) + "</span>\n";
             strHtml += "<span class='grid-desc'>" + StringClass.FormatContentNews(dt.Rows[i]["Content"].ToString(), 50) + "</span>\n</p>\n";
             strHtml += "<div class='buttons customizable'>\n";
-            strHtml += "<a class='quick-view' href='" + strURL + "'><span>Xem chi tiết</span></a>\n</div>\n";
+            strHtml += "<a class='quick-view' href='" + strURL + "'><span>Chi tiết</span></a>\n</div>\n";
             strHtml += "</div></div><!-- .product-container> -->";
             return strHtml;
         }
