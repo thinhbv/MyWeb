@@ -16,65 +16,72 @@ namespace MyWeb.Modules.Product
         protected string groupName = string.Empty;
         protected int totalcount = 0;
         protected string id = string.Empty;
-		private string pagenum = "1";
-		private Int16 perpage = 9;
-		private string sort = Consts.SortNum.asc.ToString();
+        private string pagenum = "1";
+        private Int16 perpage = 9;
+        private string sort = Consts.SortNum.asc.ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.RouteData.Values["GroupId"] != null)
             {
                 id = Page.RouteData.Values["GroupId"] as string;
             }
-			
+
             if (!IsPostBack)
-			{
-				if (Request.QueryString[Consts.CON_PARAM_URL_PAGE] != null)
-				{
-					pagenum = Request.QueryString[Consts.CON_PARAM_URL_PAGE];
-				}
-
-				if (Request.QueryString[Consts.CON_PARAM_URL_SORT] != null)
-				{
-					sort = Request.QueryString[Consts.CON_PARAM_URL_SORT];
-				}
-
-				if (Int16.TryParse(Request.QueryString[Consts.CON_PARAM_URL_NO], out perpage) == false)
-				{
-					perpage = 9;
-				}
-                List<GroupProduct> listGroup = GroupProductService.GroupProduct_GetById(id);
-                if (listGroup.Count > 0)
+            {
+                try
                 {
-                    groupName = listGroup[0].Name;
-                    totalcount = ProductService.Product_GetCount(listGroup[0].Level);
-                    DataTable dtPro = ProductService.Product_Pagination(pagenum, perpage.ToString(), listGroup[0].Level);
-					if (dtPro.Rows.Count > 0)
-					{
+                    if (Request.QueryString[Consts.CON_PARAM_URL_PAGE] != null)
+                    {
+                        pagenum = Request.QueryString[Consts.CON_PARAM_URL_PAGE];
+                    }
 
-						if (sort == Consts.SortNum.asc.ToString())
-						{
-							dtPro = dtPro.AsEnumerable().OrderBy(dr => dr.Field<string>("Name")).CopyToDataTable();
-						}
-						else
-						{
-							dtPro = dtPro.AsEnumerable().OrderByDescending(dr => dr.Field<string>("Name")).CopyToDataTable();
-						}
-						for (int i = 0; i < dtPro.Rows.Count; i++)
-						{
-							ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
-						}
-						ltrPaging.Text = GeneralPaging();
-						List<GroupProduct> listGroupSub = GroupProductService.GroupProduct_GetByTop("", "Active = 1 AND len('[Level]') > 5 AND left('[Level]', 5) = left('" + listGroup[0].Level + "', 5)", "[Level]");
-						if (listGroupSub.Count > 0)
-						{
-							for (int i = 0; i < listGroupSub.Count - 1; i++)
-							{
-								ltrCrumb.Text += "<li class='crumb-" + (i + 1).ToString() + "'>\n";
-								ltrCrumb.Text += "<a href='" + PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGroupSub[i].Id, listGroupSub[i].Name) + "' title='" + listGroupSub[i].Name + "'>" + listGroupSub[i].Name + "</a>\n";
-								ltrCrumb.Text += "</li>\n";
-							}
-						}
-					}
+                    if (Request.QueryString[Consts.CON_PARAM_URL_SORT] != null)
+                    {
+                        sort = Request.QueryString[Consts.CON_PARAM_URL_SORT];
+                    }
+
+                    if (Int16.TryParse(Request.QueryString[Consts.CON_PARAM_URL_NO], out perpage) == false)
+                    {
+                        perpage = 9;
+                    }
+                    List<GroupProduct> listGroup = GroupProductService.GroupProduct_GetById(id);
+                    if (listGroup.Count > 0)
+                    {
+                        groupName = listGroup[0].Name;
+                        totalcount = ProductService.Product_GetCount(listGroup[0].Level);
+                        DataTable dtPro = ProductService.Product_Pagination(pagenum, perpage.ToString(), listGroup[0].Level);
+                        if (dtPro.Rows.Count > 0)
+                        {
+
+                            if (sort == Consts.SortNum.asc.ToString())
+                            {
+                                dtPro = dtPro.AsEnumerable().OrderBy(dr => dr.Field<string>("Name")).CopyToDataTable();
+                            }
+                            else
+                            {
+                                dtPro = dtPro.AsEnumerable().OrderByDescending(dr => dr.Field<string>("Name")).CopyToDataTable();
+                            }
+                            for (int i = 0; i < dtPro.Rows.Count; i++)
+                            {
+                                ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
+                            }
+                            ltrPaging.Text = GeneralPaging();
+                            List<GroupProduct> listGroupSub = GroupProductService.GroupProduct_GetByTop("", "Active = 1 AND len([Level]) > len('" + listGroup[0].Level + "') AND left([Level], 5) = left('" + listGroup[0].Level + "', 5)", "[Level]");
+                            if (listGroupSub.Count > 0)
+                            {
+                                for (int i = 0; i < listGroupSub.Count; i++)
+                                {
+                                    ltrCrumb.Text += "<li class='crumb-" + (i + 1).ToString() + "'>\n";
+                                    ltrCrumb.Text += "<a href='" + PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGroupSub[i].Id, listGroupSub[i].Name) + "' title='" + listGroupSub[i].Name + "'>" + listGroupSub[i].Name + "</a>\n";
+                                    ltrCrumb.Text += "</li>\n";
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
         }
@@ -120,7 +127,7 @@ namespace MyWeb.Modules.Product
             strHtml += "<div class='left-block'>\n";
             strHtml += "<div class='product-image-container'>\n";
             List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("1", "Id='" + dt.Rows[i]["GroupId"].ToString() + "'", "");
-			string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
+            string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
             strHtml += "<a class='product_img_link' href='/" + strURL + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='url'>\n";
             strHtml += "<img class='replace-2x img-responsive' src='" + dt.Rows[i]["Image1"].ToString() + "' alt='" + dt.Rows[i]["Name"].ToString() + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='image' /></a>\n";
             strHtml += "</div></div>\n";
@@ -144,14 +151,30 @@ namespace MyWeb.Modules.Product
             int totalPage = totalcount / perpage;
             int currPage;
             string urlOrigin = Request.Path;
-			if (perpage != 9)
-			{
-				urlOrigin = urlOrigin + "?no=" + perpage + "&" + Consts.CON_PARAM_URL_PAGE + "=";
-			}
-			else
-			{
-				urlOrigin = urlOrigin + "?" + Consts.CON_PARAM_URL_PAGE + "=";
-			}
+            if (perpage != 9)
+            {
+                urlOrigin = urlOrigin + "?no=" + perpage;
+            }
+            if (sort.Equals(Consts.SortNum.desc.ToString()))
+            {
+                if (urlOrigin.IndexOf("?") > -1)
+                {
+                    urlOrigin = urlOrigin + "&sort=" + sort;
+                }
+                else
+                {
+                    urlOrigin = urlOrigin + "?sort=" + sort;
+                }
+            }
+            if (urlOrigin.IndexOf("?") > -1)
+            {
+                urlOrigin = urlOrigin + "&" + Consts.CON_PARAM_URL_PAGE + "=";
+            }
+            else
+            {
+                urlOrigin = urlOrigin + "?" + Consts.CON_PARAM_URL_PAGE + "=";
+            }
+
             if (int.TryParse(pagenum, out currPage) == false)
             {
                 currPage = 1;
@@ -193,7 +216,7 @@ namespace MyWeb.Modules.Product
                     {
                         if (currPage == i)
                         {
-                            strPaging += "<li class='active current'><span><span>"+ i.ToString() +"</span></span></li>\n";
+                            strPaging += "<li class='active current'><span><span>" + i.ToString() + "</span></span></li>\n";
                         }
                         else
                         {
@@ -242,7 +265,7 @@ namespace MyWeb.Modules.Product
                 strPaging += "<a href='" + urlOrigin + (currPage + 1).ToString() + "'>";
                 strPaging += "<b>Next</b> <i class='fa fa-chevron-right'></i></a></li>\n";
             }
-            
+
             return strPaging;
         }
     }

@@ -49,7 +49,7 @@ namespace MyWeb.Admins
                 {
                     level = listG[0].Level;
                 }
-                grdImages.DataSource = ImagesService.Images_GetByTop("", "GroupId IN (Select Id From GroupImages WHERE left(Level,len('" + level + "'))='" + level + "')", "[Level],Ord");
+                grdImages.DataSource = ImagesService.Images_GetByTop("", "GroupId IN (Select Id From GroupImages WHERE left([Level],len('" + level + "'))='" + level + "')", "Ord");
                 grdImages.DataBind();
                 if (grdImages.PageCount <= 1)
                 {

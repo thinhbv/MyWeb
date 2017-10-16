@@ -18,17 +18,17 @@ namespace MyWeb
         {
             //Product routes
             RouteTable.Routes.MapPageRoute("GroupProduct", "san-pham/{GroupId}/{title}", "~/Modules/Product/ViewProduct.aspx");
-			RouteTable.Routes.MapPageRoute("GroupProductPage", "san-pham/{GroupId}/{title}/trang-{page}", "~/Modules/Product/ViewProduct.aspx");
-			RouteTable.Routes.MapPageRoute("ProductDetail", "san-pham/{groupName}/{Id}/{title}", "~/Modules/Product/ProductDetail.aspx");
+            RouteTable.Routes.MapPageRoute("GroupProductPage", "san-pham/{GroupId}/{title}/trang-{page}", "~/Modules/Product/ViewProduct.aspx");
+            RouteTable.Routes.MapPageRoute("ProductDetail", "san-pham/{groupName}/{Id}/{title}", "~/Modules/Product/ProductDetail.aspx");
             //News routes
-			RouteTable.Routes.MapPageRoute("News", "tin-tuc/{GroupId}/{title}.aspx", "~/Modules/News/ViewNews.aspx");
-			RouteTable.Routes.MapPageRoute("GroupNews", "tin-tuc/{GroupId}/{title}/trang-{page}", "~/Modules/News/ViewNews.aspx");
-			RouteTable.Routes.MapPageRoute("NewsDetail", "tin-tuc/{groupName}/{Id}/{title}", "~/Modules/News/NewsDetails.aspx");
-            RouteTable.Routes.MapPageRoute("Images", "Thu-vien-anh/{GroupId}/{title}", "~/Modules/Page/ImagesView.aspx");
+            RouteTable.Routes.MapPageRoute("News", "tin-tuc/{GroupId}/{title}", "~/Modules/News/ViewNews.aspx");
+            RouteTable.Routes.MapPageRoute("GroupNews", "tin-tuc/{GroupId}/{title}/trang-{page}", "~/Modules/News/ViewNews.aspx");
+            RouteTable.Routes.MapPageRoute("NewsDetail", "tin-tuc/{groupName}/{Id}/{title}", "~/Modules/News/NewsDetail.aspx");
+            RouteTable.Routes.MapPageRoute("Images", "Thu-vien-anh/{GroupId}/{title}", "~/Modules/Images/ImageList.aspx");
             //Page routes
-            RouteTable.Routes.MapPageRoute("PageDetail", "Page/{pageId}/{title}", "~/Modules/Page/PageDetail.aspx");
+            RouteTable.Routes.MapPageRoute("PageDetail", "{title}-{pageId}", "~/Modules/Page/PageDetail.aspx");
             RouteTable.Routes.MapPageRoute("Contact", "Contact", "~/Modules/Page/Contact.aspx");
-			RouteTable.Routes.MapPageRoute("Logon", "Logon", "~/Modules/Page/Logon.aspx");
+            RouteTable.Routes.MapPageRoute("Logon", "Logon", "~/Modules/Page/Logon.aspx");
             RouteTable.Routes.MapPageRoute("Admin", "admin", "~/Admins/Default.aspx");
         }
 

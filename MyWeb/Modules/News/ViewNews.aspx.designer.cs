@@ -13,13 +13,13 @@ namespace MyWeb.Modules.News {
     public partial class ViewNews {
         
         /// <summary>
-        /// ltrBreadcrumb control.
+        /// ltrCrumb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrBreadcrumb;
+        protected global::System.Web.UI.WebControls.Literal ltrCrumb;
         
         /// <summary>
         /// ltrNews control.
@@ -38,5 +38,14 @@ namespace MyWeb.Modules.News {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptNews;
+        
+        /// <summary>
+        /// U_MenuLeftNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MyWeb.Controls.U_MenuLeftNews U_MenuLeftNews;
     }
 }

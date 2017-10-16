@@ -15,20 +15,27 @@ namespace MyWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserName"] == null || Session["UserName"].ToString() == "")
+            try
             {
-                Response.Redirect("/Logon");
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                dt = UserService.User_GetByUsername(Session["UserName"].ToString());
-                if (dt.Rows.Count > 0)
+                if (Session["UserName"] == null || Session["UserName"].ToString() == "")
                 {
-                    Session["FullName"] = dt.Rows[0]["Name"].ToString().Trim();
-                    Session["UserName"] = dt.Rows[0]["UserName"].ToString().Trim();
-                    Session["IsAdmin"] = dt.Rows[0]["Admin"].ToString();
+                    Response.Redirect("/Logon");
                 }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    dt = UserService.User_GetByUsername(Session["UserName"].ToString());
+                    if (dt.Rows.Count > 0)
+                    {
+                        Session["FullName"] = dt.Rows[0]["Name"].ToString().Trim();
+                        Session["UserName"] = dt.Rows[0]["UserName"].ToString().Trim();
+                        Session["IsAdmin"] = dt.Rows[0]["Admin"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

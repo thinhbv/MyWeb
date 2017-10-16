@@ -38,13 +38,13 @@ namespace MyWeb.Admins
             ddlLink.Items.Clear();
             ddlLink.Items.Add(new ListItem("Trang chủ", "/Default.aspx"));
             DataTable dt = new DataTable();
-            dt = GroupNewsService.GroupNews_GetByTop("","Active=1","Level, Ord");
+            dt = GroupNewsService.GroupNews_GetByTop("", "Active=1", "Level, Ord");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(dt.Rows[i]["Name"].ToString(), dt.Rows[i]["Level"].ToString()),PageHelper.GeneralGroupUrl(Consts.CON_TIN_TUC, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString())));
+                ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(dt.Rows[i]["Name"].ToString(), dt.Rows[i]["Level"].ToString()), PageHelper.GeneralGroupUrl(Consts.CON_TIN_TUC, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString())));
             }
             List<Data.GroupImages> listG = GroupImagesService.GroupImages_GetByTop("", "Active=1", "Level, Ord");
-            if (listG.Count>0)
+            if (listG.Count > 0)
             {
                 for (int i = 0; i < listG.Count; i++)
                 {
@@ -235,7 +235,7 @@ namespace MyWeb.Admins
                 {
                     DataTable dt = new DataTable();
                     dt = PageService.Page_GetById(Id);
-                    Link = "/Page/" + Id + "/" + StringClass.NameToTag(dt.Rows[0]["Name"].ToString());
+                    Link = StringClass.NameToTag(dt.Rows[0]["Name"].ToString()) + "-" + Id;
                     sql.ExecuteNonQuery("Update Page set Link='" + Link + "'  Where Id='" + Id + "'");
                 }
                 BindGrid();

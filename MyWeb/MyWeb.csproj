@@ -195,6 +195,7 @@
     <Content Include="Controls\U_Contact.ascx" />
     <Content Include="Controls\U_Menu.ascx" />
     <Content Include="Controls\U_MenuLeft.ascx" />
+    <Content Include="Controls\U_MenuLeftNews.ascx" />
     <Content Include="Controls\U_Slider.ascx" />
     <Content Include="Controls\U_Top.ascx" />
     <Content Include="css\blockcart.css" />
@@ -265,9 +266,12 @@
     <Content Include="img\anh1.jpg" />
     <Content Include="img\anhdemo.jpg" />
     <Content Include="img\warning_bar_0000_us.jpg" />
+    <Content Include="Modules\Images\ImageList.aspx" />
+    <Content Include="Modules\News\NewsDetail.aspx" />
     <Content Include="Modules\News\ViewNews.aspx" />
     <Content Include="Modules\Page\Contact.aspx" />
     <Content Include="Modules\Page\Logon.aspx" />
+    <Content Include="Modules\Page\PageDetail.aspx" />
     <Content Include="Modules\Product\ProductDetail.aspx" />
     <Content Include="Modules\Product\ViewProduct.aspx" />
     <Content Include="scripts\3ts2ksMwXvKRuG480KNifJ2_JNM.js" />
@@ -702,6 +706,112 @@
     <Content Include="scripts\productscategory.js" />
     <Content Include="scripts\sendtoafriend.js" />
     <Content Include="scripts\socialsharing.js" />
+    <Content Include="scripts\unitegallery\css\unite-gallery.css" />
+    <Content Include="scripts\unitegallery\images\button-close.png" />
+    <Content Include="scripts\unitegallery\images\cover-grid.png" />
+    <Content Include="scripts\unitegallery\images\icon-link32.png" />
+    <Content Include="scripts\unitegallery\images\icon-play32.png" />
+    <Content Include="scripts\unitegallery\images\icon-zoom32.png" />
+    <Content Include="scripts\unitegallery\images\lightbox-arrow-left.png" />
+    <Content Include="scripts\unitegallery\images\lightbox-arrow-right.png" />
+    <Content Include="scripts\unitegallery\images\lightbox-icon-close-compact.png" />
+    <Content Include="scripts\unitegallery\images\lightbox-icon-close-compact2.png" />
+    <Content Include="scripts\unitegallery\images\lightbox-icon-close.png" />
+    <Content Include="scripts\unitegallery\images\loader-black1.gif" />
+    <Content Include="scripts\unitegallery\images\loader-black2.gif" />
+    <Content Include="scripts\unitegallery\images\loader-black3.gif" />
+    <Content Include="scripts\unitegallery\images\loader-black4.gif" />
+    <Content Include="scripts\unitegallery\images\loader-black5.gif" />
+    <Content Include="scripts\unitegallery\images\loader-black6.gif" />
+    <Content Include="scripts\unitegallery\images\loader-black7.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white1.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white2.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white3.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white4.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white5.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white6.gif" />
+    <Content Include="scripts\unitegallery\images\loader-white7.gif" />
+    <Content Include="scripts\unitegallery\images\loader.gif" />
+    <Content Include="scripts\unitegallery\images\loader_bright.gif" />
+    <Content Include="scripts\unitegallery\images\loader_skype_trans.gif" />
+    <Content Include="scripts\unitegallery\images\not_loaded.png" />
+    <Content Include="scripts\unitegallery\images\play-button-round.png" />
+    <Content Include="scripts\unitegallery\images\play-button-square.png" />
+    <Content Include="scripts\unitegallery\images\transparent.png" />
+    <Content Include="scripts\unitegallery\js\jquery-11.0.min.js" />
+    <Content Include="scripts\unitegallery\js\unitegallery.js" />
+    <Content Include="scripts\unitegallery\js\unitegallery.min.js" />
+    <Content Include="scripts\unitegallery\skins\alexis\alexis.css" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\arrows_strip_left.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\arrows_strip_right.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\button_fullscreen.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\button_playpause.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\button_zoom_back.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\button_zoom_minus.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\button_zoom_plus.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_arrow_down.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_arrow_left.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_arrow_left_hortype.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_arrow_right.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_arrow_right_hortype.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_arrow_up.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_handle_down.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_handle_left.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_handle_right.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\grid_handle_up.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\slider_arrow_left.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\slider_arrow_right.png" />
+    <Content Include="scripts\unitegallery\skins\alexis\images\slider_bullets.png" />
+    <Content Include="scripts\unitegallery\skins\default\arrows_strip_down.png" />
+    <Content Include="scripts\unitegallery\skins\default\arrows_strip_left.png" />
+    <Content Include="scripts\unitegallery\skins\default\arrows_strip_right.png" />
+    <Content Include="scripts\unitegallery\skins\default\arrows_strip_up.png" />
+    <Content Include="scripts\unitegallery\skins\default\arrow_grid_down.png" />
+    <Content Include="scripts\unitegallery\skins\default\arrow_grid_up.png" />
+    <Content Include="scripts\unitegallery\skins\default\button_fullscreen.png" />
+    <Content Include="scripts\unitegallery\skins\default\button_playpause.png" />
+    <Content Include="scripts\unitegallery\skins\default\grid_arrow_left.png" />
+    <Content Include="scripts\unitegallery\skins\default\grid_arrow_right.png" />
+    <Content Include="scripts\unitegallery\skins\default\grid_handle_black_bottom.png" />
+    <Content Include="scripts\unitegallery\skins\default\grid_handle_black_left.png" />
+    <Content Include="scripts\unitegallery\skins\default\grid_handle_black_right.png" />
+    <Content Include="scripts\unitegallery\skins\default\grid_handle_black_top.png" />
+    <Content Include="scripts\unitegallery\skins\default\icon_zoom_back.png" />
+    <Content Include="scripts\unitegallery\skins\default\icon_zoom_minus.png" />
+    <Content Include="scripts\unitegallery\skins\default\icon_zoom_plus.png" />
+    <Content Include="scripts\unitegallery\skins\default\slider_arrow_left.png" />
+    <Content Include="scripts\unitegallery\skins\default\slider_arrow_right.png" />
+    <Content Include="scripts\unitegallery\skins\default\slider_bullets.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_bullets_blue.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_bullets_brown.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_bullets_gray.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_bullets_green.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_bullets_red.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_button_left.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_button_play_pause.png" />
+    <Content Include="scripts\unitegallery\skins\default\tile_button_right.png" />
+    <Content Include="scripts\unitegallery\themes\carousel\ug-theme-carousel.js" />
+    <Content Include="scripts\unitegallery\themes\compact\ug-theme-compact.js" />
+    <Content Include="scripts\unitegallery\themes\default\images\arrows_strip_left.png" />
+    <Content Include="scripts\unitegallery\themes\default\images\arrows_strip_right.png" />
+    <Content Include="scripts\unitegallery\themes\default\images\arrow_down_up.png" />
+    <Content Include="scripts\unitegallery\themes\default\images\button_fullscreen.png" />
+    <Content Include="scripts\unitegallery\themes\default\images\button_fullscreen_single.png" />
+    <Content Include="scripts\unitegallery\themes\default\images\button_playpause.png" />
+    <Content Include="scripts\unitegallery\themes\default\images\button_playpause_single.png" />
+    <Content Include="scripts\unitegallery\themes\default\ug-theme-default.css" />
+    <Content Include="scripts\unitegallery\themes\default\ug-theme-default.js" />
+    <Content Include="scripts\unitegallery\themes\grid\ug-theme-grid.js" />
+    <Content Include="scripts\unitegallery\themes\slider\ug-theme-slider.js" />
+    <Content Include="scripts\unitegallery\themes\tilesgrid\ug-theme-tilesgrid.js" />
+    <Content Include="scripts\unitegallery\themes\tiles\ug-theme-tiles.js" />
+    <Content Include="scripts\unitegallery\themes\video\images\arrow_left.png" />
+    <Content Include="scripts\unitegallery\themes\video\images\arrow_right.png" />
+    <Content Include="scripts\unitegallery\themes\video\skin-bottom-text.css" />
+    <Content Include="scripts\unitegallery\themes\video\skin-right-no-thumb.css" />
+    <Content Include="scripts\unitegallery\themes\video\skin-right-thumb.css" />
+    <Content Include="scripts\unitegallery\themes\video\skin-right-title-only.css" />
+    <Content Include="scripts\unitegallery\themes\video\ug-theme-video.js" />
     <Content Include="scripts\video.js" />
     <Content Include="uploads\advertise\anhdemo.jpg" />
     <Content Include="uploads\images\about.jpg" />
@@ -859,6 +969,13 @@
     <Compile Include="Controls\U_MenuLeft.ascx.designer.cs">
       <DependentUpon>U_MenuLeft.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\U_MenuLeftNews.ascx.cs">
+      <DependentUpon>U_MenuLeftNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\U_MenuLeftNews.ascx.designer.cs">
+      <DependentUpon>U_MenuLeftNews.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\U_Slider.ascx.cs">
       <DependentUpon>U_Slider.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -890,7 +1007,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Modules\News\GlobalClass.cs" />
+    <Compile Include="Modules\Images\ImageList.aspx.cs">
+      <DependentUpon>ImageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Images\ImageList.aspx.designer.cs">
+      <DependentUpon>ImageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\News\NewsDetail.aspx.cs">
+      <DependentUpon>NewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\News\NewsDetail.aspx.designer.cs">
+      <DependentUpon>NewsDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\News\ViewNews.aspx.cs">
       <DependentUpon>ViewNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -918,6 +1048,13 @@
     </Compile>
     <Compile Include="Modules\Page\Logon.aspx.designer.cs">
       <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Page\PageDetail.aspx.cs">
+      <DependentUpon>PageDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Page\PageDetail.aspx.designer.cs">
+      <DependentUpon>PageDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Product\ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
