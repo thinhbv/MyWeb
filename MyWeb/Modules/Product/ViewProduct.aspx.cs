@@ -128,12 +128,12 @@ namespace MyWeb.Modules.Product
             strHtml += "<div class='product-image-container'>\n";
             List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("1", "Id='" + dt.Rows[i]["GroupId"].ToString() + "'", "");
             string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
-            strHtml += "<a class='product_img_link' href='/" + strURL + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='url'>\n";
+            strHtml += "<a class='product_img_link' href='" + strURL + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='url'>\n";
             strHtml += "<img class='replace-2x img-responsive' src='" + dt.Rows[i]["Image1"].ToString() + "' alt='" + dt.Rows[i]["Name"].ToString() + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='image' /></a>\n";
             strHtml += "</div></div>\n";
             strHtml += "<div class='right-block'>\n";
             strHtml += "<h5 itemprop='name'>\n";
-            strHtml += "<a class='product-name' href='/" + strURL + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='url'>\n";
+            strHtml += "<a class='product-name' href='" + strURL + "' title='" + dt.Rows[i]["Name"].ToString() + "' itemprop='url'>\n";
             strHtml += "<span class='list-name'>" + dt.Rows[i]["Name"].ToString() + "</span>\n";
             strHtml += "<span class='grid-name'>" + dt.Rows[i]["Name"].ToString() + "</span>\n</a>\n</h5>\n";
             strHtml += "<p class='product-desc' itemprop='description'>\n";

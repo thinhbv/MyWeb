@@ -235,7 +235,7 @@ namespace MyWeb.Admins
                 {
                     DataTable dt = new DataTable();
                     dt = PageService.Page_GetById(Id);
-                    Link = StringClass.NameToTag(dt.Rows[0]["Name"].ToString()) + "-" + Id;
+                    Link = "/" + StringClass.NameToTag(dt.Rows[0]["Name"].ToString()) + "-" + Id;
                     sql.ExecuteNonQuery("Update Page set Link='" + Link + "'  Where Id='" + Id + "'");
                 }
                 BindGrid();
