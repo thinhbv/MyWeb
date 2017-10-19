@@ -217,28 +217,21 @@
     <Content Include="css\homeslider.css" />
     <Content Include="css\hook.css" />
     <Content Include="css\hooks%281%29.css" />
-    <Content Include="css\hooks.css" />
     <Content Include="css\jquery.autocomplete.css" />
-    <Content Include="css\jquery.bxslider%281%29.css" />
-    <Content Include="css\jquery.bxslider.css" />
     <Content Include="css\jquery.fancybox.css" />
-    <Content Include="css\jquery.jqzoom.css" />
     <Content Include="css\jquery.ui.core.css" />
     <Content Include="css\jquery.ui.slider.css" />
     <Content Include="css\jquery.ui.theme.css" />
     <Content Include="css\live_configurator.css" />
-    <Content Include="css\print.css" />
     <Content Include="css\product.css" />
     <Content Include="css\productcomments.css" />
     <Content Include="css\product_list.css" />
     <Content Include="css\rd-parallax.css" />
     <Content Include="css\responsive-tables.css" />
     <Content Include="css\scenes.css" />
-    <Content Include="css\sendtoafriend.css" />
     <Content Include="css\smartbloglatestnews.css" />
     <Content Include="css\smartblogstyle.css" />
     <Content Include="css\smartblogtags.css" />
-    <Content Include="css\socialsharing.css" />
     <Content Include="css\theme.css" />
     <Content Include="css\themeconfiglink.css" />
     <Content Include="css\tmcategoryproducts.css" />
@@ -251,7 +244,6 @@
     <Content Include="css\tmrelatedproducts.css" />
     <Content Include="css\tmsearch.css" />
     <Content Include="css\uniform.default.css" />
-    <Content Include="css\video-js.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -701,6 +693,8 @@
     <Content Include="scripts\jquery.ui.mouse.min.js" />
     <Content Include="scripts\jquery.ui.slider.min.js" />
     <Content Include="scripts\jquery.ui.widget.min.js" />
+    <Content Include="scripts\jqzoom\jquery.jqzoom.css" />
+    <Content Include="scripts\jqzoom\jquery.jqzoom.js" />
     <Content Include="scripts\library.full.js" />
     <Content Include="scripts\product.js" />
     <Content Include="scripts\productcomments.js" />
@@ -1159,6 +1153,8 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <None Include="fonts\fontawesome-webfont-2.woff" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="fonts\MaterialIcons-Regular.woff" />
     <None Include="Properties\PublishProfiles\DaMyNghe.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
