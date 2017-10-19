@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Modules/PageMaster.Master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="MyWeb.Modules.Product.ProductDetail" %>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="server">
+<link href="../../../css/product.css" rel="stylesheet" />
+<link href="../../../scripts/jqzoom/jquery.jqzoom.css" rel="stylesheet" />
+<script type="text/javascript" src="../../../scripts/product.js"></script>
+<script type="text/javascript" src="../../../scripts/jqzoom/jquery.jqzoom.js"></script>
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <div id="columns" class="container">
 <!-- Breadcrumb -->
@@ -74,7 +80,7 @@
 <div class="clearfix product-information">
 <ul class="product-info-tabs nav nav-stacked col-sm-3 col-md-3 col-lg-3">
 <li class="product-description-tab active"><a data-toggle="tab" href="<%=Request.RawUrl %>#product-description-tab-content">More info</a></li>
-<li class="product-features-tab"><a data-toggle="tab" href="<%=Request.RawUrl %>#product-features-tab-content">Comments</a></li>
+<%--<li class="product-features-tab"><a data-toggle="tab" href="<%=Request.RawUrl %>#product-features-tab-content">Comments</a></li>--%>
 </ul>
 <div class="tab-content col-sm-9 col-md-9 col-lg-9">
 <div id="product-description-tab-content" class="product-description-tab-content tab-pane active">

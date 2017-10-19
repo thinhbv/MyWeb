@@ -93,7 +93,14 @@ namespace MyWeb.Modules.Product
             {
                 return string.Empty;
             }
-            strReturn = "<li id='thumbnail_" + index + "'>\n";
+            if (index == "5")
+            {
+                strReturn = "<li id='thumbnail_" + index + "' class='last'>\n";
+            }
+            else
+            {
+                strReturn = "<li id='thumbnail_" + index + "'>\n";
+            }
             strReturn += "<a href='javascript:void(0);'\n";
             strReturn += "rel=\"{gallery: 'gal1', smallimage: '" + path + "',largeimage: '" + path + "'}\"\n";
             strReturn += "title='" + name + "'>\n";
