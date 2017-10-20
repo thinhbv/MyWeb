@@ -19,10 +19,16 @@
 <link rel="stylesheet" href="../css/category.css" media="all">
 <link rel="stylesheet" href="../css/blocklayered.css" media="all">
 <link rel="stylesheet" href="../css/tmmegamenu.css" media="all">
+<link rel="stylesheet" href="../css/hooks.css" media="all">
 <link href="../css/smartblogstyle.css" rel="stylesheet" />
 <script type="text/javascript">
     var jqZoomEnabled = true;
     var productColumns = '1';
+    var nbItemsPerLine = 3;
+    var nbItemsPerLineMobile = 2;
+    var nbItemsPerLineTablet = 2;
+    var page_name = 'category';
+
 </script>
 
 <script type="text/javascript" src="../../../scripts/jquery-1.11.0.min.js"></script>

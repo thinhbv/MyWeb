@@ -70,7 +70,7 @@ namespace MyWeb
                     ltrAbout.Text += "<p>" + StringClass.GetContent(dt.Rows[0]["Description"].ToString(), 500) + "</p>\n";
                     ltrAbout.Text += "<p><a href='" + dt.Rows[0]["Link"].ToString() + "' class='btn btn-default'><span>Chi tiết</span></a></p>\n";
                     ltrAboutImg.Text = "<a href='" + dt.Rows[0]["Link"].ToString() + "' class='item-link' title='" + dt.Rows[0]["Name"].ToString() + "'>\n";
-                    ltrAboutImg.Text += "<img src='" + dt.Rows[0]["Image"].ToString() + "' class='item-img' title='" + dt.Rows[0]["Name"].ToString() + "' alt='" + dt.Rows[0]["Name"].ToString() + "' width='100%' height='100%'/>";
+                    ltrAboutImg.Text += "<img src='" + dt.Rows[0]["Image"].ToString() + "' class='item-img' title='" + dt.Rows[0]["Name"].ToString() + "' alt='" + dt.Rows[0]["Name"].ToString() + "' width='100%' height='100%'/></a>";
                 }
                 dt.Clear();
                 dt = NewsService.News_GetByTop("3", "Active = 1 AND [Priority] = 1", "Date Desc");
@@ -160,7 +160,7 @@ namespace MyWeb
             {
                 strHtml = "<li class=\"col-xs-12 col-sm-4 col-md-4 last-in-line last-line last-item-of-tablet-line first-item-of-mobile-line last-mobile-line\">\n";
             }
-            string strURL = PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
+            string strURL = PageHelper.GeneralGroupUrl(Consts.CON_TIN_TUC, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString());
             strHtml += "<div class='post-container'>\n";
             strHtml += "<div class='blog-image'>\n";
             strHtml += "<a href='" + strURL + "'>\n";

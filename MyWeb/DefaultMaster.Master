@@ -8,264 +8,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Đá Mỹ Nghệ HT</title>
-    <meta name="description" content="Shop powered by PrestaShop" />
-	<meta name="generator" content="PrestaShop"/>
-	<meta name="robots" content="index,follow"/>
-	<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0"/>
-	<meta name="apple-mobile-web-app-capable" content="yes"/>
-        <script type="text/javascript" async="" src="../scripts/ec.js"></script>
-    <script type="text/javascript" async="" src="../scripts/analytics.js"></script>
-    <script async="" src="../scripts/gtm.js"></script>
-    <script id="facebook-jssdk" src="../scripts/sdk.js"></script>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico?1468996685">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1468996685">
-    <link rel="stylesheet" href="./css/global.css" media="all">
-    <link rel="stylesheet" href="./css/highdpi.css" media="all">
-    <link rel="stylesheet" href="./css/responsive-tables.css" media="all">
-    <link rel="stylesheet" href="./css/uniform.default.css" media="all">
-    <link rel="stylesheet" href="./css/jquery.fancybox.css" media="all">
-    <link rel="stylesheet" href="./css/product_list.css" media="all">
-    <link rel="stylesheet" href="./css/blockcategories.css" media="all">
-    <link rel="stylesheet" href="./css/blockcurrencies.css" media="all">
-    <link rel="stylesheet" href="./css/blocklanguages.css" media="all">
-    <link rel="stylesheet" href="./css/blockcontact.css" media="all">
-    <link rel="stylesheet" href="./css/blocknewsletter.css" media="all">
-    <link rel="stylesheet" href="./css/blocktags.css" media="all">
-    <link rel="stylesheet" href="./css/blockviewed.css" media="all">
-    <link rel="stylesheet" href="./css/homeslider.css" media="all">
-    <link rel="stylesheet" href="./css/blockpermanentlinks.css" media="all">
-    <link rel="stylesheet" href="./css/smartblogstyle.css" media="all">
-    <link rel="stylesheet" href="./css/smartbloglatestnews.css" media="all">
-    <link rel="stylesheet" href="./css/smartblogtags.css" media="all">
-    <link rel="stylesheet" href="./css/tmmegamenu.css" media="all">
-    <link rel="stylesheet" href="./css/front.css" media="all">
-    <link rel="stylesheet" href="./css/tmsearch.css" media="all">
-    <link rel="stylesheet" href="./css/jquery.autocomplete.css" media="all">
-    <link rel="stylesheet" href="./css/tmrelatedproducts.css" media="all">
-    <link rel="stylesheet" href="./css/blockcart.css" media="all">
-    <link rel="stylesheet" href="./css/hooks(1).css" media="all">
-    <link rel="stylesheet" href="./css/tmmediaparallax.css" media="all">
-    <link rel="stylesheet" href="./css/rd-parallax.css" media="all">
-    <link rel="stylesheet" href="./css/tmcategoryproducts.css" media="all">
-    <link rel="stylesheet" href="./css/tmproductsslider.css" media="all">
-    <link rel="stylesheet" href="./css/tmnewsletter.css" media="all">
-    <link rel="stylesheet" href="./css/blockwishlist.css" media="all">
-    <link rel="stylesheet" href="./css/productcomments.css" media="all">
-    <link rel="stylesheet" href="./css/front(1).css" media="all">
-    <link rel="stylesheet" href="./css/tmproductvideos.css" media="all">
-    <link rel="stylesheet" href="./css/hook.css" media="all">
-    <link rel="stylesheet" href="./css/tmmegalayout.css" media="all">
-    <link rel="stylesheet" href="./css/live_configurator.css" media="all">
-    <link rel="stylesheet" href="./css/themeconfiglink.css" media="all">
-    <script type="text/javascript">
-        var CUSTOMIZE_TEXTFIELD = 1;
-        var FancyboxI18nClose = 'Close';
-        var FancyboxI18nNext = 'Next';
-        var FancyboxI18nPrev = 'Previous';
-        var added_to_wishlist = 'The product was successfully added to your wishlist.';
-        var ajax_allowed = true;
-        var ajaxsearch = true;
-        var blocking_popup = '1';
-        var comparator_max_item = 2;
-        var comparedProductsIds = [];
-        var contentOnly = false;
-        var currency = { "id": 1, "name": "Dollar", "iso_code": "USD", "iso_code_num": "840", "sign": "$", "blank": "0", "conversion_rate": "1.000000", "deleted": "0", "format": "1", "decimals": "1", "active": "1", "prefix": "$ ", "suffix": "", "id_shop_list": null, "force_id": false };
-        var currencyBlank = 0;
-        var currencyFormat = 1;
-        var currencyRate = 1;
-        var currencySign = '$';
-        var customizationIdMessage = 'Customization #';
-        var delete_txt = 'Delete';
-        var displayList = false;
-        var freeProductTranslation = 'Free!';
-        var freeShippingTranslation = 'Free shipping!';
-        var generated_date = 1500444460;
-        var hasDeliveryAddress = false;
-        var highDPI = false;
-        var homeslider_loop = 1;
-        var homeslider_pause = 3000;
-        var homeslider_speed = 500;
-        var homeslider_width = 10000;
-        var id_lang = 1;
-        var instantsearch = true;
-        var isGuest = 0;
-        var isLogged = 0;
-        var isMobile = false;
-        var is_logged = false;
-        var l_code = 'en_US';
-        var loggin_required = 'You must be logged in to manage your wishlist.';
-        var max_item = 'You cannot add more than 2 product(s) to the product comparison';
-        var min_item = 'Please select at least one product';
-        var nbItemsPerLine = 4;
-        var nbItemsPerLineMobile = 2;
-        var nbItemsPerLineTablet = 3;
-        var page_name = 'index';
-        var placeholder_blocknewsletter = 'Enter your e-mail';
-        var popup_status = true;
-        var priceDisplayMethod = 1;
-        var priceDisplayPrecision = 2;
-        var quickView = true;
-        var removingLinkText = 'remove this product from my cart';
-        var roundMode = 2;
-        var static_token = '3ac4aad1510521a3b35341f846de883b';
-        var tm_cps_carousel_auto = 0;
-        var tm_cps_carousel_auto_control = 0;
-        var tm_cps_carousel_auto_hover = 1;
-        var tm_cps_carousel_auto_pause = 3000;
-        var tm_cps_carousel_control = 0;
-        var tm_cps_carousel_hide_control = 1;
-        var tm_cps_carousel_item_scroll = 1;
-        var tm_cps_carousel_loop = 1;
-        var tm_cps_carousel_nb = 4;
-        var tm_cps_carousel_pager = 0;
-        var tm_cps_carousel_random = 0;
-        var tm_cps_carousel_slide_margin = 30;
-        var tm_cps_carousel_slide_width = 270;
-        var tm_cps_carousel_speed = 500;
-        var tmnewsletter_status = '2';
-        var tmolarkchat_status = '2';
-        var tmsearch_description = true;
-        var tmsearch_height = 180;
-        var tmsearch_image = true;
-        var tmsearch_limit = true;
-        var tmsearch_limit_num = 3;
-        var tmsearch_manufacturer = true;
-        var tmsearch_price = true;
-        var tmsearch_reference = true;
-        var tmsearch_scroll = false;
-        var toBeDetermined = 'To be determined';
-        var token = '360afb8bd1876d299e62a27e06084470';
-        var user_newsletter_status = 0;
-        var usingSecureMode = true;
-        var wishlistProductsIds = false;
-	</script>
-	<script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-    </asp:ContentPlaceHolder>
-    <script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../scripts/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.easing.js"></script>
-    <script type="text/javascript" src="../scripts/tools.js"></script>
-    <script type="text/javascript" src="../scripts/global.js"></script>
-    <script type="text/javascript" src="../scripts/10-bootstrap.min.js"></script>
-    <script type="text/javascript" src="../scripts/14-device.min.js"></script>
-    <script type="text/javascript" src="../scripts/15-jquery.total-storage.min.js"></script>
-    <script type="text/javascript" src="../scripts/15-jquery.uniform-modified.js"></script>
-    <script type="text/javascript" src="../scripts/16-jquery.scrollmagic.min.js"></script>
-    <script type="text/javascript" src="../scripts/17-jquery.scrollmagic.debug.js"></script>
-    <script type="text/javascript" src="../scripts/18-TimelineMax.min.js"></script>
-    <script type="text/javascript" src="../scripts/19-TweenMax.min.js"></script>
-    <script type="text/javascript" src="../scripts/20-jquery.bxslider.js"></script>
-    <script type="text/javascript" src="../scripts/20-modernizr_v2_7_2.min.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="../scripts/products-comparison.js"></script>
-    <script type="text/javascript" src="../scripts/treeManagement.js"></script>
-    <script type="text/javascript" src="../scripts/blocknewsletter.js"></script>
-    <script type="text/javascript" src="../scripts/homeslider.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.bxslider.js"></script>
-    <script type="text/javascript" src="../scripts/hoverIntent.js"></script>
-    <script type="text/javascript" src="../scripts/superfish.js"></script>
-    <script type="text/javascript" src="../scripts/tmmegamenu.js"></script>
-    <script type="text/javascript" src="../scripts/front.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.autocomplete.js"></script>
-    <script type="text/javascript" src="../scripts/tmsearch.js"></script>
-    <script type="text/javascript" src="../scripts/tmrelatedproducts.js"></script>
-    <script type="text/javascript" src="../scripts/ajax-cart.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.scrollTo.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.serialScroll.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.rd-parallax.min.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.youtubebackground.js"></script>
-    <script type="text/javascript" src="../scripts/jquery.vide.min.js"></script>
-    <script type="text/javascript" src="../scripts/tmmediaparallax.js"></script>
-    <script type="text/javascript" src="../scripts/tmproductsslider.js"></script>
-    <script type="text/javascript" src="../scripts/validate.js"></script>
-    <script type="text/javascript" src="../scripts/tmnewsletter.js"></script>
-    <script type="text/javascript" src="../scripts/ajax-wishlist.js"></script>
-    <script type="text/javascript" src="../scripts/front1.js"></script>
-    <script type="text/javascript" src="../scripts/tmsocialfeeds.js"></script>
-    <script type="text/javascript" src="../scripts/tmmegalayout.js"></script>
-    <script type="text/javascript" src="../scripts/themeconfiglink.js"></script>
-    <script type="text/javascript" src="../scripts/index.js"></script>
-    <link data-olark="true" rel="stylesheet" href="./css/theme.css" type="text/css">
+<title>Đá Mỹ Nghệ HT</title>
+<meta name="description" content="Shop powered by PrestaShop" />
+<meta name="generator" content="PrestaShop" />
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico?1468996685">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1468996685">
+<link rel="stylesheet" href="./css/global.css" media="all">
+<link rel="stylesheet" href="./css/responsive-tables.css" media="all">
+<link rel="stylesheet" href="./css/uniform.default.css" media="all">
+<link rel="stylesheet" href="./css/product_list.css" media="all">
+<link rel="stylesheet" href="./css/homeslider.css" media="all">
+<link rel="stylesheet" href="./css/smartblogstyle.css" media="all">
+<link rel="stylesheet" href="./css/smartbloglatestnews.css" media="all">
+<link rel="stylesheet" href="./css/smartblogtags.css" media="all">
+<link rel="stylesheet" href="./css/tmmegamenu.css" media="all">
+<link rel="stylesheet" href="./css/hooks.css" media="all">
+
+<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+</asp:ContentPlaceHolder>
+<script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../scripts/tools.js"></script>
+<script type="text/javascript" src="../scripts/global.js"></script>
+<script type="text/javascript" src="../scripts/10-bootstrap.min.js"></script>
+<script type="text/javascript" src="../scripts/14-device.min.js"></script>
+<script type="text/javascript" src="../scripts/16-jquery.scrollmagic.min.js"></script>
+<script type="text/javascript" src="../scripts/17-jquery.scrollmagic.debug.js"></script>
+<script type="text/javascript" src="../scripts/18-TimelineMax.min.js"></script>
+<script type="text/javascript" src="../scripts/19-TweenMax.min.js"></script>
+<script type="text/javascript" src="../scripts/20-jquery.bxslider.js"></script>
+<script type="text/javascript" src="../scripts/20-modernizr_v2_7_2.min.js"></script>
+<script type="text/javascript" src="../scripts/homeslider.js"></script>
+<script type="text/javascript" src="../scripts/superfish.js"></script>
+<script type="text/javascript" src="../scripts/tmmegamenu.js"></script>
 </head>
-    <%--<script>
-        function patch() {
-
-            window._open = window.open;
-            document._createElement = document.createElement;
-            document._createEvent = document.createEvent;
-            window._parent = (window.location != window.parent.location) ? document.referrer : document.location;
-
-            function getParent(el, selector) {
-                var parent = el.parentNode;
-                if (parent == document) {
-                    return null;
-                }
-                if (parent.matches(selector)) {
-                    return parent;
-                } else {
-                    return getParent(parent, selector);
-                }
-            }
-
-            function blockWindow(args) {
-                var target;
-                if (window.event) {
-                    target = window.event.target.tagName.toLowerCase() == 'a' ?
-                        window.event.target : getParent(window.event.target, 'a');
-                }
-                parent.postMessage({
-                    type: "safeBlock",
-                    url: args && args.length > 0 ? args[0] : '',
-                    args: args ? Array.from(args) : null,
-                    href: target ? target.href : null
-                }, window._parent);
-            }
-
-            window.open = function () {
-                blockWindow(arguments);
-            };
-
-            dispatchEvent = function (element) {
-                return function (event) {
-                    if (event.type == "click") {
-                        blockWindow([element.getAttribute('href')]);
-                    }
-                }
-            };
-
-            document.createElement = function () {
-                var element = document._createElement.apply(document, arguments);
-                if (arguments[0].toLowerCase() == 'a') {
-                    element.dispatchEvent = dispatchEvent(element);
-                }
-                return element;
-            };
-
-            // Process saved popup.
-            var html = document.querySelector('html'),
-                key = 'data-sbro-popup-current',
-                url = html.getAttribute(key);
-            if (url) {
-                blockWindow([url]);
-            }
-
-        }; patch();</script>--%>
 <body id="index" class="index hide-left-column hide-right-column lang_en  one-column">
-   <div id="page">
-       <div id="preloader">
-			<div class="cssload-dots"></div>
-		</div>
-		<!-- #preloader -->
-       <div class="header-container">
-           <header id="header">
+<div id="page">
+<div id="preloader">
+<div class="cssload-dots"></div>
+</div>
+<!-- #preloader -->
+<div class="header-container">
+<header id="header">
                <div class="nav">
 					<div class="container">
 						<div class="row">
 							<div id="header_logo">
-								<a href="https://ld-prestashop.template-help.com/prestashop_60012/" title="Crazysoft">
-									<img class="logo img-responsive" src="./images/logo.png" alt="Crazysoft" width="1170" height="250" />
+								<a href="/" title="Đá Mỹ Nghệ Hoàng Thành">
+									<img class="logo img-responsive" src="./images/logo.png" alt="Đá Mỹ Nghệ Hoàng Thành" width="1170" height="250" />
 								</a>
 							</div><!--header_logo-->
 						</div><!--row-->
@@ -278,16 +70,22 @@
                        </div><!--row-->
                    </div><!--container-->
                </div><!--top-->
-           </header><!--header-->
-        </div><!--header-container-->
-       <div class="columns-container">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-       </div><!--columns-container-->
-       <div class="footer-container">
-           <div id="footer">
-               <uc6:Footer ID="U_Footer" runat="server" />
-           </div><!--footer-->
-       </div><!--footer-container-->
-    </div><!-- #page -->
+           </header>
+<!--header-->
+</div>
+<!--header-container-->
+<div class="columns-container">
+<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+</div>
+<!--columns-container-->
+<div class="footer-container">
+<div id="footer">
+<uc6:Footer ID="U_Footer" runat="server" />
+</div>
+<!--footer-->
+</div>
+<!--footer-container-->
+</div>
+<!-- #page -->
 </body>
 </html>
