@@ -133,12 +133,12 @@ Display="Dynamic" ErrorMessage="*" SetFocusOnError="True" />
 </th>
 <td>
 <asp:TextBox ID="txtImage" runat="server" CssClass="text image"></asp:TextBox>&nbsp;<input
-id="btnImgImage" type="button" onclick="BrowseServer('<% =txtImage.ClientID %>    ','Images');"
+id="btnImgImage" type="button" onclick="BrowseServer('<% =txtImage.ClientID %>','Images');"
 value="Browse Server" />&nbsp;
-                    <asp:Image ID="imgImage" runat="server" ImageAlign="Middle" Width="100px" />
+<asp:Image ID="imgImage" runat="server" ImageAlign="Middle" Width="100px" />
 </td>
 </tr>
-<tr>
+<%--<tr>
 <th>
 <asp:Label ID="lblPriority" runat="server" Text="Vị trí hiển thị:"></asp:Label>
 </th>
@@ -146,7 +146,7 @@ value="Browse Server" />&nbsp;
 <asp:DropDownList ID="ddlPriority" runat="server">
 </asp:DropDownList>
 </td>
-</tr>
+</tr>--%>
 <tr>
 <th>
 <asp:Label ID="lblOrd" runat="server" Text="Thứ tự:"></asp:Label>

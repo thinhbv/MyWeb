@@ -22,7 +22,7 @@ namespace MyWeb.Admins
                 NumberClass.OnlyInputNumber(txtOrd);
                 BindGrid();
                 LoadDropDownListGroupImage();
-                PageHelper.LoadDropProPriority(ddlPriority);
+                //PageHelper.LoadDropProPriority(ddlPriority);
             }
         }
 
@@ -126,10 +126,10 @@ namespace MyWeb.Admins
                     List<Data.Images> listE = ImagesService.Images_GetById(Id);
                     ddlGroupImage.SelectedValue = listE[0].GroupId;
                     LoadDropDownListGroupImage();
-                    PageHelper.LoadDropProPriority(ddlPriority);
+                    //PageHelper.LoadDropProPriority(ddlPriority);
                     txtImage.Text = listE[0].Image;
                     imgImage.ImageUrl = listE[0].Image.Length > 0 ? listE[0].Image : "";
-                    ddlPriority.SelectedValue = listE[0].Priority;
+                    //ddlPriority.SelectedValue = listE[0].Priority;
                     txtOrd.Text = listE[0].Ord;
                     chkActive.Checked = listE[0].Active == "1" || listE[0].Active == "True";
                     pnView.Visible = false;
@@ -191,7 +191,7 @@ namespace MyWeb.Admins
                 obj.Id = Id;
                 obj.Image = txtImage.Text;
                 obj.GroupId = ddlGroupImage.SelectedValue;
-                obj.Priority = ddlPriority.SelectedValue;
+                obj.Priority = "0";
                 obj.Ord = txtOrd.Text != "" ? txtOrd.Text : "1";
                 obj.Active = chkActive.Checked ? "1" : "0";
                 if (Insert == true)

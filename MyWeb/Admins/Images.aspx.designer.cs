@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyWeb.Admins
-{
-
-
-    public partial class Images
-    {
-
+namespace MyWeb.Admins {
+    
+    
+    public partial class Images {
+        
         /// <summary>
         /// pnView control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnView;
-
+        
         /// <summary>
         /// drlnhom control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drlnhom;
-
+        
         /// <summary>
         /// lbtAddT control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtAddT;
-
+        
         /// <summary>
         /// lbtDeleteT control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtDeleteT;
-
+        
         /// <summary>
         /// lbtRefreshT control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtRefreshT;
-
+        
         /// <summary>
         /// grdImages control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataGrid grdImages;
-
+        
         /// <summary>
         /// lbtAddB control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtAddB;
-
+        
         /// <summary>
         /// lbtDeleteB control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtDeleteB;
-
+        
         /// <summary>
         /// lbtRefreshB control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtRefreshB;
-
+        
         /// <summary>
         /// pnUpdate control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnUpdate;
-
+        
         /// <summary>
         /// lbtUpdateT control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtUpdateT;
-
+        
         /// <summary>
         /// lbtBackT control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtBackT;
-
+        
         /// <summary>
         /// lblGroupImg control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGroupImg;
-
+        
         /// <summary>
         /// ddlGroupImage control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGroupImage;
-
+        
         /// <summary>
         /// rfvGroupNews control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGroupNews;
-
+        
         /// <summary>
         /// lblImage control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblImage;
-
+        
         /// <summary>
         /// txtImage control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImage;
-
+        
         /// <summary>
         /// imgImage control.
         /// </summary>
@@ -175,25 +173,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgImage;
-
-        /// <summary>
-        /// lblPriority control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPriority;
-
-        /// <summary>
-        /// ddlPriority control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPriority;
-
+        
         /// <summary>
         /// lblOrd control.
         /// </summary>
@@ -202,7 +182,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrd;
-
+        
         /// <summary>
         /// txtOrd control.
         /// </summary>
@@ -211,7 +191,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrd;
-
+        
         /// <summary>
         /// rfvOrd control.
         /// </summary>
@@ -220,7 +200,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOrd;
-
+        
         /// <summary>
         /// lblActive control.
         /// </summary>
@@ -229,7 +209,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblActive;
-
+        
         /// <summary>
         /// chkActive control.
         /// </summary>
@@ -238,7 +218,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkActive;
-
+        
         /// <summary>
         /// lbtUpdateB control.
         /// </summary>
@@ -247,7 +227,7 @@ namespace MyWeb.Admins
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtUpdateB;
-
+        
         /// <summary>
         /// lbtBackB control.
         /// </summary>
