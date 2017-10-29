@@ -10,6 +10,11 @@ namespace MyWeb.Common
 		public const string CON_PARAM_URL_PAGE = "page";
 		public const string CON_PARAM_URL_SORT = "sort";
 		public enum SortNum {asc, desc};
+		public const string FOLDER_UPLOAD_IMAGES = "\\uploads\\images";
+		public const string FOLDER_UPLOAD_ADVERTISE = "\\uploads\\advertise";
+		public const string FOLDER_UPLOAD_IMAGES_THUMBS = "\\uploads\\_thumbs\\images";
+		public const string FOLDER_UPLOAD_ADVERTISE_THUMBS = "\\uploads\\_thumbs\\advertise";
+		public const int MAX_IMAGE_THUMBNAIL = 140;
 
 	}
 }

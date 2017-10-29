@@ -47,7 +47,7 @@ namespace MyWeb.Modules.Product
                             ltrImages.Text += ShowImages(pro[0].Image5, "5");
 
                             //Hiển thị sản phẩm tương tự
-                            List<Data.Product> listRelated = ProductService.Product_GetByTop("", "Active = 1 AND GroupId='" + pro[0].GroupId + "'", "Ord");
+							List<Data.Product> listRelated = ProductService.Product_GetByTop("", "Active = 1 AND GroupId='" + pro[0].GroupId + "' AND Id <> '" + id + "'", "Ord");
                             if (listRelated.Count > 0)
                             {
                                 ltrRelated.Text += "<ul id='bxslider' class='bxslider clearfix' style='width: 915%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);'>\n";
