@@ -106,6 +106,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -124,6 +125,7 @@
     <Content Include="Admins\Page.aspx" />
     <Content Include="Admins\Product.aspx" />
     <Content Include="Admins\Support.aspx" />
+    <Content Include="Admins\UploadImages.aspx" />
     <Content Include="Admins\User.aspx" />
     <Content Include="App_Themes\Admin\images\add.png" />
     <Content Include="App_Themes\Admin\images\asc.gif" />
@@ -226,6 +228,7 @@
     <Content Include="img\anh1.jpg" />
     <Content Include="img\anhdemo.jpg" />
     <Content Include="img\bx_loader.gif" />
+    <Content Include="img\shadow.png" />
     <Content Include="img\warning_bar_0000_us.jpg" />
     <Content Include="Modules\Images\ImageList.aspx" />
     <Content Include="Modules\News\NewsDetail.aspx" />
@@ -652,6 +655,7 @@
     <Content Include="scripts\jquery.jqzoom.js" />
     <Content Include="scripts\jqzoom\jquery.jqzoom.css" />
     <Content Include="scripts\jqzoom\jquery.jqzoom.js" />
+    <Content Include="scripts\jqzoom\zoomloader.gif" />
     <Content Include="scripts\product.js" />
     <Content Include="scripts\unitegallery\css\unite-gallery.css" />
     <Content Include="scripts\unitegallery\images\button-close.png" />
@@ -858,6 +862,13 @@
     </Compile>
     <Compile Include="Admins\Support.aspx.designer.cs">
       <DependentUpon>Support.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\UploadImages.aspx.cs">
+      <DependentUpon>UploadImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\UploadImages.aspx.designer.cs">
+      <DependentUpon>UploadImages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>
@@ -1073,6 +1084,7 @@
     <Content Include="fonts\MaterialIcons-Regular.woff2" />
     <Content Include="fonts\MaterialIcons-Regular.woff" />
     <None Include="Properties\PublishProfiles\DaMyNghe.pubxml" />
+    <None Include="Properties\PublishProfiles\MyWeb.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
