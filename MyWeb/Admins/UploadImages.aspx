@@ -19,15 +19,7 @@
 								CausesValidation="False">Clear</asp:LinkButton></li>
 					</ul>
 				</td>
-			</tr>
-			<tr>
-				<th>
-					<asp:Label ID="lblPath" runat="server" Text="Chọn ảnh:"></asp:Label>
-				</th>
-				<td>
-					<asp:FileUpload ID="fupFiles" runat="server" AllowMultiple="true" />
-				</td>
-			</tr>
+			</tr>	
 			<tr>
 				<th>
 					<asp:Label ID="Label1" runat="server" Text="Thư mục Upload:"></asp:Label>
@@ -41,6 +33,14 @@
 						<SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" HorizontalPadding="0px"
 							VerticalPadding="0px" />
 					</asp:TreeView>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<asp:Label ID="lblPath" runat="server" Text="Chọn ảnh:"></asp:Label>
+				</th>
+				<td>
+					<asp:FileUpload ID="fupFiles" runat="server" AllowMultiple="true" />
 				</td>
 			</tr>
 			<tr>
