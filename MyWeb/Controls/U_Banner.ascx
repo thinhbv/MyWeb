@@ -6,10 +6,10 @@
                 <a href='<%#DataBinder.Eval(Container.DataItem,"Link").ToString() %>' title='<%#DataBinder.Eval(Container.DataItem,"Name").ToString() %>'>
                     <img src='<%#DataBinder.Eval(Container.DataItem,"Image").ToString() %>' width="1437" height="608" alt='<%#DataBinder.Eval(Container.DataItem,"Name").ToString() %>' />
                 </a>
-                <div class="homeslider-description">
+                <%--<div class="homeslider-description">
                     <h2><%#DataBinder.Eval(Container.DataItem,"Name").ToString() %></h2>
                     <h3><%#DataBinder.Eval(Container.DataItem,"Content").ToString() %></h3>
-                </div>
+                </div>--%>
             </li>
         </ItemTemplate>
     </asp:Repeater>

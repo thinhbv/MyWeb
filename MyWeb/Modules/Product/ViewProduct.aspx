@@ -12,7 +12,7 @@
         if ($("#selectProductSort").val() == null) {
             $("#selectProductSort").val('<%=MyWeb.Common.Consts.SortNum.asc.ToString()%>');
         }
-        $("#ul_layered_id_attribute_group_1 input[type=checkbox]").each(function (index) {
+    	$("#layered_form input[type=checkbox]").each(function (index) {
             $(this).click(function () {
                 event.preventDefault();
             })

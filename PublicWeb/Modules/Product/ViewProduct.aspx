@@ -9,50 +9,50 @@
             $("#nb_item").val("9");
         }
         $("#selectProductSort").val(getParameterByName('<%=MyWeb.Common.Consts.CON_PARAM_URL_SORT%>'));
-		    if ($("#selectProductSort").val() == null) {
-		        $("#selectProductSort").val('<%=MyWeb.Common.Consts.SortNum.asc.ToString()%>');
-			}
-        $("#ul_layered_id_attribute_group_1 input[type=checkbox]").each(function (index) {
+        if ($("#selectProductSort").val() == null) {
+            $("#selectProductSort").val('<%=MyWeb.Common.Consts.SortNum.asc.ToString()%>');
+        }
+    	$("#layered_form input[type=checkbox]").each(function (index) {
             $(this).click(function () {
                 event.preventDefault();
             })
             var groupId = '<%= id%>';
-		        if ($(this).val() == groupId) {
-		            $(this).prop("checked", true);
-		            $(this).parent().children().children().addClass("red");
-		        }
-		        else {
-		            $(this).prop("checked", false);
-		        }
-		    })
+            if ($(this).val() == groupId) {
+                $(this).prop("checked", true);
+                $(this).parent().children().children().addClass("red");
+            }
+            else {
+                $(this).prop("checked", false);
+            }
+        })
     })
-        function OnChangeItemsDisplay(e) {
-            var no = $(e).val();
-            var url = window.location.href;
-            url = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_PAGE%>', "1");
-            window.location.href = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_NO%>', no);
+    function OnChangeItemsDisplay(e) {
+        var no = $(e).val();
+        var url = window.location.href;
+        url = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_PAGE%>', "1");
+        window.location.href = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_NO%>', no);
+    }
+    function OnChangeProductSort(e) {
+        var sort = $(e).val();
+        var url = window.location.href;
+        url = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_PAGE%>', "1");
+            window.location.href = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_SORT%>', sort);
         }
-        function OnChangeProductSort(e) {
-            var sort = $(e).val();
-            var url = window.location.href;
-            url = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_PAGE%>', "1");
-	    	    window.location.href = replaceUrlParam(url, '<%=MyWeb.Common.Consts.CON_PARAM_URL_SORT%>', sort);
-	    	}
-	    	function getParameterByName(name) {
-	    	    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-	    	    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-	    	}
-	    	function replaceUrlParam(url, paramName, paramValue) {
-	    	    var pattern = new RegExp('(\\?|\\&)(' + paramName + '=).*?(&|$)')
-	    	    var newUrl = url
-	    	    if (url.search(pattern) >= 0) {
-	    	        newUrl = url.replace(pattern, '$1$2' + paramValue + '$3');
-	    	    }
-	    	    else {
-	    	        newUrl = newUrl + (newUrl.indexOf('?') > 0 ? '&' : '?') + paramName + '=' + paramValue
-	    	    }
-	    	    return newUrl
-	    	}
+        function getParameterByName(name) {
+            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
+        function replaceUrlParam(url, paramName, paramValue) {
+            var pattern = new RegExp('(\\?|\\&)(' + paramName + '=).*?(&|$)')
+            var newUrl = url
+            if (url.search(pattern) >= 0) {
+                newUrl = url.replace(pattern, '$1$2' + paramValue + '$3');
+            }
+            else {
+                newUrl = newUrl + (newUrl.indexOf('?') > 0 ? '&' : '?') + paramName + '=' + paramValue
+            }
+            return newUrl
+        }
 </script>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -133,11 +133,6 @@ Hiển thị
 <div class="content_sortPagiBar">
 <div class="bottom-pagination-content clearfix">
 <div id="pagination_bottom" class="pagination clearfix">
-<%--<div class="showall">
-                                        <button type="submit" class="btn btn-default">
-                                            <span>Hiển thị tất cả</span>
-                                        </button>
-                                    </div>--%>
 <ul class="pagination">
 <asp:Literal ID="ltrPaging" runat="server"></asp:Literal>
 </ul>
