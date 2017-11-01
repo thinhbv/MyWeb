@@ -768,23 +768,9 @@
     <Content Include="uploads\advertise\anhdemo.jpg" />
     <Content Include="uploads\images\about.jpg" />
     <Content Include="uploads\images\anh1.jpg" />
-    <Content Include="uploads\images\LTĐ01.png" />
-    <Content Include="uploads\images\LTĐ02-1.png" />
-    <Content Include="uploads\images\LTĐ02.png" />
-    <Content Include="uploads\images\LTĐ03.png" />
-    <Content Include="uploads\images\LTĐ04.png" />
-    <Content Include="uploads\images\LTĐ05.png" />
-    <Content Include="uploads\images\LTĐ06.png" />
     <Content Include="uploads\_thumbs\Advertise\anhdemo.jpg" />
     <Content Include="uploads\_thumbs\Images\about.jpg" />
     <Content Include="uploads\_thumbs\Images\anh1.jpg" />
-    <Content Include="uploads\_thumbs\Images\LTĐ01.png" />
-    <Content Include="uploads\_thumbs\Images\LTĐ02-1.png" />
-    <Content Include="uploads\_thumbs\Images\LTĐ02.png" />
-    <Content Include="uploads\_thumbs\Images\LTĐ03.png" />
-    <Content Include="uploads\_thumbs\Images\LTĐ04.png" />
-    <Content Include="uploads\_thumbs\Images\LTĐ05.png" />
-    <Content Include="uploads\_thumbs\Images\LTĐ06.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

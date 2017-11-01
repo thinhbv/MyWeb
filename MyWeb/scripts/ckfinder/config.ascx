@@ -26,8 +26,8 @@
 		Thumbnails.Dir = BaseDir + "_thumbs/";
 		Thumbnails.Enabled = true;
 		Thumbnails.DirectAccess = false;
-		Thumbnails.MaxWidth = 140;
-		Thumbnails.MaxHeight = 140;
+		Thumbnails.MaxWidth = 270;
+		Thumbnails.MaxHeight = 270;
 		Thumbnails.Quality = 80;
 		Images.MaxWidth = 1200;
 		Images.MaxHeight = 1200;

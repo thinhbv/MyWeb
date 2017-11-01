@@ -33,7 +33,7 @@ namespace MyWeb.Controls
                     ltrMenu.Text += "</ul>\n";
                 }
                 dt.Clear();
-                List<Images> listImg = ImagesService.Images_GetByTop("8", "Active = 1 AND Priority = 2", "Ord DESC");
+                List<Images> listImg = ImagesService.Images_GetByTop("8", "Active = 1", "Ord DESC");
                 if (listImg.Count > 0)
                 {
                     for (int i = 0; i < listImg.Count; i++)

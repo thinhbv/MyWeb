@@ -136,7 +136,7 @@ namespace MyWeb.Admins
                     imgImage4.ImageUrl = listE[0].Image4.Length > 0 ? listE[0].Image4 : "";
                     txtImage5.Text = listE[0].Image5;
                     imgImage5.ImageUrl = listE[0].Image5.Length > 0 ? listE[0].Image5 : "";
-                    fckContent.Value = listE[0].Content;
+                    txtContent.Text = listE[0].Content;
                     fckDetail.Value = listE[0].Detail;
                     chkPopular.Checked = listE[0].IsPopular == "1" || listE[0].IsPopular == "True";
                     chkHot.Checked = listE[0].IsHot == "1" || listE[0].IsHot == "True";
@@ -226,7 +226,7 @@ namespace MyWeb.Admins
                 obj.Image3 = txtImage3.Text;
                 obj.Image4 = txtImage4.Text;
                 obj.Image5 = txtImage5.Text;
-                obj.Content = fckContent.Value;
+				obj.Content = txtContent.Text;
                 obj.Detail = fckDetail.Value;
                 obj.GroupId = ddlGroupProduct.SelectedValue;
                 obj.IsPopular = chkPopular.Checked ? "1" : "0";

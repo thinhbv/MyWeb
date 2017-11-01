@@ -2,7 +2,7 @@
 
 <div class="head">
     <h1 id="logo">
-        <a href="/" title="Family Spa">
+        <a href="/" title="Đá Mỹ Nghệ Hoàng Thành">
             <asp:Literal ID="ltrLogo" runat="server"></asp:Literal>
         </a>
     </h1>

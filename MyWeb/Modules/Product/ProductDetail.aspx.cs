@@ -67,7 +67,7 @@ namespace MyWeb.Modules.Product
                                     }
                                     ltrRelated.Text += "<div class='product_desc'>\n";
                                     ltrRelated.Text += "<a href='" + PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, groupname, listRelated[i].Id, listRelated[i].Name) + "' title='" + listRelated[i].Name + "' class='product-image product_image'>\n";
-                                    ltrRelated.Text += "<img class='lazyOwl' src='" + listRelated[i].Image1 + "' alt='" + listRelated[i].Name + "' width='500' height='620'></a>\n";
+									ltrRelated.Text += "<img class='lazyOwl' src='" + StringClass.ThumbImage(listRelated[i].Image1) + "' alt='" + listRelated[i].Name + "'></a>\n";
                                     ltrRelated.Text += "<div class='block_description'><span>" + StringClass.FormatContentNews(listRelated[i].Content, 50) + "</span></div>\n";
                                     ltrRelated.Text += "</div>\n";
                                     ltrRelated.Text += "<div class='s_title_block'>\n";

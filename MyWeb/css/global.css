@@ -283,6 +283,8 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+	max-height:270px;
+	max-width:270px;
 }
 
 .img-rounded {
@@ -16819,7 +16821,8 @@ fieldset.customerprivacy label {
 .accessories-block .block_content .bx-wrapper img,
 #productscategory_list .bx-wrapper img,
 .related-block .bx-wrapper img {
-    max-width: 100%;
+    width: 161px;
+	max-height:121px;
     display: block;
 }
 

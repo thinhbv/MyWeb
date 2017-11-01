@@ -127,8 +127,11 @@ namespace MyWeb
             List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("1", "Id=" + listProduct[i].GroupId, "");
             string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, listProduct[i].Id, listProduct[i].Name);
             strHtml += "<a class=\"product_img_link\" href=\"" + strURL + "\" title='" + listProduct[i].Name + "' itemprop=\"url\">\n";
-            strHtml += "<img class=\"replace-2x img-responsive\" src='" + listProduct[i].Image1 + "' alt='" + listProduct[i].Name + "' title='" + listProduct[i].Name + "' itemprop=\"image\" /></a>\n";
-            strHtml += "<a class=\"new-box\" href='#'><span class=\"new-label\">New</span></a>\n";
+            strHtml += "<img class=\"replace-2x img-responsive\" src='" + StringClass.ThumbImage(listProduct[i].Image1) + "' alt='" + listProduct[i].Name + "' title='" + listProduct[i].Name + "' itemprop=\"image\" /></a>\n";
+			if (listProduct[i].IsNew == "1")
+			{
+				strHtml += "<a class=\"new-box\" href='#'><span class=\"new-label\">New</span></a>\n";
+			}
             strHtml += "</div><!--left-block-->\n</div><!--roduct-image-container-->\n";
             strHtml += "<div class=\"right-block\">\n";
             strHtml += "<h5 itemprop=\"name\">\n";
@@ -137,8 +140,8 @@ namespace MyWeb
             strHtml += "<span class=\"grid-name\">" + listProduct[i].Name + "</span>\n";
             strHtml += "</a></h5>\n";
             strHtml += "<p class=\"product-desc\" itemprop=\"description\">\n";
-            strHtml += "<span class=\"list-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 200) + "</span>\n";
-            strHtml += "<span class=\"grid-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 50) + "</span></p>\n";
+			//strHtml += "<span class=\"list-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 200) + "</span>\n";
+            strHtml += "<span class=\"grid-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 100) + "</span></p>\n";
             strHtml += "<div class=\"buttons\">\n";
             strHtml += "<a class=\"quick-view\" href=\"" + strURL + "\" data-href=\"" + strURL + "\">\n";
             strHtml += "<span>Chi tiết</span></a>\n</div><!--buttons-->\n";

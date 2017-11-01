@@ -221,7 +221,7 @@ value="Browse Server" />&nbsp;
 <asp:Label ID="lblContent" runat="server" Text="Mô tả:"></asp:Label>
 </th>
 <td>
-<FCKeditorV2:FCKeditor ID="fckContent" runat="server" ToolbarSet="Basic" />
+<asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" CssClass="text multiline"></asp:TextBox>
 </td>
 </tr>
 <tr>
