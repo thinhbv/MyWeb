@@ -251,5 +251,15 @@ namespace MyWeb.Common
             }
         }
         #endregion
+
+		public static string SqlInjection(string value)
+		{
+			string strReturn = value;
+			if (value.IndexOf("'") > -1)
+			{
+				strReturn = value.Replace("'", "''");
+			}
+			return strReturn;
+		}
     }
 }

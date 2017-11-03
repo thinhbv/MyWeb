@@ -41,6 +41,9 @@
 <div id="center_column" class="center_column col-xs-12 col-sm-9">
 <div itemtype="#" itemscope="" id="sdsblogArticle" class="blog-post">
 <h1 class="title_block_exclusive"><%=title %></h1>
+<div class="post-image">
+<%=content %>
+</div>
 <div class="sdsarticle-des">
 <asp:Literal ID="ltrDetail" runat="server"></asp:Literal>
 </div>

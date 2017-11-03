@@ -26,6 +26,8 @@
 <link rel="stylesheet" href="./css/smartblogtags.css" media="all">
 <link rel="stylesheet" href="./css/tmmegamenu.css" media="all">
 <link rel="stylesheet" href="./css/hooks.css" media="all">
+<link href="./css/tmmegalayout.css" rel="stylesheet" />
+<link href="./css/hooks(1).css" rel="stylesheet" />
 
 <asp:ContentPlaceHolder ID="HeadContent" runat="server">
 </asp:ContentPlaceHolder>

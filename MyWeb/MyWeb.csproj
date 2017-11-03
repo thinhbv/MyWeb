@@ -204,6 +204,7 @@
     <Content Include="css\category.css" />
     <Content Include="css\global.css" />
     <Content Include="css\homeslider.css" />
+    <Content Include="css\hooks%281%29.css" />
     <Content Include="css\hooks.css" />
     <Content Include="css\product.css" />
     <Content Include="css\product_list.css" />
@@ -211,6 +212,7 @@
     <Content Include="css\smartbloglatestnews.css" />
     <Content Include="css\smartblogstyle.css" />
     <Content Include="css\smartblogtags.css" />
+    <Content Include="css\tmmegalayout.css" />
     <Content Include="css\tmmegamenu.css" />
     <Content Include="css\uniform.default.css" />
     <Content Include="Default.aspx" />

@@ -99,14 +99,14 @@ namespace MyWeb.Modules.Product
 						}
 						else
 						{
-							dtPro = ProductService.Product_GetByTop("", "Active = 1 AND (Name like '%" + keyword + "%' OR Detail like '%" + keyword + "%' OR Content like '%" + keyword + "%')", "Ord DESC");
+							dtPro = ProductService.Product_GetByTop("", "Active = 1 AND (Name like '%" + StringClass.SqlInjection(keyword) + "%' OR Detail like '%" + StringClass.SqlInjection(keyword) + "%' OR Content like '%" + StringClass.SqlInjection(keyword) + "%')", "Ord DESC");
 						}
 						totalcount = dtPro.Rows.Count;
 						for (int i = 0; i < dtPro.Rows.Count; i++)
 						{
 							ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
 						}
-						ltrCrumb.Text += "<li class='crumb-1'>"+keyword+"</li>\n";
+						ltrCrumb.Text += "<li class='crumb-1'>" + Server.HtmlEncode(keyword) + "</li>\n";
 					}             
                 }
                 catch (Exception ex)

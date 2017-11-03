@@ -126,7 +126,7 @@ namespace MyWeb.Admins
                     txtImage.Text = dt.Rows[0]["Image"].ToString();
                     imgImage.ImageUrl = dt.Rows[0]["Image"].ToString().Length > 0 ? dt.Rows[0]["Image"].ToString() : "";
                     fckDetail.Value = dt.Rows[0]["Detail"].ToString();
-                    //txtDescription.Text = dt.Rows[0]["Description"].ToString();
+                    txtContent.Text = dt.Rows[0]["Description"].ToString();
                     //txtKeyword.Text = dt.Rows[0]["Keyword"].ToString();
                     PageHelper.LoadDropDownListPagePosition(ddlPosition);
                     PageHelper.LoadDropDownListTarget(ddlTarget);
@@ -214,7 +214,7 @@ namespace MyWeb.Admins
                 obj.Image = txtImage.Text;
                 obj.Detail = fckDetail.Value;
                 obj.Level = Level + "00000";
-                obj.Description = "";
+                obj.Description = txtContent.Text;
                 obj.Keyword = "";
                 obj.Type = ddlType.SelectedValue;
                 obj.Link = txtLink.Text;

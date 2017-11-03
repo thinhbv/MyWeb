@@ -13,6 +13,7 @@ namespace MyWeb.Modules.Page
     {
         protected string pageId = string.Empty;
         protected string title = string.Empty;
+		protected string content = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.RouteData.Values["pageId"] != null)
@@ -27,6 +28,7 @@ namespace MyWeb.Modules.Page
                     if (dtPage.Rows.Count > 0)
                     {
                         title = dtPage.Rows[0]["Name"].ToString();
+						content = dtPage.Rows[0]["Description"].ToString();
                         ltrDetail.Text = dtPage.Rows[0]["Detail"].ToString();
                     }
                 }

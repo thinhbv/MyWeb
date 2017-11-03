@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="../css/blocklayered.css" media="all">
 <link rel="stylesheet" href="../css/tmmegamenu.css" media="all">
 <link rel="stylesheet" href="../css/hooks.css" media="all">
+<link href="../css/tmmegalayout.css" rel="stylesheet" />
 <link href="../css/smartblogstyle.css" rel="stylesheet" />
 <script type="text/javascript">
     var jqZoomEnabled = true;
