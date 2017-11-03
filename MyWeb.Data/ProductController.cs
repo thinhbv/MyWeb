@@ -95,43 +95,24 @@ namespace MyWeb.Data
         }
         #endregion
         #region[Product_GetByTop]
-        public List<Product> Product_GetByTop(string Top, string Where, string Order)
+		public DataTable Product_GetByTop(string Top, string Where, string Order)
         {
-            List<Data.Product> list = new List<Data.Product>();
-            Data.Product obj = new Data.Product();
-            SqlDataReader dr = null;
+			DataTable dt = new DataTable();
             try
             {
-                using (SqlCommand dbCmd = new SqlCommand("sp_Product_GetByTop", GetConnection()))
-                {
-                    dbCmd.CommandType = CommandType.StoredProcedure;
-                    dbCmd.Parameters.Add(new SqlParameter("@Top", Top));
-                    dbCmd.Parameters.Add(new SqlParameter("@Where", Where));
-                    dbCmd.Parameters.Add(new SqlParameter("@Order", Order));
-                    dr = dbCmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        while (dr.Read())
-                        {
-                            list.Add(obj.ProductIDataReader(dr));
-                        }
-                        //conn.Close();
-                    }
-                }
+				SqlCommand dbCmd;
+				dbCmd = new SqlCommand("sp_Product_GetByTop");
+				dbCmd.CommandType = CommandType.StoredProcedure;
+				dbCmd.Parameters.Add(new SqlParameter("@Top", Top));
+				dbCmd.Parameters.Add(new SqlParameter("@Where", Where));
+				dbCmd.Parameters.Add(new SqlParameter("@Order", Order));
+				dt = GetData(dbCmd);
             }
             catch (Exception ex)
             {
 				throw ex;
             }
-            finally
-            {
-                if (dr != null)
-                {
-                    dr.Close();
-                }
-                obj = null;
-            }
-            return list;
+			return dt;
         }
         #endregion
         #region[Product_GetByAll]

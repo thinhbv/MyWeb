@@ -13,10 +13,15 @@ namespace MyWeb.Controls
 {
     public partial class U_Menu : System.Web.UI.UserControl
     {
+		protected string keyword = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+				if (Request.QueryString["key"] != null)
+				{
+					keyword = Request.QueryString["key"];
+				}
                 ShowMenu();
             }
         }

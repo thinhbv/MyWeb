@@ -19,6 +19,10 @@ namespace MyWeb.Modules.Product
         private string pagenum = "1";
         private Int16 perpage = 9;
         private string sort = Consts.SortNum.asc.ToString();
+		private string keyword;
+		List<GroupProduct> listGroup;
+		DataTable dtPro;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.RouteData.Values["GroupId"] != null)
@@ -39,45 +43,71 @@ namespace MyWeb.Modules.Product
                     {
                         sort = Request.QueryString[Consts.CON_PARAM_URL_SORT];
                     }
-
+					if (Request.QueryString["key"] != null)
+					{
+						keyword = Request.QueryString["key"];
+					}
                     if (Int16.TryParse(Request.QueryString[Consts.CON_PARAM_URL_NO], out perpage) == false)
                     {
                         perpage = 9;
                     }
-                    List<GroupProduct> listGroup = GroupProductService.GroupProduct_GetById(id);
-                    if (listGroup.Count > 0)
-                    {
-                        groupName = listGroup[0].Name;
-                        totalcount = ProductService.Product_GetCount(listGroup[0].Level);
-                        DataTable dtPro = ProductService.Product_Pagination(pagenum, perpage.ToString(), listGroup[0].Level);
-                        if (dtPro.Rows.Count > 0)
-                        {
-
-                            if (sort == Consts.SortNum.asc.ToString())
-                            {
-                                dtPro = dtPro.AsEnumerable().OrderBy(dr => dr.Field<string>("Name")).CopyToDataTable();
-                            }
-                            else
-                            {
-                                dtPro = dtPro.AsEnumerable().OrderByDescending(dr => dr.Field<string>("Name")).CopyToDataTable();
-                            }
-                            for (int i = 0; i < dtPro.Rows.Count; i++)
-                            {
-                                ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
-                            }
-                            ltrPaging.Text = GeneralPaging();
-                            List<GroupProduct> listGroupSub = GroupProductService.GroupProduct_GetByTop("", "Active = 1 AND len([Level]) > len('" + listGroup[0].Level + "') AND left([Level], 5) = left('" + listGroup[0].Level + "', 5)", "[Level]");
-                            if (listGroupSub.Count > 0)
-                            {
-                                for (int i = 0; i < listGroupSub.Count; i++)
-                                {
-                                    ltrCrumb.Text += "<li class='crumb-" + (i + 1).ToString() + "'>\n";
-                                    ltrCrumb.Text += "<a href='" + PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGroupSub[i].Id, listGroupSub[i].Name) + "' title='" + listGroupSub[i].Name + "'>" + listGroupSub[i].Name + "</a>\n";
-                                    ltrCrumb.Text += "</li>\n";
-                                }
-                            }
-                        }
-                    }
+					if (keyword == null)
+					{
+						if (Microsoft.VisualBasic.Information.IsNumeric(id) == false)
+						{
+							return;
+						}
+						listGroup = GroupProductService.GroupProduct_GetById(id);
+						if (listGroup.Count > 0)
+						{
+							groupName = listGroup[0].Name;
+							totalcount = ProductService.Product_GetCount(listGroup[0].Level);
+							dtPro = ProductService.Product_Pagination(pagenum, perpage.ToString(), listGroup[0].Level);
+							if (dtPro.Rows.Count > 0)
+							{
+								if (sort == Consts.SortNum.asc.ToString())
+								{
+									dtPro = dtPro.AsEnumerable().OrderBy(dr => dr.Field<string>("Name")).CopyToDataTable();
+								}
+								else
+								{
+									dtPro = dtPro.AsEnumerable().OrderByDescending(dr => dr.Field<string>("Name")).CopyToDataTable();
+								}
+								for (int i = 0; i < dtPro.Rows.Count; i++)
+								{
+									ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
+								}
+								ltrPaging.Text = GeneralPaging();
+								List<GroupProduct> listGroupSub = GroupProductService.GroupProduct_GetByTop("", "Active = 1 AND len([Level]) < len('" + listGroup[0].Level + "') AND left([Level], 5) = left('" + listGroup[0].Level + "', 5)", "[Level]");
+								if (listGroupSub.Count > 0)
+								{
+									for (int i = 0; i < listGroupSub.Count; i++)
+									{
+										ltrCrumb.Text += "<li class='crumb-" + (i + 1).ToString() + "'>\n";
+										ltrCrumb.Text += "<a href='" + PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGroupSub[i].Id, listGroupSub[i].Name) + "' title='" + listGroupSub[i].Name + "'>" + listGroupSub[i].Name + "</a>\n";
+										ltrCrumb.Text += "</li>\n";
+									}
+								}
+							}
+						}
+					}
+					else
+					{
+						if (keyword == string.Empty)
+						{
+							dtPro = ProductService.Product_GetByTop("", "Active = 1", "Ord DESC");
+						}
+						else
+						{
+							dtPro = ProductService.Product_GetByTop("", "Active = 1 AND (Name like '%" + keyword + "%' OR Detail like '%" + keyword + "%' OR Content like '%" + keyword + "%')", "Ord DESC");
+						}
+						totalcount = dtPro.Rows.Count;
+						for (int i = 0; i < dtPro.Rows.Count; i++)
+						{
+							ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
+						}
+						ltrCrumb.Text += "<li class='crumb-1'>"+keyword+"</li>\n";
+					}             
                 }
                 catch (Exception ex)
                 {

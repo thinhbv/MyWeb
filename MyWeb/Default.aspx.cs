@@ -24,41 +24,41 @@ namespace MyWeb
                     Page.MetaDescription = dtConfig.Rows[0]["Description"].ToString();
                     Page.MetaKeywords = dtConfig.Rows[0]["Keyword"].ToString();
                 }
-                List<Product> listProduct = new List<Product>();
+				DataTable dtProduct = new DataTable();
                 //Get sản phẩm phổ biến
-                listProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsPopular] = 1", "Ord");
-                if (listProduct.Count > 0)
+                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsPopular] = 1", "Ord");
+                if (dtProduct.Rows.Count > 0)
                 {
-                    for (int i = 0; i < listProduct.Count; i++)
+					for (int i = 0; i < dtProduct.Rows.Count; i++)
                     {
-                        ltrProFeatured.Text += GeneralProductHtml(i + 1, listProduct);
+                        ltrProFeatured.Text += GeneralProductHtml(i + 1, dtProduct);
                     }
                 }
                 //Get sản phẩm mới
-                listProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsNew] = 1", "Ord");
-                if (listProduct.Count > 0)
+                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsNew] = 1", "Ord");
+                if (dtProduct.Rows.Count > 0)
                 {
-                    for (int i = 0; i < listProduct.Count; i++)
+					for (int i = 0; i < dtProduct.Rows.Count; i++)
                     {
-                        ltrProNew.Text += GeneralProductHtml(i + 1, listProduct);
+                        ltrProNew.Text += GeneralProductHtml(i + 1, dtProduct);
                     }
                 }
                 //Get sản phẩm bán chạy
-                listProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsHot] = 1", "Ord");
-                if (listProduct.Count > 0)
+                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsHot] = 1", "Ord");
+				if (dtProduct.Rows.Count > 0)
                 {
-                    for (int i = 0; i < listProduct.Count; i++)
+					for (int i = 0; i < dtProduct.Rows.Count; i++)
                     {
-                        ltrProSeller.Text += GeneralProductHtml(i + 1, listProduct);
+                        ltrProSeller.Text += GeneralProductHtml(i + 1, dtProduct);
                     }
                 }
                 //Get sản phẩm đặc biệt
-                listProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsSpecial] = 1", "Ord");
-                if (listProduct.Count > 0)
+                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsSpecial] = 1", "Ord");
+				if (dtProduct.Rows.Count > 0)
                 {
-                    for (int i = 0; i < listProduct.Count; i++)
+					for (int i = 0; i < dtProduct.Rows.Count; i++)
                     {
-                        ltrProSpecial.Text += GeneralProductHtml(i + 1, listProduct);
+                        ltrProSpecial.Text += GeneralProductHtml(i + 1, dtProduct);
                     }
                 }
 
@@ -87,7 +87,7 @@ namespace MyWeb
             }
         }
 
-        private string GeneralProductHtml(int i, List<Product> listProduct)
+        private string GeneralProductHtml(int i, DataTable dtProduct)
         {
             string strHtml = string.Empty;
             strHtml = "<li class=\"ajax_block_product col-xs-12 col-sm-4 col-md-3 ";
@@ -124,24 +124,24 @@ namespace MyWeb
             strHtml += "<div class=\"product-container\">\n";
             strHtml += "<div class=\"left-block\">\n";
             strHtml += "<div class=\"product-image-container\">\n";
-            List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("1", "Id=" + listProduct[i].GroupId, "");
-            string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, listProduct[i].Id, listProduct[i].Name);
-            strHtml += "<a class=\"product_img_link\" href=\"" + strURL + "\" title='" + listProduct[i].Name + "' itemprop=\"url\">\n";
-            strHtml += "<img class=\"replace-2x img-responsive\" src='" + StringClass.ThumbImage(listProduct[i].Image1) + "' alt='" + listProduct[i].Name + "' title='" + listProduct[i].Name + "' itemprop=\"image\" /></a>\n";
-			if (listProduct[i].IsNew == "1")
+            List<GroupProduct> listG = GroupProductService.GroupProduct_GetByTop("1", "Id=" + dtProduct.Rows[i]["GroupId"].ToString(), "");
+			string strURL = PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, listG[0].Name, dtProduct.Rows[i]["Id"].ToString(), dtProduct.Rows[i]["Name"].ToString());
+			strHtml += "<a class=\"product_img_link\" href=\"" + strURL + "\" title='" + dtProduct.Rows[i]["Name"].ToString() + "' itemprop=\"url\">\n";
+            strHtml += "<img class=\"replace-2x img-responsive\" src='" + StringClass.ThumbImage(dtProduct.Rows[i]["Image1"].ToString()) + "' alt='" + dtProduct.Rows[i]["Name"].ToString() + "' title='" + dtProduct.Rows[i]["Name"].ToString() + "' itemprop=\"image\" /></a>\n";
+			if (dtProduct.Rows[i]["IsNew"].ToString() == "1")
 			{
 				strHtml += "<a class=\"new-box\" href='#'><span class=\"new-label\">New</span></a>\n";
 			}
             strHtml += "</div><!--left-block-->\n</div><!--roduct-image-container-->\n";
             strHtml += "<div class=\"right-block\">\n";
             strHtml += "<h5 itemprop=\"name\">\n";
-            strHtml += "<a class=\"product-name\" href=\"" + strURL + "\" title='" + listProduct[i].Name + "' itemprop=\"url\">\n";
-            strHtml += "<span class=\"list-name\">" + listProduct[i].Name + "</span>\n";
-            strHtml += "<span class=\"grid-name\">" + listProduct[i].Name + "</span>\n";
+			strHtml += "<a class=\"product-name\" href=\"" + strURL + "\" title='" + dtProduct.Rows[i]["Name"].ToString() + "' itemprop=\"url\">\n";
+			strHtml += "<span class=\"list-name\">" + dtProduct.Rows[i]["Name"].ToString() + "</span>\n";
+			strHtml += "<span class=\"grid-name\">" + dtProduct.Rows[i]["Name"].ToString() + "</span>\n";
             strHtml += "</a></h5>\n";
             strHtml += "<p class=\"product-desc\" itemprop=\"description\">\n";
 			//strHtml += "<span class=\"list-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 200) + "</span>\n";
-            strHtml += "<span class=\"grid-desc\">" + StringClass.FormatContentNews(listProduct[i].Content, 100) + "</span></p>\n";
+			strHtml += "<span class=\"grid-desc\">" + StringClass.FormatContentNews(dtProduct.Rows[i]["Content"].ToString(), 100) + "</span></p>\n";
             strHtml += "<div class=\"buttons\">\n";
             strHtml += "<a class=\"quick-view\" href=\"" + strURL + "\" data-href=\"" + strURL + "\">\n";
             strHtml += "<span>Chi tiết</span></a>\n</div><!--buttons-->\n";

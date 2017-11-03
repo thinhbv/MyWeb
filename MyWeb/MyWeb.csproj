@@ -230,6 +230,7 @@
     <Content Include="img\bx_loader.gif" />
     <Content Include="img\shadow.png" />
     <Content Include="img\warning_bar_0000_us.jpg" />
+    <Content Include="InnerError.html" />
     <Content Include="Modules\Images\ImageList.aspx" />
     <Content Include="Modules\News\NewsDetail.aspx" />
     <Content Include="Modules\News\ViewNews.aspx" />

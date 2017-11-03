@@ -16,7 +16,7 @@ namespace MyWeb.Business
         }
         #endregion
         #region[Product_GetByTop]
-        public static List<Data.Product> Product_GetByTop(string Top, string Where, string Order)
+        public static DataTable Product_GetByTop(string Top, string Where, string Order)
         {
             return db.Product_GetByTop(Top, Where, Order);
         }

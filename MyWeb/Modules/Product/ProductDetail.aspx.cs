@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using MyWeb.Data;
 using MyWeb.Business;
 using MyWeb.Common;
+using System.Data;
 
 namespace MyWeb.Modules.Product
 {
@@ -47,17 +48,17 @@ namespace MyWeb.Modules.Product
                             ltrImages.Text += ShowImages(pro[0].Image5, "5");
 
                             //Hiển thị sản phẩm tương tự
-							List<Data.Product> listRelated = ProductService.Product_GetByTop("", "Active = 1 AND GroupId='" + pro[0].GroupId + "' AND Id <> '" + id + "'", "Ord");
-                            if (listRelated.Count > 0)
+							DataTable dtRelated = ProductService.Product_GetByTop("", "Active = 1 AND GroupId='" + pro[0].GroupId + "' AND Id <> '" + id + "'", "Ord");
+							if (dtRelated.Rows.Count > 0)
                             {
                                 ltrRelated.Text += "<ul id='bxslider' class='bxslider clearfix' style='width: 915%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);'>\n";
-                                for (int i = 0; i < listRelated.Count; i++)
+								for (int i = 0; i < dtRelated.Rows.Count; i++)
                                 {
                                     if (i == 0)
                                     {
                                         ltrRelated.Text += "<li class='item product-box ajax_block_product first_item product_accessories_description' style='float: left; list-style: none; position: relative; margin-right: 20px; width: 178px;'>\n";
                                     }
-                                    else if (i == listRelated.Count - 1)
+									else if (i == dtRelated.Rows.Count - 1)
                                     {
                                         ltrRelated.Text += "<li class='item product-box ajax_block_product last_item product_accessories_description' style='float: left; list-style: none; position: relative; margin-right: 20px; width: 178px;'>\n";
                                     }
@@ -66,13 +67,13 @@ namespace MyWeb.Modules.Product
                                         ltrRelated.Text += "<li class='item product-box ajax_block_product product_accessories_description' style='float: left; list-style: none; position: relative; margin-right: 20px; width: 178px;'>\n";
                                     }
                                     ltrRelated.Text += "<div class='product_desc'>\n";
-                                    ltrRelated.Text += "<a href='" + PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, groupname, listRelated[i].Id, listRelated[i].Name) + "' title='" + listRelated[i].Name + "' class='product-image product_image'>\n";
-									ltrRelated.Text += "<img class='lazyOwl' src='" + StringClass.ThumbImage(listRelated[i].Image1) + "' alt='" + listRelated[i].Name + "'></a>\n";
-                                    ltrRelated.Text += "<div class='block_description'><span>" + StringClass.FormatContentNews(listRelated[i].Content, 50) + "</span></div>\n";
+									ltrRelated.Text += "<a href='" + PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, groupname, dtRelated.Rows[i]["Id"].ToString(), dtRelated.Rows[i]["Name"].ToString()) + "' title='" + dtRelated.Rows[i]["Name"].ToString() + "' class='product-image product_image'>\n";
+									ltrRelated.Text += "<img class='lazyOwl' src='" + StringClass.ThumbImage(dtRelated.Rows[i]["Image1"].ToString()) + "' alt='" + dtRelated.Rows[i]["Name"].ToString() + "'></a>\n";
+									ltrRelated.Text += "<div class='block_description'><span>" + StringClass.FormatContentNews(dtRelated.Rows[i]["Content"].ToString(), 50) + "</span></div>\n";
                                     ltrRelated.Text += "</div>\n";
                                     ltrRelated.Text += "<div class='s_title_block'>\n";
                                     ltrRelated.Text += "<h5 class='product-name'>\n";
-                                    ltrRelated.Text += "<a href='" + PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, groupname, listRelated[i].Id, listRelated[i].Name) + "' title='" + listRelated[i].Name + "'>" + listRelated[i].Name + "</a>\n</h5>\n</div>\n";
+									ltrRelated.Text += "<a href='" + PageHelper.GeneralDetailUrl(Consts.CON_SAN_PHAM, groupname, dtRelated.Rows[i]["Id"].ToString(), dtRelated.Rows[i]["Name"].ToString()) + "' title='" + dtRelated.Rows[i]["Name"].ToString() + "'>" + dtRelated.Rows[i]["Name"].ToString() + "</a>\n</h5>\n</div>\n";
                                     ltrRelated.Text += "</li>";
                                 }
                                 ltrRelated.Text += "</ul>";
