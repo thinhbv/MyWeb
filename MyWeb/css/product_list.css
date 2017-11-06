@@ -233,10 +233,6 @@ ul.product_list .product-image-container {
 	position: relative;
 }
 
-	ul.product_list .product-image-container img {
-		margin: 0 auto;
-	}
-
 ul.product_list .comments_note {
 	text-align: center;
 	overflow: hidden;
@@ -400,8 +396,7 @@ ul.product_list.grid > li .product-container {
 			background: #f7f7f7;
 			display: block;
 			position: relative;
-			display: block;
-			position: relative;
+			height:270px;
 		}
 
 			ul.product_list.grid > li .product-container .product-image-container .product_img_link:after {
@@ -651,6 +646,7 @@ ul.product_list.list > li .product-image-container .product_img_link {
 	background: #f7f7f7;
 	display: block;
 	position: relative;
+	height:270px;
 }
 
 ul.product_list.list > li .product-image-container .content_price {

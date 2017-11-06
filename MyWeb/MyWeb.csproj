@@ -206,6 +206,7 @@
     <Content Include="css\homeslider.css" />
     <Content Include="css\hooks%281%29.css" />
     <Content Include="css\hooks.css" />
+    <Content Include="css\jquery.jqzoom.css" />
     <Content Include="css\product.css" />
     <Content Include="css\product_list.css" />
     <Content Include="css\responsive-tables.css" />
@@ -1129,7 +1130,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54368</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

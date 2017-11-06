@@ -20,7 +20,7 @@ namespace MyWeb.Controls
             {
                 ltrNews.Text = "<h4 class='title_block'>Tin mới nhất</h4>\n";
                 ltrNews.Text += "<div class='block_content products-block'>\n<ul>\n";
-                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     if (i == 0)
                     {
@@ -34,10 +34,10 @@ namespace MyWeb.Controls
                     {
                         ltrNews.Text += "<li class='clearfix'>\n";
                     }
-                    ltrNews.Text += "<a class='products-block-image' title='" + dt.Rows[i]["Name"].ToString() + "' href='" + PageHelper.GeneralDetailUrl(Consts.CON_TIN_TUC, dt.Rows[0]["GroupNewsId"].ToString(), dt.Rows[0]["Id"].ToString(), dt.Rows[0]["Name"].ToString()) + "'>\n";
+                    ltrNews.Text += "<a class='products-block-image' title='" + dt.Rows[i]["Name"].ToString() + "' href='" + PageHelper.GeneralDetailUrl(Consts.CON_TIN_TUC, dt.Rows[i]["GroupNewsId"].ToString(), dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString()) + "'>\n";
                     ltrNews.Text += "<img alt='" + dt.Rows[i]["Name"].ToString() + "' src='" + dt.Rows[i]["Image"].ToString() + "'></a>\n";
                     ltrNews.Text += "<div class='product-content'>\n";
-                    ltrNews.Text += "<h5><a class='post-name product-name' title='" + dt.Rows[i]["Name"].ToString() + "' href='" + PageHelper.GeneralDetailUrl(Consts.CON_TIN_TUC, dt.Rows[0]["GroupNewsId"].ToString(), dt.Rows[0]["Id"].ToString(), dt.Rows[0]["Name"].ToString()) + "'>" + dt.Rows[i]["Name"].ToString() + "</a></h5>\n";
+                    ltrNews.Text += "<h5><a class='post-name product-name' title='" + dt.Rows[i]["Name"].ToString() + "' href='" + PageHelper.GeneralDetailUrl(Consts.CON_TIN_TUC, dt.Rows[i]["GroupNewsId"].ToString(), dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString()) + "'>" + dt.Rows[i]["Name"].ToString() + "</a></h5>\n";
                     ltrNews.Text += "<span class='info'>" + dt.Rows[i]["Date"].ToString() + "</span></div>\n";
                 }
                 ltrNews.Text += "</ul></div>\n";

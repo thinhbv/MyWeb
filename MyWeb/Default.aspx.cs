@@ -170,7 +170,7 @@ namespace MyWeb
             strHtml += "<img alt='" + dt.Rows[i]["Name"].ToString() + "' class='img-responsive' src='" + dt.Rows[i]["Image"].ToString() + "'></a></div>\n";
             strHtml += "<div class='post-content'>\n";
             strHtml += "<h5><a class='product-name' href='" + strURL + "'>" + dt.Rows[i]["Name"].ToString() + "</a></h5>\n";
-            strHtml += "<p class='post-descr'>" + StringClass.FormatContentNews(dt.Rows[i]["Content"].ToString(), 200) + "</p>\n";
+            strHtml += "<p class='post-descr'>" + StringClass.FormatContentNews(dt.Rows[i]["Content"].ToString(), 100) + "</p>\n";
             strHtml += "<a href='" + strURL + "' class='btn btn-default btn-sm icon-right'><span>Chi tiêt</span></a>";
             strHtml += "<p class='date-added'>" + DateTimeClass.ConvertDateTime(dt.Rows[i]["Date"].ToString(), "MM/dd/yyyy HH:mm:ss") + "</p>\n";
             strHtml += "</div>\n</div>\n</li>\n";

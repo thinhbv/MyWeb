@@ -333,7 +333,7 @@
 }
 
 	#tmhtmlcontent_home ul li {
-		padding: 0;
+		padding: 20px 0;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
@@ -382,7 +382,6 @@
 
 #tmhtmlcontent_home ul li .item-html {
 	display: inline-block;
-	padding-top: 9%;
 	text-align: right;
 	width: 80%;
 }

@@ -102,7 +102,7 @@ a.read-more {
 #sdsblogArticle .post-image {
 	display: block;
 	margin-bottom: 10px;
-	font-weight:bold;
+	font-weight: bold;
 }
 
 	#sdsblogArticle .post-image img {
@@ -361,6 +361,7 @@ ul.commentList ul {
 			background: #f7f7f7;
 			display: block;
 			position: relative;
+			height: 270px;
 		}
 
 @media only screen and (min-width: 992px) {
