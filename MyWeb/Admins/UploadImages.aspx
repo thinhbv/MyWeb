@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="UploadImages.aspx.cs" Inherits="MyWeb.Admins.UploadImages" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+	<script type="text/javascript">
+		function OpenCenter(url, name, w, h) {
+			var left = (screen.width - w) / 2;
+			var top = (screen.height - h) / 4;
+			var win = window.open(url, name, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+		}
+	</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="PageName">
@@ -14,6 +21,8 @@
 					<ul>
 						<li>
 							<asp:LinkButton CssClass="uupdate" ID="lbtUploadT" runat="server" OnClick="lbtUpload_Click">Upload</asp:LinkButton></li>
+						<li>
+							<a href="javascript:void(0);" class="vadd" onclick="OpenCenter('/scripts/ckfinder/ckfinder.html','CreateFolder','600', '600');" >Tạo thư mục</a></li>
 						<li>
 							<asp:LinkButton CssClass="uback" ID="lbtClearT" runat="server"
 								CausesValidation="False">Clear</asp:LinkButton></li>
@@ -56,6 +65,8 @@
 					<ul>
 						<li>
 							<asp:LinkButton CssClass="uupdate" ID="lbtUploadB" runat="server" OnClick="lbtUpload_Click">Upload</asp:LinkButton></li>
+						<li>
+							<a href="javascript:void(0);" class="vadd" onclick='window.open("/scripts/ckfinder/ckfinder.html","CreateFolder","width=500,height=700");' >Tạo thư mục</a></li>
 						<li>
 							<asp:LinkButton CssClass="uback" ID="lbtClearB" runat="server"
 								CausesValidation="False">Clear</asp:LinkButton></li>
