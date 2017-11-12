@@ -27,8 +27,8 @@ namespace MyWeb
             RouteTable.Routes.MapPageRoute("NewsDetail", "tin-tuc/{groupName}/{Id}/{title}", "~/Modules/News/NewsDetail.aspx");
             RouteTable.Routes.MapPageRoute("Images", "Thu-vien-anh/{GroupId}/{title}", "~/Modules/Images/ImageList.aspx");
             //Page routes
-            RouteTable.Routes.MapPageRoute("PageDetail", "{title}-{pageId}", "~/Modules/Page/PageDetail.aspx");
-            RouteTable.Routes.MapPageRoute("Contact", "Contact", "~/Modules/Page/Contact.aspx");
+            RouteTable.Routes.MapPageRoute("PageDetail", "trang-tin/{title}-{pageId}", "~/Modules/Page/PageDetail.aspx");
+            RouteTable.Routes.MapPageRoute("Contact", "lien-he", "~/Modules/Page/Contact.aspx");
             RouteTable.Routes.MapPageRoute("Logon", "Logon", "~/Modules/Page/Logon.aspx");
             RouteTable.Routes.MapPageRoute("Admin", "admin", "~/Admins/Default.aspx");
         }
@@ -82,7 +82,7 @@ namespace MyWeb
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+			Response.Redirect("/InnerError.html", false);
         }
 
         protected void Session_End(object sender, EventArgs e)

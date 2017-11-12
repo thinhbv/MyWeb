@@ -107,12 +107,12 @@ namespace MyWeb.Modules.Product
 							ltrProducts.Text += GeneralProductHtml(i + 1, dtPro);
 						}
 						ltrCrumb.Text += "<li class='crumb-1'>" + Server.HtmlEncode(keyword) + "</li>\n";
-					}             
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+					}
+				}
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
 

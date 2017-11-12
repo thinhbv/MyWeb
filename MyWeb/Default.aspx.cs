@@ -15,76 +15,84 @@ namespace MyWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                DataTable dtConfig = ConfigService.Config_GetByTop("1", "", "");
-                if (dtConfig.Rows.Count > 0)
-                {
-                    Page.Title = dtConfig.Rows[0]["Title"].ToString();
-                    Page.MetaDescription = dtConfig.Rows[0]["Description"].ToString();
-                    Page.MetaKeywords = dtConfig.Rows[0]["Keyword"].ToString();
-                }
-				DataTable dtProduct = new DataTable();
-                //Get sản phẩm phổ biến
-                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsPopular] = 1", "Ord");
-                if (dtProduct.Rows.Count > 0)
-                {
-					for (int i = 0; i < dtProduct.Rows.Count; i++)
-                    {
-                        ltrProFeatured.Text += GeneralProductHtml(i + 1, dtProduct);
-                    }
-                }
-                //Get sản phẩm mới
-                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsNew] = 1", "Ord");
-                if (dtProduct.Rows.Count > 0)
-                {
-					for (int i = 0; i < dtProduct.Rows.Count; i++)
-                    {
-                        ltrProNew.Text += GeneralProductHtml(i + 1, dtProduct);
-                    }
-                }
-                //Get sản phẩm bán chạy
-                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsHot] = 1", "Ord");
-				if (dtProduct.Rows.Count > 0)
-                {
-					for (int i = 0; i < dtProduct.Rows.Count; i++)
-                    {
-                        ltrProSeller.Text += GeneralProductHtml(i + 1, dtProduct);
-                    }
-                }
-                //Get sản phẩm đặc biệt
-                dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsSpecial] = 1", "Ord");
-				if (dtProduct.Rows.Count > 0)
-                {
-					for (int i = 0; i < dtProduct.Rows.Count; i++)
-                    {
-                        ltrProSpecial.Text += GeneralProductHtml(i + 1, dtProduct);
-                    }
-                }
+			try
+			{
 
-                //Giới thiệu về chúng tôi
-                DataTable dt = PageService.Page_GetByTop("1", "Name like N'%giới thiệu%'", "");
-                if (dt.Rows.Count > 0)
-                {
-                    ltrAbout.Text = "<h3>" + dt.Rows[0]["Name"].ToString() + "</h3>\n";
-                    ltrAbout.Text += "<p>" + StringClass.GetContent(dt.Rows[0]["Description"].ToString(), 500) + "</p>\n";
-                    ltrAbout.Text += "<p><a href='" + dt.Rows[0]["Link"].ToString() + "' class='btn btn-default'><span>Chi tiết</span></a></p>\n";
-                    ltrAboutImg.Text = "<a href='" + dt.Rows[0]["Link"].ToString() + "' class='item-link' title='" + dt.Rows[0]["Name"].ToString() + "'>\n";
-                    ltrAboutImg.Text += "<img src='" + dt.Rows[0]["Image"].ToString() + "' class='item-img' title='" + dt.Rows[0]["Name"].ToString() + "' alt='" + dt.Rows[0]["Name"].ToString() + "' width='100%' height='100%'/></a>";
-                }
-                dt.Clear();
-                dt = NewsService.News_GetByTop("3", "Active = 1 AND [Priority] = 1", "Date Desc");
-                if (dt.Rows.Count > 0)
-                {
-                    ltrNews.Text = "<h4 class='title_block'>Tin mới nhất</h4>\n";
-                    ltrNews.Text += "<div class='block_content'>\n<ul class='row'>\n";
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        ltrNews.Text += GeneralNewsHtml(i, dt);
-                    }
-                    ltrNews.Text += "</ul>\n</div>\n";
-                }
-            }
+				if (!IsPostBack)
+				{
+					DataTable dtConfig = ConfigService.Config_GetByTop("1", "", "");
+					if (dtConfig.Rows.Count > 0)
+					{
+						Page.Title = dtConfig.Rows[0]["Title"].ToString();
+						Page.MetaDescription = dtConfig.Rows[0]["Description"].ToString();
+						Page.MetaKeywords = dtConfig.Rows[0]["Keyword"].ToString();
+					}
+					DataTable dtProduct = new DataTable();
+					//Get sản phẩm phổ biến
+					dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsPopular] = 1", "Ord");
+					if (dtProduct.Rows.Count > 0)
+					{
+						for (int i = 0; i < dtProduct.Rows.Count; i++)
+						{
+							ltrProFeatured.Text += GeneralProductHtml(i + 1, dtProduct);
+						}
+					}
+					//Get sản phẩm mới
+					dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsNew] = 1", "Ord");
+					if (dtProduct.Rows.Count > 0)
+					{
+						for (int i = 0; i < dtProduct.Rows.Count; i++)
+						{
+							ltrProNew.Text += GeneralProductHtml(i + 1, dtProduct);
+						}
+					}
+					//Get sản phẩm bán chạy
+					dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsHot] = 1", "Ord");
+					if (dtProduct.Rows.Count > 0)
+					{
+						for (int i = 0; i < dtProduct.Rows.Count; i++)
+						{
+							ltrProSeller.Text += GeneralProductHtml(i + 1, dtProduct);
+						}
+					}
+					//Get sản phẩm đặc biệt
+					dtProduct = ProductService.Product_GetByTop("", "Active = 1 And [IsSpecial] = 1", "Ord");
+					if (dtProduct.Rows.Count > 0)
+					{
+						for (int i = 0; i < dtProduct.Rows.Count; i++)
+						{
+							ltrProSpecial.Text += GeneralProductHtml(i + 1, dtProduct);
+						}
+					}
+
+					//Giới thiệu về chúng tôi
+					DataTable dt = PageService.Page_GetByTop("1", "Name like N'%giới thiệu%'", "");
+					if (dt.Rows.Count > 0)
+					{
+						ltrAbout.Text = "<h3>" + dt.Rows[0]["Name"].ToString() + "</h3>\n";
+						ltrAbout.Text += "<p>" + StringClass.GetContent(dt.Rows[0]["Description"].ToString(), 500) + "</p>\n";
+						ltrAbout.Text += "<p><a href='" + dt.Rows[0]["Link"].ToString() + "' class='btn btn-default'><span>Chi tiết</span></a></p>\n";
+						ltrAboutImg.Text = "<a href='" + dt.Rows[0]["Link"].ToString() + "' class='item-link' title='" + dt.Rows[0]["Name"].ToString() + "'>\n";
+						ltrAboutImg.Text += "<img src='" + dt.Rows[0]["Image"].ToString() + "' class='item-img' title='" + dt.Rows[0]["Name"].ToString() + "' alt='" + dt.Rows[0]["Name"].ToString() + "' width='100%' height='100%'/></a>";
+					}
+					dt.Clear();
+					dt = NewsService.News_GetByTop("3", "Active = 1 AND [Priority] = 1", "Date Desc");
+					if (dt.Rows.Count > 0)
+					{
+						ltrNews.Text = "<h4 class='title_block'>Tin mới nhất</h4>\n";
+						ltrNews.Text += "<div class='block_content'>\n<ul class='row'>\n";
+						for (int i = 0; i < dt.Rows.Count; i++)
+						{
+							ltrNews.Text += GeneralNewsHtml(i, dt);
+						}
+						ltrNews.Text += "</ul>\n</div>\n";
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MailSender.SendMail("", "","Error System", ex.Message);
+			}
         }
 
         private string GeneralProductHtml(int i, DataTable dtProduct)

@@ -17,13 +17,20 @@ namespace MyWeb.Controls
         {
             if (!IsPostBack)
             {
-                List<Advertise> listBanner = new List<Advertise>();
-                listBanner=AdvertiseService.Advertise_GetByPosition("2");
-                if (listBanner.Count>0)
-                {
-                    rptBanner.DataSource = listBanner;
-                    rptBanner.DataBind();
-                }
+				try
+				{
+					List<Advertise> listBanner = new List<Advertise>();
+					listBanner = AdvertiseService.Advertise_GetByPosition("2");
+					if (listBanner.Count > 0)
+					{
+						rptBanner.DataSource = listBanner;
+						rptBanner.DataBind();
+					}
+				}
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
     }

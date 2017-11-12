@@ -56,12 +56,12 @@ namespace MyWeb.Modules.News
                                 GeneralNewsReleate(i, dtNewsReleate.Rows[i]);
                             }
                         }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+					}
+				}
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
 

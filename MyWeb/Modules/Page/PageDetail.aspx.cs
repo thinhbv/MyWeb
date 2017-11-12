@@ -24,18 +24,22 @@ namespace MyWeb.Modules.Page
             {
                 try
                 {
+					if (Microsoft.VisualBasic.Information.IsNumeric(pageId) == false)
+					{
+						return;
+					}
                     DataTable dtPage = PageService.Page_GetById(pageId);
                     if (dtPage.Rows.Count > 0)
                     {
                         title = dtPage.Rows[0]["Name"].ToString();
 						content = dtPage.Rows[0]["Description"].ToString();
                         ltrDetail.Text = dtPage.Rows[0]["Detail"].ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+					}
+				}
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
     }

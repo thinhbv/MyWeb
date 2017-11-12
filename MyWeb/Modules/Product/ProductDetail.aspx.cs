@@ -79,12 +79,12 @@ namespace MyWeb.Modules.Product
                                 ltrRelated.Text += "</ul>";
                             }
                         }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+					}
+				}
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
         private string ShowImages(string path, string index)

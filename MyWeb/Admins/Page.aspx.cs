@@ -36,30 +36,33 @@ namespace MyWeb.Admins
         private void LoadDropDownListPageLink()
         {
             ddlLink.Items.Clear();
-            ddlLink.Items.Add(new ListItem("Trang chủ", "/Default.aspx"));
+            ddlLink.Items.Add(new ListItem("Trang chủ", "/"));
             DataTable dt = new DataTable();
             dt = GroupNewsService.GroupNews_GetByTop("", "Active=1", "Level, Ord");
+			ddlLink.Items.Add(new ListItem("Tin tức", "#"));
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(dt.Rows[i]["Name"].ToString(), dt.Rows[i]["Level"].ToString()), PageHelper.GeneralGroupUrl(Consts.CON_TIN_TUC, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString())));
+                ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(dt.Rows[i]["Name"].ToString(), dt.Rows[i]["Level"].ToString() + "00000"), PageHelper.GeneralGroupUrl(Consts.CON_TIN_TUC, dt.Rows[i]["Id"].ToString(), dt.Rows[i]["Name"].ToString())));
             }
             List<Data.GroupImages> listG = GroupImagesService.GroupImages_GetByTop("", "Active=1", "Level, Ord");
+			ddlLink.Items.Add(new ListItem("Hình ảnh", "#"));
             if (listG.Count > 0)
             {
                 for (int i = 0; i < listG.Count; i++)
                 {
-                    ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listG[i].Name, listG[i].Level), "/Thu-vien-anh/" + listG[i].Id + "/" + StringClass.NameToTag(listG[i].Name)));
+					ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listG[i].Name, listG[i].Level + "00000"), "/Thu-vien-anh/" + listG[i].Id + "/" + StringClass.NameToTag(listG[i].Name)));
                 }
             }
             List<Data.GroupProduct> listGProduct = GroupProductService.GroupProduct_GetByTop("", "Active=1", "Level, Ord");
+			ddlLink.Items.Add(new ListItem("Sản phẩm", "#"));
             if (listGProduct.Count > 0)
             {
                 for (int i = 0; i < listGProduct.Count; i++)
                 {
-                    ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listGProduct[i].Name, listGProduct[i].Level), PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGProduct[i].Id, listGProduct[i].Name)));
+					ddlLink.Items.Add(new ListItem(StringClass.ShowNameLevel(listGProduct[i].Name, listGProduct[i].Level + "00000"), PageHelper.GeneralGroupUrl(Consts.CON_SAN_PHAM, listGProduct[i].Id, listGProduct[i].Name)));
                 }
             }
-            ddlLink.Items.Add(new ListItem("Liên hệ", "/Contact.aspx"));
+            ddlLink.Items.Add(new ListItem("Liên hệ", "/lien-he"));
             ddlLink.DataBind();
         }
 
@@ -235,7 +238,7 @@ namespace MyWeb.Admins
                 {
                     DataTable dt = new DataTable();
                     dt = PageService.Page_GetById(Id);
-                    Link = "/" + StringClass.NameToTag(dt.Rows[0]["Name"].ToString()) + "-" + Id;
+                    Link = "trang-tin/" + StringClass.NameToTag(dt.Rows[0]["Name"].ToString()) + "-" + Id;
                     sql.ExecuteNonQuery("Update Page set Link='" + Link + "'  Where Id='" + Id + "'");
                 }
                 BindGrid();

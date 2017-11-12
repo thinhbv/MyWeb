@@ -27,11 +27,18 @@ namespace MyWeb.Controls
 
         protected void LinkButton_Click(object sender, EventArgs e)
         {
-            LinkButton lbt = (LinkButton)sender;
-            LastLoadedPage = lbt.ID.Replace("lbt", "/Admins/") + ".aspx";
-            Panel currentPanel = (Panel)lbt.Parent;
-            Session["currentPanel"] = currentPanel.ID;
-            Response.Redirect(LastLoadedPage);
+			try
+			{
+				LinkButton lbt = (LinkButton)sender;
+				LastLoadedPage = lbt.ID.Replace("lbt", "/Admins/") + ".aspx";
+				Panel currentPanel = (Panel)lbt.Parent;
+				Session["currentPanel"] = currentPanel.ID;
+				Response.Redirect(LastLoadedPage, false);
+			}
+			catch (Exception ex)
+			{
+				MailSender.SendMail("", "", "Error System", ex.Message);
+			}
         }
     }
 }

@@ -103,7 +103,7 @@ namespace MyWeb.Common
 
         public static void ErrorMessage(string strError)
         {
-            HttpContext.Current.Response.Redirect(ApplicationPath + "/error.aspx?error=" + strError);
+            HttpContext.Current.Response.Redirect(ApplicationPath + "/error.aspx?error=" + strError, false);
         }
         /// <summary>
         /// Get config Key in config file

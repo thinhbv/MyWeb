@@ -29,8 +29,6 @@
 <link href="./css/tmmegalayout.css" rel="stylesheet" />
 <link href="./css/hooks(1).css" rel="stylesheet" />
 
-<asp:ContentPlaceHolder ID="HeadContent" runat="server">
-</asp:ContentPlaceHolder>
 <script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="../scripts/tools.js"></script>
 <script type="text/javascript" src="../scripts/global.js"></script>
@@ -45,6 +43,8 @@
 <script type="text/javascript" src="../scripts/homeslider.js"></script>
 <script type="text/javascript" src="../scripts/superfish.js"></script>
 <script type="text/javascript" src="../scripts/tmmegamenu.js"></script>
+<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+</asp:ContentPlaceHolder>
 </head>
 <body id="index" class="index hide-left-column hide-right-column lang_en  one-column">
 <div id="page">
@@ -59,7 +59,7 @@
 						<div class="row">
 							<div id="header_logo">
 								<a href="/" title="Đá Mỹ Nghệ Hoàng Thành">
-									<img class="logo" src="./images/logo.png" alt="Đá Mỹ Nghệ Hoàng Thành" width="1170" height="250" />
+									<img class="logo" src="../images/logo.png" alt="Đá Mỹ Nghệ Hoàng Thành" width="1170" height="250" />
 								</a>
 							</div><!--header_logo-->
 						</div><!--row-->

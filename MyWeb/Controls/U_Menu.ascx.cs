@@ -18,11 +18,18 @@ namespace MyWeb.Controls
         {
             if (!IsPostBack)
             {
-				if (Request.QueryString["key"] != null)
+				try
 				{
-					keyword = Request.QueryString["key"];
+					if (Request.QueryString["key"] != null)
+					{
+						keyword = Request.QueryString["key"];
+					}
+					ShowMenu();
 				}
-                ShowMenu();
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
 

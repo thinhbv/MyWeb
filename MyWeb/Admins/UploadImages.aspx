@@ -2,11 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 	<script type="text/javascript">
+		var win;
 		function OpenCenter(url, name, w, h) {
 			var left = (screen.width - w) / 2;
 			var top = (screen.height - h) / 4;
-			var win = window.open(url, name, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+			win = window.open(url, name, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+			var pollTimer = window.setInterval(function () {
+				if (win.closed !== false) { // !== is required for compatibility with Opera
+					window.clearInterval(pollTimer);
+					window.location.reload();
+				}
+			}, 200);
 		}
+
 	</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

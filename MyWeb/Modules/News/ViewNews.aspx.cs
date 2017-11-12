@@ -53,13 +53,12 @@ namespace MyWeb.Modules.News
                                 ltrCrumb.Text += "</li>\n";
                             }
                         }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
+					}
+				}
+				catch (Exception ex)
+				{
+					MailSender.SendMail("", "", "Error System", ex.Message);
+				}
             }
         }
     }

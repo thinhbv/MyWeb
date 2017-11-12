@@ -19,7 +19,7 @@ namespace MyWeb
             {
                 if (Session["UserName"] == null || Session["UserName"].ToString() == "")
                 {
-                    Response.Redirect("/Logon");
+                    Response.Redirect("/Logon", false);
                 }
                 else
                 {
@@ -31,12 +31,12 @@ namespace MyWeb
                         Session["UserName"] = dt.Rows[0]["UserName"].ToString().Trim();
                         Session["IsAdmin"] = dt.Rows[0]["Admin"].ToString();
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+				}
+			}
+			catch (Exception ex)
+			{
+				MailSender.SendMail("", "", "Error System", ex.Message);
+			}
         }
     }
 }

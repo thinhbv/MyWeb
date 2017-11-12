@@ -14204,7 +14204,7 @@ button:hover:not([disabled]), button:active, button:active:focus, button:focus, 
 
 @media (min-width: 1200px) {
     button:hover:not([disabled]), button:active, button:active:focus, button:focus, .button:hover:not([disabled]), .button:active, .button:active:focus, .button:focus, .btn:hover:not([disabled]), .btn:active, .btn:active:focus, .btn:focus, .btn.btn-default:hover:not([disabled]), .btn.btn-default:active, .btn.btn-default:active:focus, .btn.btn-default:focus, .button.btn-default:hover:not([disabled]), .button.btn-default:active, .button.btn-default:active:focus, .button.btn-default:focus {
-        background: #fff;
+        /*background: #fff;*/
         box-shadow: none;
         outline: none;
     }
