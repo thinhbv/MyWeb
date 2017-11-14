@@ -8,17 +8,17 @@ namespace MyWeb.Common
     public class MailSender
     {
         #region[Declare variables]
-		private static string _Mail_Smtp = "smtp.gmail.com";
-		private static string _Mail_Port = "25";
-		private static string _Mail_From = "contact@damyngheht.com";
-		private static string _Mail_Name = "buithinh.tt1@gmail.com";
-        private static string _Mail_Password = "Thinh@12345";
+		private static string _Mail_Smtp;
+		private static string _Mail_Port;
+		private static string _Mail_From;
+		private static string _Mail_Name;
+        private static string _Mail_Password;
         #endregion
         #region[Public Properties]
         public static string Mail_Smtp { get { if (_Mail_Smtp != null && _Mail_Smtp != "") { return _Mail_Smtp; } else { return GlobalClass.Mail_Smtp; } } set { _Mail_Smtp = value; } }
         public static string Mail_Port { get { if (_Mail_Port != null && _Mail_Port != "") { return _Mail_Port; } else { return GlobalClass.Mail_Port; } } set { _Mail_Port = value; } }
-        public static string Mail_From { get { if (_Mail_From != null && _Mail_From != "") { return _Mail_From; } else { return GlobalClass.Mail_Noreply; } } set { _Mail_From = value; } }
-        public static string Mail_Name { get { if (_Mail_Name != null && _Mail_Name != "") { return _Mail_Name; } else { return GlobalClass.Mail_Noreply; } } set { _Mail_Name = value; } }
+		public static string Mail_From { get { if (_Mail_From != null && _Mail_From != "") { return _Mail_From; } else { return GlobalClass.Mail_Info; } } set { _Mail_From = value; } }
+		public static string Mail_Name { get { if (_Mail_Name != null && _Mail_Name != "") { return _Mail_Name; } else { return GlobalClass.Mail_Noreply; } } set { _Mail_Name = value; } }
         public static string Mail_Password { get { if (_Mail_Password != null && _Mail_Password != "") { return _Mail_Password; } else { return GlobalClass.Mail_Password; } } set { _Mail_Password = value; } }
         #endregion
         #region[Public Properties]

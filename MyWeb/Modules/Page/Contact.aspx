@@ -136,7 +136,7 @@
 										</tr>
 									</table>
 									<div class="button-contact">
-										<asp:Button ID="btnSend" runat="server" Text="SEND" OnClick="btnSend_Click" />
+										<asp:Button ID="btnSend" runat="server" Text="SEND" OnClick="btnSend_Click" CssClass="btn btn-default button-search" />
 										<button  type="button" id="tm_submit_search" class="btn btn-default button-search"><span>CLEAR</span></button>
 									</div>
 								</div>

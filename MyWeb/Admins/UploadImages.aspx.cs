@@ -30,13 +30,14 @@ namespace MyWeb.Admins
 			{
 				HttpPostedFile userPostedFile = uploadedFiles[i];
 				string filename = userPostedFile.FileName;
-				System.Drawing.Image thumb;
+				System.Drawing.Image thumb = null;
+				System.Drawing.Image image = null;
 				try
 				{
 					if (userPostedFile.ContentLength > 0)
 					{
 						Span1.Text += "<u>File " + userPostedFile.FileName + "</u><br>";
-						if (userPostedFile.ContentLength >= 6300290) //<5MB
+						if (userPostedFile.ContentLength >= 12600580) //<5MB
 						{
 							Span1.Text += "Kết quả: File quá lớn => Thất bại<p>";
 						}
@@ -44,7 +45,7 @@ namespace MyWeb.Admins
 						{
 							userPostedFile.SaveAs(filePathImage + "\\" + filename);
 							//Create image thumbnail
-							System.Drawing.Image image = System.Drawing.Image.FromFile(filePathImage + "\\" + filename);
+							image = System.Drawing.Image.FromFile(filePathImage + "\\" + filename);
 							if (image.Width >= image.Height)
 							{
 								thumb = image.GetThumbnailImage(Consts.MAX_IMAGE_THUMBNAIL, Convert.ToInt32((image.Height / (image.Width / Consts.MAX_IMAGE_THUMBNAIL))), () => false, IntPtr.Zero);
@@ -53,16 +54,33 @@ namespace MyWeb.Admins
 							{
 								thumb = image.GetThumbnailImage(Convert.ToInt32((image.Width / (image.Height / Consts.MAX_IMAGE_THUMBNAIL))), Consts.MAX_IMAGE_THUMBNAIL, () => false, IntPtr.Zero);
 							}
+							if (image != null)
+							{
+								image.Dispose();
+								image = null;
+							}
 							thumb.Save(filePathImageThumbs + "\\" + filename);
-							image.Dispose();
-							thumb.Dispose();
 							Span1.Text += "Kết quả: Thành công<p>";
 						}
 					}
 				}
-				catch (Exception)
+				catch (Exception ex)
 				{
+					MailSender.SendMail("", "", "", ex.Message);
 					Span1.Text += "Kết quả: Thất bại <br>";
+				}
+				finally
+				{
+					if (image != null)
+					{
+						image.Dispose();
+						image = null;
+					}
+					if (thumb != null)
+					{
+						thumb.Dispose();
+						thumb = null;
+					}
 				}
 			}
 		}

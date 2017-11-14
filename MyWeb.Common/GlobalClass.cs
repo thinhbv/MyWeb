@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Web;
 using System.Text;
+using System.Data;
+using MyWeb.Business;
 
 namespace MyWeb.Common
 {
@@ -47,7 +49,15 @@ namespace MyWeb.Common
         #endregion
         static GlobalClass()
         {
-       
+			DataTable dtConfig = ConfigService.Config_GetByTop("1", "", "");
+			if (dtConfig.Rows.Count > 0)
+			{
+				Mail_Smtp = dtConfig.Rows[0]["Mail_Smtp"].ToString();
+				Mail_Port = dtConfig.Rows[0]["Mail_Port"].ToString();
+				Mail_Noreply = dtConfig.Rows[0]["Mail_Noreply"].ToString();
+				Mail_Password = dtConfig.Rows[0]["Mail_Password"].ToString();
+				Mail_Info = dtConfig.Rows[0]["Mail_Info"].ToString();
+			}
         }
 
         public static String GetUrlUpload()
