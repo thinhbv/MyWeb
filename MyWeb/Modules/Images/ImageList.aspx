@@ -24,7 +24,7 @@
 <!-- /Breadcrumb -->
 <div class="row">
 <div class="large-left col-sm-12">
-<div class="row">
+<div class="row" style="margin:0;">
 <h4 class="title_block"><%=groupName %></h4>
 <div id="gallery" style="display: none;">
 <asp:Literal ID="ltrImages" runat="server"></asp:Literal>
